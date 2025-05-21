@@ -1,5 +1,5 @@
 import os
-os.environ['CUDA_VISIBLE_DEVICES'] = '1'
+os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 
 import json
 from args import args_define
@@ -17,6 +17,7 @@ from tqdm import tqdm
 from datasets import CIRRDataset, CIRCODataset, FashionIQDataset
 from utils import extract_image_features, device, collate_fn, PROJECT_ROOT, targetpad_transform
 
+print(f"device: {device}")
 
 name2model = {
     'SEIZE-B':'ViT-B-32',
@@ -404,10 +405,9 @@ def circo_generate_test_dict(relative_test_dataset: CIRCODataset, clip_model: CL
 
     return queryid_to_retrieved_images
 
-
 @torch.no_grad()
-def fiq_val_retrieval(dataset_path: str, dress_type: str, clip_model_name: str, ref_names_list: List[str],
-                      pseudo_tokens: torch.Tensor, preprocess: callable) -> Dict[str, float]:
+def fiq_val_retrieval(dataset_path: str, dress_type: str, clip_model_name: str,
+                      preprocess: callable) -> Dict[str, float]:
     """
     Compute the retrieval metrics on the FashionIQ validation set given the pseudo tokens and the reference names
     """
@@ -428,16 +428,17 @@ def fiq_val_retrieval(dataset_path: str, dress_type: str, clip_model_name: str, 
     # Define the relative dataset
     relative_val_dataset = FashionIQDataset(dataset_path, 'val', [dress_type], 'relative', preprocess)
 
-    return fiq_compute_val_metrics(relative_val_dataset, clip_model, index_features, index_names, ref_names_list,
-                                   pseudo_tokens)
+    # Modified: I set ref_names_list to be the same as index_names
+    return fiq_compute_val_metrics(relative_val_dataset, clip_model, index_features, index_names, ref_names_list=index_names
+                                   )
 
 
 @torch.no_grad()
 def fiq_compute_val_metrics(relative_val_dataset: FashionIQDataset, clip_model: CLIP, index_features: torch.Tensor,
-                            index_names: List[str], ref_names_list: List[str], pseudo_tokens: torch.Tensor) \
+                            index_names: List[str], ref_names_list: List[str]) \
         -> Dict[str, float]:
     """
-    Compute the retrieval metrics on the FashionIQ validation set given the dataset, pseudo tokens and the reference names
+    Compute the retrieval metrics on the FashionIQ validation set given the dataset
     """
 
     dress_type = relative_val_dataset.dress_types[0]
@@ -448,8 +449,7 @@ def fiq_compute_val_metrics(relative_val_dataset: FashionIQDataset, clip_model: 
         predicted_features = torch.load(f'{feat_dataset_dress_path}/{args.model_type}/{args.gpt_version}_predicted_features.pt')
         target_names = target_names.tolist()
     else:
-        predicted_features, target_names = fiq_generate_val_predictions(clip_model, relative_val_dataset, ref_names_list,
-                                                                        pseudo_tokens)
+        predicted_features, target_names = fiq_generate_val_predictions(clip_model, relative_val_dataset)
         np.save(f'{feat_dataset_dress_path}/target_names.npy', target_names)
         torch.save(predicted_features, f'{feat_dataset_dress_path}/{args.model_type}/{args.gpt_version}_predicted_features.pt')
 
@@ -458,7 +458,7 @@ def fiq_compute_val_metrics(relative_val_dataset: FashionIQDataset, clip_model: 
             blip_predicted_features = torch.load(f'{feat_dataset_dress_path}/{args.model_type}/blip_predicted_features.pt')
         else:
             blip_predicted_features, _ = \
-                fiq_generate_val_predictions(clip_model, relative_val_dataset, ref_names_list, pseudo_tokens, True)
+                fiq_generate_val_predictions(clip_model, relative_val_dataset, True)
             
             torch.save(blip_predicted_features, f'{feat_dataset_dress_path}/{args.model_type}/blip_predicted_features.pt')
 
@@ -487,7 +487,7 @@ def fiq_compute_val_metrics(relative_val_dataset: FashionIQDataset, clip_model: 
     similarity = similarity_after + args.neg_factor * diff_neg + args.pos_factor * diff_pos
 
     for i in range(similarity_before.shape[0]):
-        if indexs[i] != -1:
+        if indexs[i] != -1: # if name in ref_names_list and in index_name_dict
             similarity[i][indexs[i]] = -1
 
     # Compute the distances
@@ -509,8 +509,8 @@ def fiq_compute_val_metrics(relative_val_dataset: FashionIQDataset, clip_model: 
 
 
 @torch.no_grad()
-def fiq_generate_val_predictions(clip_model: CLIP, relative_val_dataset: FashionIQDataset, ref_names_list: List[str],
-                                 pseudo_tokens: torch.Tensor, use_momentum_strategy=False) -> Tuple[torch.Tensor, List[str]]:
+def fiq_generate_val_predictions(clip_model: CLIP, relative_val_dataset: FashionIQDataset, 
+                                 use_momentum_strategy=False) -> Tuple[torch.Tensor, List[str]]:
     """
     Generates features predictions for the validation set of Fashion IQ.
     """
@@ -594,32 +594,32 @@ def main():
     elif args.dataset == 'circo':
         circo_generate_test_submission_file(args.dataset_path, clip_model_name, preprocess, args.submission_name)
     elif args.dataset.lower() == 'fashioniq':
-        # recalls_at10 = []
-        # recalls_at50 = []
-        # for dress_type in ['shirt', 'dress', 'toptee']:
-        #     fiq_metrics = fiq_val_retrieval(args.dataset_path, dress_type, clip_model_name, preprocess)
-        #     recalls_at10.append(fiq_metrics['fiq_recall_at10'])
-        #     recalls_at50.append(fiq_metrics['fiq_recall_at50'])
+        recalls_at10 = []
+        recalls_at50 = []
+        for dress_type in ['shirt', 'dress', 'toptee']:
+            fiq_metrics = fiq_val_retrieval(args.dataset_path, dress_type, clip_model_name, preprocess)
+            recalls_at10.append(fiq_metrics['fiq_recall_at10'])
+            recalls_at50.append(fiq_metrics['fiq_recall_at50'])
 
-        #     for k, v in fiq_metrics.items():
-        #         print(f"{dress_type}_{k} = {v:.2f}")
-        #     print("\n")
+            for k, v in fiq_metrics.items():
+                print(f"{dress_type}_{k} = {v:.2f}")
+            print("\n")
 
-        # print(f"average_fiq_recall_at10 = {np.mean(recalls_at10):.2f}")
-        # print(f"average_fiq_recall_at50 = {np.mean(recalls_at50):.2f}")
+        print(f"average_fiq_recall_at10 = {np.mean(recalls_at10):.2f}")
+        print(f"average_fiq_recall_at50 = {np.mean(recalls_at50):.2f}")
 
-        # Only test dress
-        dress_type = "dress"
-        fiq_metrics = fiq_val_retrieval(args.dataset_path, dress_type, clip_model_name, preprocess=preprocess)
-        recalls_at10 = fiq_metrics['fiq_recall_at10']
-        recalls_at50 = fiq_metrics['fiq_recall_at50']
+        # # Only test dress
+        # dress_type = "dress"
+        # fiq_metrics = fiq_val_retrieval(args.dataset_path, dress_type, clip_model_name, preprocess=preprocess)
+        # recalls_at10 = fiq_metrics['fiq_recall_at10']
+        # recalls_at50 = fiq_metrics['fiq_recall_at50']
 
-        for k, v in fiq_metrics.items():
-            print(f"{dress_type}_{k} = {v:.2f}")
-        print("\n")
+        # for k, v in fiq_metrics.items():
+        #     print(f"{dress_type}_{k} = {v:.2f}")
+        # print("\n")
 
-        print(f"fiq_recall_at10 = {recalls_at10:.4f}")
-        print(f"fiq_recall_at50 = {recalls_at50:.4f}")
+        # print(f"fiq_recall_at10 = {recalls_at10:.4f}")
+        # print(f"fiq_recall_at50 = {recalls_at50:.4f}")
 
     else:
         raise ValueError("Dataset not supported")

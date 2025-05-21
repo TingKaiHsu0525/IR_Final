@@ -3,7 +3,7 @@ from argparse import ArgumentParser
 class args_define():
     parser = ArgumentParser()
     parser.add_argument("--dataset", type=str, default='circo', choices=['cirr', 'circo', 'fashioniq'], help="Dataset to use")
-    parser.add_argument("--dataset_path", type=str, help="Path to the dataset", choices=['CIRR', 'CIRCO', 'FashionIQ'], default='CIRCO')
+    parser.add_argument("--dataset_path", type=str, help="Path to the dataset", default='CIRCO')
     parser.add_argument("--model_type", type=str, choices=['SEIZE-B', 'SEIZE-L', 'SEIZE-H', 'SEIZE-g', 'SEIZE-G', 'SEIZE-CoCa-B', 'SEIZE-CoCa-L'], default='SEIZE-G',
                         help="if 'SEIZE-B' uses the pre-trained CLIP ViT-B/32,"
                              "if 'SEIZE-L' uses the pre-trained CLIP ViT-L/14,"
