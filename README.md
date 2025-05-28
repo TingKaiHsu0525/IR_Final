@@ -1,4 +1,4 @@
-IR Final Project
+# IR Final Project
 
 ### Dataset 
 1. Fashion-iq: https://disk.yandex.com/d/Z2E54WCwvrQA3A
@@ -10,12 +10,10 @@ reference: https://github.com/XiaoxiaoGuo/fashion-iq/issues/18
     NUM_CAPTION 15 -> 5
     BLIP2_MODEL opt6.7b -> opt2.7b
 
-step 2:
-openai.api_key can't run
+    step 3:
+    get reference_name list
 
-reference : https://github.com/yzy-bupt/SEIZE
-
-## 20250521
+## 2025/05/21
 ### Duplicate the experiment
 Run Step 1. and Step 2. as usual:
 ```
@@ -55,3 +53,111 @@ To do Step 3, run
 ```
 In the shell script, the `--dataset_path` argument should be `<directory_name_you_like>`.
 
+## 2025/05/28
+
+### Update
+- Step 1:
+    - Change to use BLIP2_MODEL opt6.7b (reacll ⭡)
+    - Change to NUM_CAPTION 15 (stpe 2 spend time ⭡, reacll unkown)
+
+- Step 2:
+    - code modify input gpt prompt (reacll ⭡)
+
+- Step 3:  
+    - Modify get ref_name_list in step 3 code (reacll ⭡)
+    - Add original input caption features (reacll ⭡)
+
+
+### Code Explanation
+    Step 2:
+
+    LLM-based_editing_reasoner_fashioniq_v1.py -> use gpt version
+    LLM-based_editing_reasoner_fashioniq.py -> use LLama2-7b version
+
+    Step 3:
+    semantic_editing_search_v1.py -> modify version
+
+### Captions store
+The captions output use BLIP2_MODEL opt6.7b run after step 1 
+```
+LLM-edit
+| -- captions_num_5
+| -- captions_num_15
+| -- edit_5
+```
+
+### Captions Directory for step 3
+I put the all version caption data in FashionIQ_multi_opt_gpt35_5 directory
+```
+srcFashionIQ_multi_opt_gpt35_5
+| -- captions
+    |-- cap.dress.val.json
+    |-- cap.shirt.val.json
+    |-- cap.toptee.val.json
+| -- caption_gpt3.5_v1 -> gpt 
+| -- caption_Llama2 -> Llama2-7b
+| -- image_splits
+| -- images
+```
+
+### Ablation Study Results (FashionIQ Recall)
+
+#### LLM: LLama2-7B
+| Category | Model | pos_factor | neg_factor | add_original| Recall@10 (%) | Recall@50(%) |
+|----|---|------|---|---|--------|--------|
+| Shirt | SEIZE-g | 0.5 | 0 | ✔️ | 33.32 | 52.60 |
+| Dress | SEIZE-g | 0.5 | 0 | ✔️ | 28.06 | 50.27 |
+| Toptee | SEIZE-g | 0.5 | 0 | ✔️ | 37.48 | 59.15 |
+| **Average** | | | | **32.95** | **54.01** |
+| | | | | | | |
+| Shirt | SEIZE-G | 0.5 | 0 | ✔️ | 34.59 | 52.75 |
+| Dress | SEIZE-G | 0.5 | 0 | ✔️ | 26.82 | 48.83 |
+| Toptee | SEIZE-G | 0.5 | 0 | ✔️ | 37.43 | 60.22 |
+| **Average** | | | | **32.95** | **53.94** |
+| | | | | | | |
+| Shirt | SEIZE-H | 0.5 | 0 | ✔️ | 32.58 | 51.28 |
+| Dress | SEIZE-H | 0.5 | 0 | ✔️ | 27.66 | 49.43 |
+| Toptee | SEIZE-H | 0.5 | 0 | ✔️ | 35.95 | 60.28 |
+| **Average** | | | | **32.07** | **53.66** |
+| | | | | | | |
+| Shirt | SEIZE-H | 0.5 | 0 | ✔️ | 32.58 | 51.28 |
+| Dress | SEIZE-H | 0.5 | 0 | ✔️ | 27.66 | 49.43 |
+| Toptee | SEIZE-H | 0.5 | 0 | ✔️ | 35.95 | 60.28 |
+| **Average** | | | | **32.07** | **53.66** |
+| | | | | | | |
+| Shirt | SEIZE-L | 0.5 | 0 | ❌ | 25.42 | 41.12 |
+| Dress | SEIZE-L | 0.5 | 0 | ❌ | 18.00 | 39.12 |
+| Toptee | SEIZE-L | 0.5 | 0 | ❌ | 25.04 | 47.12 |
+| **Average** | | | | **22.82** | **42.45** |
+| | | | | | | |
+| Shirt | SEIZE-g | default | default | ❌ | 33.91 | 51.37|
+| Dress | SEIZE-g | default | default | ❌ | 26.62 | 47.00 |
+| Toptee | SEIZE-g | default | default | ❌ | 34.83 | 56.40 |
+| **Average** | | | | **31.79** | **51.59** |
+
+
+#### LLM: GPT3.5
+| Category | Model | pos_factor | neg_factor | add_original| Recall@10 (%) | Recall@50(%) |
+|----|---|------|---|---|--------|--------|
+| Shirt | SEIZE-g | 0.5 | 0 | ❌ |  |  |
+| Dress | SEIZE-g | 0.5 | 0 | ❌ | 31.38 | 53.74 |
+| Toptee | SEIZE-g | 0.5 | 0 | ❌ |  |  |
+| **Average** | | | | |  |
+| | | | | | | |
+| Shirt | SEIZE-g | 0.5 | 0 | ✔️ |  |  |
+| Dress | SEIZE-g | 0.5 | 0 | ✔️ | 30.64 | 52.80 |
+| Toptee | SEIZE-g | 0.5 | 0 | ✔️ |  |  |
+| **Average** | | | | |  |
+| | | | | | | |
+| Shirt | SEIZE-g | default | default  | ❌ |  |  |
+| Dress | SEIZE-g | default  | default  | ❌ | 30.59 | 53.40 |
+| Toptee | SEIZE-g | default  | default  | ❌ |  |  |
+
+### TODO
+    step 1: using opt6.7b with 5 captions (Done)
+    step 2: editing captions with(Llama or gpt3.5) (Doing)
+    step 3: modify search pos & neg factors
+
+    
+
+reference : https://github.com/yzy-bupt/SEIZE
