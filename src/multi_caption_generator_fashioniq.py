@@ -18,14 +18,14 @@ device = torch.device("cuda") if torch.cuda.is_available() else "cpu"
 
 if BLIP2_MODEL == 'opt':
     # original used opt6.7b
-    # model, vis_processors, _ = load_model_and_preprocess(
-    #     name="blip2_opt", model_type="caption_coco_opt6.7b", is_eval=True, device=device
-    # )
+    model, vis_processors, _ = load_model_and_preprocess(
+        name="blip2_opt", model_type="caption_coco_opt6.7b", is_eval=True, device=device
+    )
 
     # modifyd to use opt2.7b
-    model, vis_processors, _ = load_model_and_preprocess(
-    name="blip2_opt", model_type="caption_coco_opt2.7b", is_eval=True, device=device
-    )
+    # model, vis_processors, _ = load_model_and_preprocess(
+    # name="blip2_opt", model_type="caption_coco_opt2.7b", is_eval=True, device=device
+    # )
 
 else:
     model, vis_processors, _ = load_model_and_preprocess(

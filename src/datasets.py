@@ -84,6 +84,7 @@ class FashionIQDataset(Dataset):
                 reference_name = self.triplets[index]['candidate']
                 multi_opt = self.triplets[index]['multi_caption_opt'][:args.nums_caption]
                 multi_gpt_opt = self.triplets[index]['multi_gpt-3.5_opt'][:args.nums_caption]
+                captions = self.triplets[index]['captions'][:2]
 
                 if self.split in ['train', 'val']:
                     reference_image_path = self.dataset_path / 'images' / f"{reference_name}.png"
@@ -100,6 +101,7 @@ class FashionIQDataset(Dataset):
                         'relative_captions': relative_captions,
                         'multi_opt': multi_opt,
                         'multi_gpt_opt': multi_gpt_opt,
+                        'captions': captions,
                     }
 
                 elif self.split == 'test':
