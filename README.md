@@ -153,11 +153,5 @@ srcFashionIQ_multi_opt_gpt35_5
 | Dress | SEIZE-g | default  | default  | ❌ | 30.59 | 53.40 |
 | Toptee | SEIZE-g | default  | default  | ❌ |  |  |
 
-### TODO
-    step 1: using opt6.7b with 5 captions (Done)
-    step 2: editing captions with(Llama or gpt3.5) (Doing)
-    step 3: modify search pos & neg factors
-
-    
 
 reference : https://github.com/yzy-bupt/SEIZE
