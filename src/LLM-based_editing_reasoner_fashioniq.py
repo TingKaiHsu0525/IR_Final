@@ -37,21 +37,15 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 #         ret = response.strip()
 #     return ret
 
+def edit(json_path_in: Path, 
+         json_path_out: Path,
+         prompt_dir: Path):
+    with open(prompt_dir / "system.txt", "r") as f:
+        sys_prompt = f.read().strip()
+    with open(prompt_dir / "user.txt", "r") as f:
+        usr_prompt_temp = f.read().strip()
 
-# input_json = '{}_blip2_{}.json'.format(SPLIT, BLIP2_MODEL)
-dataset_path = Path('FashionIQ')
-# input_json = 'FashionIQ/captions/cap.dress.val.json'
-# dataset_path = Path('CIRR')
-
-#original code
-for DRESS in ['dress', 'shirt', 'toptee']:
-
-    # original caption path
-    # with open(dataset_path / 'captions' / f'cap.{DRESS}.{SPLIT}.json', "r") as f:
-    #     annotations = json.load(f)
-
-    # modified caption path
-    with open(dataset_path  / f'cap.{DRESS}.{SPLIT}.json', "r") as f:
+    with open(json_path_in, "r") as f:
         annotations = json.load(f)
 
     for ans in tqdm(annotations):
@@ -67,12 +61,10 @@ for DRESS in ['dress', 'shirt', 'toptee']:
             else:
                 blip2_caption = ans["blip2_caption_{}".format(BLIP2_MODEL)]
 
-        sys_prompt = "I have an image. Given an instruction to edit the image, carefully generate a description of the edited image."
-
         if MULTI_CAPTION:
             multi_gpt = []
             for cap in blip2_caption:
-                usr_prompt = "I will put my image content beginning with \"Image Content:\". The instruction I provide will begin with \"Instruction:\". The edited description you generate should begin with \"Edited Description:\". You just generate one edited description only begin with \"Edited Description:\". The edited description needs to be as simple as possible and only reflects image content. Just one line.\nA example:\nImage Content: a man adjusting a woman's tie.\nInstruction: has the woman and the man with the roles switched.\nEdited Description: a woman adjusting a man's tie.\n\nImage Content: {}\nInstruction: {}\nEdited Description:".format(cap, rel_cap)
+                usr_prompt = usr_prompt_temp.format(cap, rel_cap)
                 # print("[usr_prompt]")
                 # print(usr_prompt)
                 # print("--"*20)
@@ -96,10 +88,10 @@ for DRESS in ['dress', 'shirt', 'toptee']:
             ans["multi_gpt-3.5_{}".format(BLIP2_MODEL)] = multi_gpt
             
         else:
-            usr_prompt = "I will put my image content beginning with \"Image Content:\". The instruction I provide will begin with \"Instruction:\". The edited description you generate should begin with \"Edited Description:\". You just generate one edited description only begin with \"Edited Description:\". The edited description needs to be as simple as possible and only reflects image content. Just one line.\nA example:\nImage Content: a man adjusting a woman's tie.\nInstruction: has the woman and the man with the roles switched.\nEdited Description: a woman adjusting a man's tie.\n\nImage Content: {}\nInstruction: {}\nEdited Description:".format(blip2_caption, rel_cap)
-            print("[usr_prompt]")
-            print(usr_prompt)
-            print("--"*20)
+            usr_prompt = usr_prompt_temp.format(blip2_caption, rel_cap)
+            # print("[usr_prompt]")
+            # print(usr_prompt)
+            # print("--"*20)
             while True:
                 try:
                     completion = openai.ChatCompletion.create(
@@ -124,9 +116,19 @@ for DRESS in ['dress', 'shirt', 'toptee']:
         # with open("CIRCO/annotations/gpt3.5-temp.json", "a") as f:
         #     f.write(json.dumps(ans, indent=4) + '\n')
 
-    with open(dataset_path / f'new.cap.{DRESS}.{SPLIT}.json', "w") as f:
+    with open(json_path_out, "w") as f:
         f.write(json.dumps(annotations, indent=4))
 
+
+if __name__ == "__main__":
+    exp_dir = Path("FashionIQ_multi_opt_gpt35_5_p1")
+
+    for DRESS in ['dress', 'shirt', 'toptee']:
+        edit(
+            exp_dir / "captions" / f'cap.{DRESS}.{SPLIT}.1.json', 
+            exp_dir / "captions" / f'cap.{DRESS}.{SPLIT}.2.json',
+            prompt_dir=(exp_dir / "prompts")
+        )
 
 # # modified code
 # for DRESS in ['dress', 'shirt', 'toptee']:
@@ -185,3 +187,6 @@ for DRESS in ['dress', 'shirt', 'toptee']:
 
 #     with open(dataset_path / f'new.cap.{DRESS}.{SPLIT}.json', "w") as f:
 #         f.write(json.dumps(annotations, indent=4))
+
+
+

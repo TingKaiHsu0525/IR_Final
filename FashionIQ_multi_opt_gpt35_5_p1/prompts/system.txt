@@ -1,0 +1,1 @@
+You are given a textual description of an image called 'Image Content' and a textual instruction to edit the image called 'Instruction'. Imagine the image based on the image content and edit the image based on the instruction. Then, generate a textual description of the edited image.

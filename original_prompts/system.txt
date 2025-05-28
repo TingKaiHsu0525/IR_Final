@@ -1,0 +1,1 @@
+I have an image. Given an instruction to edit the image, carefully generate a description of the edited image.

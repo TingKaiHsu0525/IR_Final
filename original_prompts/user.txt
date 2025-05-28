@@ -1,0 +1,9 @@
+I will put my image content beginning with "Image Content:". The instruction I provide will begin with "Instruction:". The edited description you generate should begin with "Edited Description:". You just generate one edited description only begin with "Edited Description:". The edited description needs to be as simple as possible and only reflects image content. Just one line.
+A example:
+Image Content: a man adjusting a woman's tie.
+Instruction: has the woman and the man with the roles switched.
+Edited Description: a woman adjusting a man's tie.
+
+Image Content: {}
+Instruction: {}
+Edited Description:

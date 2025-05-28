@@ -624,6 +624,16 @@ def main():
     else:
         raise ValueError("Dataset not supported")
 
+def main1():
+    dress_type = "shirt"
+    preprocess = targetpad_transform(1.25, 224)
+    relative_val_dataset = FashionIQDataset(
+        args.dataset_path, 
+        'val', 
+        [dress_type], 
+        'relative', 
+        preprocess
+    )
 
 if __name__ == '__main__':
     main()
