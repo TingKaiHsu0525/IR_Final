@@ -126,3 +126,26 @@ def collate_fn(batch):
 
 def _convert_image_to_rgb(image):
     return image.convert("RGB")
+
+def sample_dataset(dataset_json_path: str, n_samples: int):
+    import json
+    import random
+    with open(dataset_json_path, 'r') as f:
+        dataset = json.load(f)
+    sampled_dataset = random.sample(dataset, n_samples)
+    return sampled_dataset
+
+if __name__ == "__main__":
+    import json
+    n_samples = 200
+    save_dir = Path("FashionIQ_multi_opt_gpt35_5_p1") / "captions"
+    for fn in os.listdir('FashionIQ'):
+        if fn.endswith('.json'):
+            sampled = sample_dataset(Path('FashionIQ') / fn, n_samples)
+
+            # change cap.dress.val.json to cap.dress.val.1.json
+            fn_save = fn.split('.')
+            fn_save[-1] = '1.json'
+            fn_save = '.'.join(fn_save)
+            with open(save_dir / fn_save, 'w') as f:
+                json.dump(sampled, f, indent=4)

@@ -1,0 +1,3002 @@
+[
+    {
+        "target": "B0084NYJ5C",
+        "candidate": "B00C3TWRM0",
+        "captions": [
+            "is a lighter color",
+            "is lighter"
+        ],
+        "multi_caption_opt": [
+            "a man wearing a suit in a pose for a photo",
+            "a man in black dress shirt and black pants",
+            "a person in a suit standing with hands in pockets",
+            "a man standing in a black dress shirt and slacks",
+            "a young man in a black dress shirt and pants"
+        ]
+    },
+    {
+        "target": "B00FV0FKXQ",
+        "candidate": "B002HNSH80",
+        "captions": [
+            "is light blue with yellow logo",
+            "is light blue"
+        ],
+        "multi_caption_opt": [
+            "a young man poses with his hands on his hips and his eyes on the camera",
+            "a man standing with his hands on his hips",
+            "a young man is posing with his hands on his hips",
+            "a man with a black t-shirt and glasses",
+            "a young man in jeans and a black t-shirt that reads \"got mandelice?\""
+        ]
+    },
+    {
+        "target": "B004FOCCA8",
+        "candidate": "B005I4MIO4",
+        "captions": [
+            "has writing on it",
+            "is red with no collar or buttons"
+        ],
+        "multi_caption_opt": [
+            "a man wearing a long sleeve plaid shirt",
+            "a male wearing a flannelette shirt",
+            "a man standing, wearing a plaid shirt",
+            "a black man wearing a red and black plaid shirt",
+            "a black man wearing a red and black plaid shirt"
+        ]
+    },
+    {
+        "target": "B0019RM524",
+        "candidate": "B00FD8I2HC",
+        "captions": [
+            "is white colored",
+            "is light gray"
+        ],
+        "multi_caption_opt": [
+            "a shirt with the words weird science on it",
+            "a shirt that says weird science",
+            "a yellow t shirt with the words weird science on it",
+            "the yellow shirt with weird science on it",
+            "weird science t - shirt"
+        ]
+    },
+    {
+        "target": "B003OUW9KW",
+        "candidate": "B0019IT79C",
+        "captions": [
+            "Is less wordy and has a larger graphic",
+            "is darker in color"
+        ],
+        "multi_caption_opt": [
+            "a young man wearing a hat with the words \"green new deal\" on it",
+            "a man is smiling while standing by a white background",
+            "a man standing on a white background with his hands on his hips",
+            "a man standing holding his hands in front of his waist",
+            "man standing smiling with his left hand on his hip"
+        ]
+    },
+    {
+        "target": "B005XS00E0",
+        "candidate": "B0060EYIU8",
+        "captions": [
+            "is smaller in size with different print design",
+            "has more pattern"
+        ],
+        "multi_caption_opt": [
+            "a man is in a skateboarding pose",
+            "a man in a white t-shirt and jeans",
+            "a man standing in a white t shirt and jeans",
+            "a man poses for a photograph while holding a frisbee in one hand",
+            "a man standing with his skateboard in his hand"
+        ]
+    },
+    {
+        "target": "B006AN59CA",
+        "candidate": "B00APU4KE2",
+        "captions": [
+            "has short sleeves and a logo",
+            "has shorter leeves"
+        ],
+        "multi_caption_opt": [
+            "a man wearing a long sleeve shirt and gray pants",
+            "a man in a shirt and pants standing",
+            "a man that is looking off of something",
+            "a man in a black shirt and gray pants",
+            "a young man wearing a black shirt and gray pants"
+        ]
+    },
+    {
+        "target": "B00605YPSC",
+        "candidate": "B004VFHTL8",
+        "captions": [
+            "Is more monochromatic",
+            "is more of a navy blue"
+        ],
+        "multi_caption_opt": [
+            "a man posing for a picture wearing black shirt and white pants",
+            "a man is posing for a photo wearing white shorts",
+            "a man wearing a black polo shirt and white shorts",
+            "a man wearing a black shirt, with white pants",
+            "a man in a black shirt and white pants"
+        ]
+    },
+    {
+        "target": "B00AAJ67QW",
+        "candidate": "B0081FLAGO",
+        "captions": [
+            "is more manly and faded",
+            "has a white design on the chest"
+        ],
+        "multi_caption_opt": [
+            "a t - shirt that reads this is what the world's greatest grandma looks like",
+            "a t - shirt that says grandma looks like this",
+            "this is what grandma looks like t-shirt",
+            "a black t - shirt that says this is what the world's greatest grandma looks like",
+            "a t - shirt with the words \"this is what's great about grandma\" on it"
+        ]
+    },
+    {
+        "target": "B00CC02P5O",
+        "candidate": "B00B4X5XLI",
+        "captions": [
+            "is for children",
+            "is one piece gray and no collar"
+        ],
+        "multi_caption_opt": [
+            "a white dress shirt with buttons and collar",
+            "the men's white formal shirt with buttons on the chest",
+            "a white dress shirt on top of a dresser",
+            "a white dress shirt sitting against a white background",
+            "a dress shirt on a white table"
+        ]
+    },
+    {
+        "target": "B002C6FOII",
+        "candidate": "B0013FJWT6",
+        "captions": [
+            "is sleeveless and plain white",
+            "is sleeveless and white"
+        ],
+        "multi_caption_opt": [
+            "a man is wearing a blue shirt",
+            "man wearing a blue shirt standing up for a picture",
+            "a man wearing a hat and blue t-shirt",
+            "a man in a blue t shirt and gray jeans",
+            "a man standing in a blue shirt"
+        ]
+    },
+    {
+        "target": "B00C1EMHHW",
+        "candidate": "B00AK46JK6",
+        "captions": [
+            "green tank top with white stripes",
+            "is green and no sleeves"
+        ],
+        "multi_caption_opt": [
+            "a man standing on the street wearing a hat and shorts",
+            "a young man wearing a blue shirt and shorts",
+            "a man is posing for a picture wearing a blue shirt",
+            "a man standing up and holding a skateboard",
+            "a male with black pants, a blue shirt and skateboard"
+        ]
+    },
+    {
+        "target": "B000BTMG0C",
+        "candidate": "B005H9ZP8Q",
+        "captions": [
+            "has a different logo",
+            "has a cow graphic"
+        ],
+        "multi_caption_opt": [
+            "a couple of t-shirts that have animal and animal on them",
+            "three t-shirts of animal and human that say the same thing",
+            "two different t shirts, one has the word animal on it and the other has the word animal on it",
+            "a white t-shirt on top of a black t-shirt with the word animal on it",
+            "a couple of t shirts with a black animal and an a on them"
+        ]
+    },
+    {
+        "target": "B0012C826O",
+        "candidate": "B004J1JDH2",
+        "captions": [
+            "is darker",
+            "Desired image contains stylized image of a motorcycle"
+        ],
+        "multi_caption_opt": [
+            "a black t - shirt with the text \"i see stupid people\"",
+            "a black t - shirt with i see stupid people on it",
+            "a t - shirt that says, 'i see stupid people'",
+            "a black t - shirt with a white text saying see stupid people",
+            "a t-shirt that says, i see stupid people"
+        ]
+    },
+    {
+        "target": "B006ZP60QC",
+        "candidate": "B009ADCOP2",
+        "captions": [
+            "is darker",
+            "is more beige"
+        ],
+        "multi_caption_opt": [
+            "a blue t - shirt with a cat logo on it",
+            "a blue shirt with a small boat on it",
+            "a blue shirt with a cartoon boat in the middle",
+            "a blue t - shirt with a logo on it",
+            "a men's t - shirt with a logo on it"
+        ]
+    },
+    {
+        "target": "B00AZIN2P2",
+        "candidate": "B0042RUEJY",
+        "captions": [
+            "has tan button and is denim colored",
+            "is blue with buttons and a collar"
+        ],
+        "multi_caption_opt": [
+            "man standing while looking at something on the ground",
+            "a man in a tan shirt is standing up",
+            "a man with a beard wearing a shirt and jeans",
+            "a man standing in a military style shirt",
+            "a man standing in front of a white background"
+        ]
+    },
+    {
+        "target": "B000FQ9R62",
+        "candidate": "B009WVHAXI",
+        "captions": [
+            "Has stripes and button down with pocket on front.",
+            "is a button down with longer sleeves"
+        ],
+        "multi_caption_opt": [
+            "a striped polo shirt on a white surface",
+            "striped polo shirt on a white background",
+            "a men's striped polo shirt",
+            "a striped polo shirt with the collar turned up",
+            "a navy and white striped shirt"
+        ]
+    },
+    {
+        "target": "B0058RUUH8",
+        "candidate": "B00F6S5GUK",
+        "captions": [
+            "Is not as wordy and has more color",
+            "is shorter"
+        ],
+        "multi_caption_opt": [
+            "a man with a star wars logo t-shirt",
+            "a man wearing a star wars t shirt standing with his arms crossed",
+            "a man in a black shirt standing for a picture",
+            "a man posing for a picture wearing a star wars t-shirt",
+            "a man wearing a shirt that says star wars"
+        ]
+    },
+    {
+        "target": "B007CCUJQE",
+        "candidate": "B00AKYDNFA",
+        "captions": [
+            "Is black and has a more simple graphic",
+            "is solid black with a Quiksilver design"
+        ],
+        "multi_caption_opt": [
+            "a camo t - shirt with a logo",
+            "camo tee shirt with the words duck hunting",
+            "the shirt is shown in a camouflage print",
+            "a camo t - shirt with a white eagle on the chest",
+            "camo camo t - shirt with a duck"
+        ]
+    },
+    {
+        "target": "B00FK45MG8",
+        "candidate": "B007TB59A4",
+        "captions": [
+            "is blue with a collar",
+            "Is navy in color"
+        ],
+        "multi_caption_opt": [
+            "a jersey with a canada design on it",
+            "a shirt that is red with the word canada on it",
+            "a hockey jersey that has a canada emblem on it",
+            "a canadian soccer jersey with the canadian flag",
+            "a red, white and black hockey jersey"
+        ]
+    },
+    {
+        "target": "B0011RLPW8",
+        "candidate": "B00B6E7IHW",
+        "captions": [
+            "is more gray and plain",
+            "is grey and is more loose fitted"
+        ],
+        "multi_caption_opt": [
+            "a man standing in white shirt and jeans",
+            "a man standing wearing a hat with a long sleeve",
+            "a man in a white shirt and black jeans standing up",
+            "a man in a white shirt standing alone",
+            "a man standing with his arms folded against his chest"
+        ]
+    },
+    {
+        "target": "B0038MJA8U",
+        "candidate": "B007PVC4R4",
+        "captions": [
+            "Is more plain and monochromatic",
+            "Is long-sleeved with Jack Daniels bottle logo on front"
+        ],
+        "multi_caption_opt": [
+            "a mannequin wearing a gray and black shirt",
+            "a male mannequin wearing a black and grey colored shirt",
+            "a male torso is wearing a black and grey long sleeve top",
+            "a mannequin that looks like a black and gray shirt on top of a black and gray sweatshirt",
+            "a mannequin with black and grey long sleeve shirt"
+        ]
+    },
+    {
+        "target": "B0041IVTJ8",
+        "candidate": "B004VUFJK6",
+        "captions": [
+            "is light gray with an image",
+            "has a crewneck and large graphics"
+        ],
+        "multi_caption_opt": [
+            "a man in a gray v-neck shirt posing",
+            "a man wearing a dark grey shirt and dark jeans",
+            "a man is wearing jeans and a gray shirt",
+            "a young man wearing a gray t shirt",
+            "a young man in jeans and a gray shirt"
+        ]
+    },
+    {
+        "target": "B00776LY8W",
+        "candidate": "B00AZIN2P2",
+        "captions": [
+            "is made of cotton and is formal",
+            "is striped and only top buttons"
+        ],
+        "multi_caption_opt": [
+            "a man in blue button down shirt and tan pants",
+            "man standing while wearing a denim shirt and khaki pants",
+            "man wearing a light blue denim shirt",
+            "a male wearing a denim shirt and brown shorts",
+            "a man in a short sleeve shirt and pants"
+        ]
+    },
+    {
+        "target": "B00DXZ2S5E",
+        "candidate": "B0091RIIRA",
+        "captions": [
+            "is grey colored",
+            "is lighter colored and more adolescent"
+        ],
+        "multi_caption_opt": [
+            "a black shirt with the word umbrella on it",
+            "a black umbrella t shirt with the logo on it",
+            "an umbrella t - shirt on sale at walmart",
+            "a black t - shirt with the logo of umbrella",
+            "a black umbrella logo t shirt"
+        ]
+    },
+    {
+        "target": "B009ZOJJ9K",
+        "candidate": "B001DDPIKA",
+        "captions": [
+            "a short sleeve solid color shirt with a few buttons",
+            "has shorter slleves"
+        ],
+        "multi_caption_opt": [
+            "men's black and gray quarter zip pullover",
+            "a shirt with sleeves that are gray and tan",
+            "a photo of a shirt that is on a surface",
+            "a mens quarter zip shirt with gray and brown trims",
+            "a black and gray jacket with a contrast color block"
+        ]
+    },
+    {
+        "target": "B00G0IUSB2",
+        "candidate": "B009CCS6JO",
+        "captions": [
+            "is gray and has a different image",
+            "is pale grey with a weather report"
+        ],
+        "multi_caption_opt": [
+            "a red hawaiian shirt with a cartoon design",
+            "a red shirt with a palm tree print and a dog on the shirt",
+            "red hawaiian style shirt with images of hawaii",
+            "a men's red hawaiian shirt with palm trees and the sun",
+            "a red hawaiian shirt with a cartoon scene"
+        ]
+    },
+    {
+        "target": "B005IR27EC",
+        "candidate": "B000XK9KKI",
+        "captions": [
+            "has more lettering and is less oval",
+            "A black shirt with white words and face on front"
+        ],
+        "multi_caption_opt": [
+            "black batman symbol t - shirt",
+            "an adult t - shirt with a batman logo",
+            "black batman logo tee with yellow batman logo",
+            "a black batman t - shirt with a yellow batman logo",
+            "a black shirt with a batman logo"
+        ]
+    },
+    {
+        "target": "B000WK6SDQ",
+        "candidate": "B001U9DJ0I",
+        "captions": [
+            "is darker and has a larger graphic",
+            "has bolder graphics and less humorous"
+        ],
+        "multi_caption_opt": [
+            "a photo of a shirt that has a drawing of a hand giving the middle finger",
+            "a photo of a man with a white hand sign on his shirt",
+            "a men's grey t - shirt with the logo of satan on it",
+            "a grey t-shirt with a white logo that reads: \"we are the men that satan fucks\"",
+            "a black t shirt with a black hand and two fingers up in the air"
+        ]
+    },
+    {
+        "target": "B008D6Q7DC",
+        "candidate": "B005PQ02G6",
+        "captions": [
+            "",
+            "is grey with a design on the back"
+        ],
+        "multi_caption_opt": [
+            "a shirt with santa in a surf shop",
+            "a white shirt with the santa clause on it",
+            "a white hawaiian shirt with a santa on it",
+            "the white shirt is a hawaiian design",
+            "a shirt featuring santa and cars"
+        ]
+    },
+    {
+        "target": "B0098YLOJK",
+        "candidate": "B00AZWLNV8",
+        "captions": [
+            "is a plaid button down shirt with a collar",
+            "is more flannel and pocketed"
+        ],
+        "multi_caption_opt": [
+            "a young man in grey, black, and pink striped t-shirt",
+            "a man in a gray striped shirt and jeans",
+            "a man is standing with his hands on his pockets",
+            "a man wearing a striped shirt and blue jeans",
+            "a young man in grey striped shirt posing"
+        ]
+    },
+    {
+        "target": "B001CP1LLY",
+        "candidate": "B00CXV9H26",
+        "captions": [
+            "is white and has a fish image on it",
+            "is light gray colored"
+        ],
+        "multi_caption_opt": [
+            "black t - shirt with the word yippi pulee motherfucker written on it",
+            "a hockey t shirt featuring the yippy paille logo",
+            "a tee - shirt that reads 'yipee paille motherfucker",
+            "a black shirt with the words yippee parley on it",
+            "yuppie paille st paul hockey logo and the word hockey on the black shirt"
+        ]
+    },
+    {
+        "target": "B00593FR24",
+        "candidate": "B004RL9ZEU",
+        "captions": [
+            "has a v shaped neckline",
+            "has longer sleeves and slim fit"
+        ],
+        "multi_caption_opt": [
+            "a man that is looking off to the side",
+            "a man in a t-shirt with a white lettering",
+            "a man standing in the background wearing a black shirt",
+            "a man wearing a black ifwg tshirt and jeans",
+            "a man in a black t-shirt and pants standing"
+        ]
+    },
+    {
+        "target": "B0040JZKSE",
+        "candidate": "B0039228GK",
+        "captions": [
+            "has a different pattern and is darker",
+            "is less formal"
+        ],
+        "multi_caption_opt": [
+            "a male wearing a striped shirt and blue jeans",
+            "a young man standing with his hand in his pocket",
+            "a man is standing in the picture",
+            "a young man wearing a striped shirt posing for the camera",
+            "a man in a white shirt with multi colored stripes"
+        ]
+    },
+    {
+        "target": "B004S92OEE",
+        "candidate": "B00BFTS1DI",
+        "captions": [
+            "is more segmented and is longer",
+            "has more colors in it"
+        ],
+        "multi_caption_opt": [
+            "a red shirt that reads keep calm ah",
+            "a red t - shirt with a canadian maple leaf on it",
+            "a t-shirt with a canadian maple leaf on it",
+            "a t-shirt is sitting in a plain white background",
+            "a child's tee shirt with the word keep calm in canadian english"
+        ]
+    },
+    {
+        "target": "B00BEYS666",
+        "candidate": "B00A7EQAWG",
+        "captions": [
+            "is striped black and white",
+            "is striped"
+        ],
+        "multi_caption_opt": [
+            "a yellow polo shirt sitting on a white background",
+            "a yellow polo shirt that has a blue collar",
+            "a bright yellow polo shirt",
+            "a shirt on a white surface",
+            "a yellow polo shirt that has a white collar"
+        ]
+    },
+    {
+        "target": "B00AO7K6TE",
+        "candidate": "B00BK77UC8",
+        "captions": [
+            "is a navy blue t-shirt and has writing on it",
+            "is darker and has shorter sleeves"
+        ],
+        "multi_caption_opt": [
+            "a young man is wearing a red plaid shirt and white jeans",
+            "a man with red, white and black plaid shirt",
+            "a man is wearing a red plaid shirt and white pants",
+            "a man in a pink checkered shirt and white shorts",
+            "man wearing a pink and red plaid shirt posing for a picture"
+        ]
+    },
+    {
+        "target": "B00AAG5H5C",
+        "candidate": "B00EZAK902",
+        "captions": [
+            "has shorter sleeves and is darker colored",
+            "is darker"
+        ],
+        "multi_caption_opt": [
+            "a t - shirt with a picture of a chain pattern",
+            "a t shirt with a photo of chains on it",
+            "the white t - shirt with the chain print",
+            "a tee - shirt with an abstract print",
+            "the white t - shirt with the gold chains on it"
+        ]
+    },
+    {
+        "target": "B00AES8W30",
+        "candidate": "B0045EY35K",
+        "captions": [
+            "has a lighter color and a different print",
+            "It is more gray"
+        ],
+        "multi_caption_opt": [
+            "a shirt with the words finland and a soccer ball",
+            "a child wearing a t - shirt with a soccer ball",
+            "a t - shirt for finland with a soccer ball on it",
+            "a shirt featuring a soccer ball in a design on a navy background",
+            "a picture of a shirt that is blue and has a soccer ball on it"
+        ]
+    },
+    {
+        "target": "B004GGUA9U",
+        "candidate": "B007P28IKK",
+        "captions": [
+            "Is darker with a silver print.",
+            "is black"
+        ],
+        "multi_caption_opt": [
+            "a young man standing on white carpet wearing a white t-shirt",
+            "a young man is standing up in a white t-shirt and jeans",
+            "a man in a shirt and jeans standing",
+            "a young man standing with his hands in his pockets and wearing a white t shirt",
+            "a man is standing with his hands on his hips"
+        ]
+    },
+    {
+        "target": "B00B4WVJKI",
+        "candidate": "B004R1NSL6",
+        "captions": [
+            "has short sleeves",
+            "Is lavender with shorter sleeves"
+        ],
+        "multi_caption_opt": [
+            "a dark blue sweater that is against a white background",
+            "a blue long sleeved pull over shirt",
+            "a dark blue sweater that is on display",
+            "a men's turtleneck in blue",
+            "a men's dark blue sweater on white"
+        ]
+    },
+    {
+        "target": "B0087J4VGK",
+        "candidate": "B00CIYDP94",
+        "captions": [
+            "has a different graphic",
+            "is nerdier"
+        ],
+        "multi_caption_opt": [
+            "a man wearing a shirt with a cartoon face",
+            "a t shirt that has a logo of a ghost and a no smoking sign on the chest",
+            "the back of a black shirt with a cartoon character holding a fist in the air",
+            "a black shirt with an anime logo",
+            "a black shirt with a cartoon man with a square head"
+        ]
+    },
+    {
+        "target": "B003QCGEVS",
+        "candidate": "B003QCBBJI",
+        "captions": [
+            "is white with strips on collar",
+            "is more solid and has striped collar"
+        ],
+        "multi_caption_opt": [
+            "a men's polo shirt made up of multiple colors",
+            "a white and blue shirt on a dummy torso",
+            "a blue and white polo shirt on a mannequin torso",
+            "a shirt with a color block design on it",
+            "a mannequin is dressed in a white and blue polo shirt"
+        ]
+    },
+    {
+        "target": "B0009PRMSE",
+        "candidate": "B008QT38YW",
+        "captions": [
+            "Pink and buttons don't stand out",
+            "A yellow long sleeved buttoned shirt"
+        ],
+        "multi_caption_opt": [
+            "a light blue shirt sitting on a white background",
+            "a light blue dress shirt",
+            "a dress shirt with a light blue collar",
+            "blue shirt, white shirt and pink shirt on a white background",
+            "a light blue dress shirt on a white background"
+        ]
+    },
+    {
+        "target": "B00BFTMTJA",
+        "candidate": "B004OKFF7K",
+        "captions": [
+            "has BMS written on it",
+            "is shorter"
+        ],
+        "multi_caption_opt": [
+            "a man in a t-shirt with a dog face on it",
+            "a guy wearing a shirt with a dog on it",
+            "a man wearing a dog t-shirt standing in front of a camera",
+            "a man standing in a white tee shirt and jeans",
+            "a man wearing a shirt with a picture of a dog on it"
+        ]
+    },
+    {
+        "target": "B00BPD4N5E",
+        "candidate": "B0083I6W08",
+        "captions": [
+            "is green with a four leaf clover",
+            "is green and has no text"
+        ],
+        "multi_caption_opt": [
+            "a shirt with a word super dad on it",
+            "a blue super dad t shirt with white letters",
+            "a child's t - shirt with the word super dad written in white on it",
+            "blue shirt that has super dad printed on it",
+            "blue shirt that says super dad with a white background"
+        ]
+    },
+    {
+        "target": "B00BTJJVPQ",
+        "candidate": "B007T4JJ5W",
+        "captions": [
+            "is a blue button down",
+            "is more blue"
+        ],
+        "multi_caption_opt": [
+            "a blue and yellow plaid dress shirt",
+            "a dress shirt made with a blue and white checked fabric",
+            "a man's blue and orange checkered dress shirt",
+            "a dress shirt with a blue and white plaid design",
+            "nautica dress shirt in blue and yellow plaid"
+        ]
+    },
+    {
+        "target": "B00CJSTVJC",
+        "candidate": "B002RL87FK",
+        "captions": [
+            " more colorful print",
+            " black and turquoise stripes"
+        ],
+        "multi_caption_opt": [
+            "a man standing with his hand in his pocket",
+            "a man is posing for a picture",
+            "a man standing with his hands on his hips and wearing a light blue shirt",
+            "a man standing on his two feet wearing a shirt",
+            "a man wearing a shirt and black pants standing"
+        ]
+    },
+    {
+        "target": "B00AO9UKDO",
+        "candidate": "B00CMAHVE4",
+        "captions": [
+            "is black with words",
+            "A black shirt with white letters on front"
+        ],
+        "multi_caption_opt": [
+            "boston strong tee shirt in purple on a white background",
+            "a purple shirt with the words boston strong on it",
+            "a t - shirt that says boston strong",
+            "the boston 8th grade strong t shirt in purple",
+            "a purple shirt that says boston strong"
+        ]
+    },
+    {
+        "target": "B009ZRV3GY",
+        "candidate": "B00DU9IRGC",
+        "captions": [
+            "is long sleeved with a plaid colorful print",
+            "is more multi colored"
+        ],
+        "multi_caption_opt": [
+            "the male is posing wearing a black t shirt",
+            "a man posing for a picture in a t-shirt",
+            "the man is posing wearing a t-shirt and jeans",
+            "a man standing holding an apple, and holding a skateboard in one hand",
+            "a young man wearing a black t-shirt and black jeans"
+        ]
+    },
+    {
+        "target": "B008JBOODG",
+        "candidate": "B008VRA3AG",
+        "captions": [
+            " less graphics",
+            "is more revealing and has shorter sleeves"
+        ],
+        "multi_caption_opt": [
+            "a man posing for a photograph while wearing pants and a white shirt",
+            "a man in a white shirt posing for a photo",
+            "a young man standing posing for a picture",
+            "a man standing in a white shirt with tan jeans",
+            "a man wearing a white button down shirt and blue jeans"
+        ]
+    },
+    {
+        "target": "B00A8RGFO0",
+        "candidate": "B004M45KQ4",
+        "captions": [
+            "is white with cartoon print",
+            "is white with cartoon graphic"
+        ],
+        "multi_caption_opt": [
+            "a man wearing a shirt with a panda bear face",
+            "a man in jeans and a shirt with a panda bear printed on the shirt",
+            "a panda bear shirt with a blue background",
+            "a man standing with his hands in his pockets wearing a shirt that says \"dont mess with the panda\"",
+            "a man standing holding a black tee-shirt with a picture of a panda bear on it"
+        ]
+    },
+    {
+        "target": "B00BWJXU2S",
+        "candidate": "B007PIYT8O",
+        "captions": [
+            "has short sleeves and is silver",
+            "Is grey and more casual"
+        ],
+        "multi_caption_opt": [
+            "a purple dress shirt on a white background",
+            "a purple dress shirt on a white background",
+            "a purple dress shirt on display",
+            "a mens dress shirt with blue cuffs",
+            "a purple dress shirt on display"
+        ]
+    },
+    {
+        "target": "B004VFHTL8",
+        "candidate": "B009T5NMS4",
+        "captions": [
+            "is black in color",
+            "is darker"
+        ],
+        "multi_caption_opt": [
+            "a man in a striped polo and khaki shorts",
+            "a man standing up in blue striped shirt",
+            "a man standing wearing a light blue striped shirt and grey pants",
+            "a male wearing a blue and white striped shirt",
+            "a man standing in front of a white wall wearing a polo shirt and khakis"
+        ]
+    },
+    {
+        "target": "B001LZV83Q",
+        "candidate": "B00501BIXW",
+        "captions": [
+            "has a graphical design",
+            "is darker"
+        ],
+        "multi_caption_opt": [
+            "a grey t - shirt with the band grateful dead and their name",
+            "grateful dead to tellyde t-shirt",
+            "a black tee - shirt that reads grateful dead and telephone",
+            "the grateful dead's t - shirt",
+            "a black t - shirt with an image of the Grateful Dead"
+        ]
+    },
+    {
+        "target": "B003HEYHV4",
+        "candidate": "B004UIOL3K",
+        "captions": [
+            "is brown with a different picture",
+            "is brown"
+        ],
+        "multi_caption_opt": [
+            "a purple t - shirt with a frog wearing headphones on it",
+            "a t shirt with a frog with headphones and headphones on",
+            "a shirt that is purple with the words \"a little frog with headphones\" on it",
+            "a t-shirt with a frog holding a pair of headphones",
+            "a purple t shirt with a frog holding a pair of headphones and wearing sunglasses"
+        ]
+    },
+    {
+        "target": "B0056FTFB4",
+        "candidate": "B0059BG2SE",
+        "captions": [
+            "Brighter and checked",
+            "has a lighter color"
+        ],
+        "multi_caption_opt": [
+            "a shirt on a white surface, next to a man",
+            "a brown shirt that is on a white background",
+            "a brown shirt with a red band around the collar",
+            "a long sleeve shirt in brown color",
+            "brown shirt with a brown trimming and a brown belt"
+        ]
+    },
+    {
+        "target": "B0060H4ZWQ",
+        "candidate": "B0050TEWVO",
+        "captions": [
+            "has shorter sleeves and blue stripes",
+            "is short sleeves with vertical stripes"
+        ],
+        "multi_caption_opt": [
+            "a man in a red shirt posing for the camera",
+            "a man wearing a burgundy shirt and pants",
+            "a man in a red shirt and jeans standing up",
+            "a man in a maroon shirt is posing for a picture",
+            "a man standing in front of a white background"
+        ]
+    },
+    {
+        "target": "B004N1BFR4",
+        "candidate": "B00593M4M0",
+        "captions": [
+            "Has a different graphic and is darker",
+            "is a black tee"
+        ],
+        "multi_caption_opt": [
+            "a man in a long sleeve tee with skulls on it",
+            "a male wearing a gray long-sleeve top and a black beanie",
+            "a male in a long sleeve shirt and skull t-shirt",
+            "a male in a grey long sleeve with skulls on it",
+            "a man wearing a shirt with skulls"
+        ]
+    },
+    {
+        "target": "B00AFU8P2K",
+        "candidate": "B006ID8WAI",
+        "captions": [
+            "is blue in color",
+            "is solid blue"
+        ],
+        "multi_caption_opt": [
+            "a man in a polo shirt with beige shorts",
+            "a man is posing while wearing a polo shirt",
+            "a man standing with his hands on his hips",
+            "man in a polo shirt posing in a studio",
+            "a man that is standing in a polo shirt"
+        ]
+    },
+    {
+        "target": "B00CL5HKPK",
+        "candidate": "B00BCX4MWG",
+        "captions": [
+            "is a black vest",
+            "has no sleeves"
+        ],
+        "multi_caption_opt": [
+            "a t - shirt that reads keep calm and kill zombies",
+            "a black t - shirt that says keep calm and kill zombies",
+            "a t - shirt that reads keep calm and kill zombies",
+            "a black shirt that says keep calm and kill zombies",
+            "a t - shirt that says keep calm and kill zombies"
+        ]
+    },
+    {
+        "target": "B00H9FBM5Q",
+        "candidate": "B00CH4QR7M",
+        "captions": [
+            "Is lighter with different TV graphic.",
+            "has a photo of buck rogers"
+        ],
+        "multi_caption_opt": [
+            "a t - shirt with a pony and doctor",
+            "a t - shirt that features a picture of pony and a phone booth",
+            "pony on black tee shirt with cartoon pony in background",
+            "a black t - shirt that has the pony on it",
+            "a t - shirt featuring a pony in the style of a cartoon"
+        ]
+    },
+    {
+        "target": "B00CP77EEG",
+        "candidate": "B0091V9DR0",
+        "captions": [
+            "is a light grey with green logo",
+            "is gray with camping graphic"
+        ],
+        "multi_caption_opt": [
+            "a black t-shirt with the word no printed on it",
+            "a no t shirt that is black with white writing on it",
+            "a black tee shirt with a no word on it",
+            "black t-shirt with no on the front in white letters",
+            "a black t-shirt that says no"
+        ]
+    },
+    {
+        "target": "B006RI34ZC",
+        "candidate": "B009279FB2",
+        "captions": [
+            "black tshirt is more fashionable",
+            "is black colored and person graphic design"
+        ],
+        "multi_caption_opt": [
+            "a t - shirt that has a logo for we trippy main",
+            "we want trippy mane t - shirt in a white font",
+            "a shirt with the words \"we trppy maine\"",
+            "a black t - shirt with we trippy maine on it",
+            "a black shirt that has the phrase we trippie maine on it"
+        ]
+    },
+    {
+        "target": "B005REIERK",
+        "candidate": "B0048KZ3FU",
+        "captions": [
+            "has a orange snake",
+            "has a different graphic"
+        ],
+        "multi_caption_opt": [
+            "man wearing a black tee-shirt with a skateboard in hand",
+            "a man with curly hair holding out a peace sign",
+            "a man making a hand gesture while posing",
+            "a man holding a black board that says hurley",
+            "a man is standing in front of a wall"
+        ]
+    },
+    {
+        "target": "B0002I5T5G",
+        "candidate": "B00009ETTU",
+        "captions": [
+            "is pink and more plain",
+            "is a dog shirt"
+        ],
+        "multi_caption_opt": [
+            "a person posing for a photo with no pants on",
+            "a man standing in a white body suit and holding a beer can",
+            "a man is standing with his pants off, and has on a white undershirt and a white t-shirt",
+            "a man wearing a white v-neck shirt posing for a photo",
+            "man in white boxer briefs standing in front of white background"
+        ]
+    },
+    {
+        "target": "B008588ZPQ",
+        "candidate": "B004F9QDFS",
+        "captions": [
+            "is brown in color",
+            "is dark yellow with a different graphic"
+        ],
+        "multi_caption_opt": [
+            "a young man in a red shirt posing for a photo",
+            "a young man in a red t-shirt stands in a studio",
+            "a man wearing a red t-shirt standing up",
+            "a man standing with his hands on his hips wearing a red t shirt",
+            "a man wearing a red shirt posing for a photograph"
+        ]
+    },
+    {
+        "target": "B002TR4X6O",
+        "candidate": "B0068RJFC8",
+        "captions": [
+            "has longer sleeves and a different graphic",
+            "is longer sleeved and red"
+        ],
+        "multi_caption_opt": [
+            "a shirt featuring a photo of a man wearing a tie, jacket, and jeans, with the caption \"look sharp\"",
+            "this picture shows a white t-shirt and a red t-shirt",
+            "a picture of a t shirt with a logo on it",
+            "a t shirt with a design on the front",
+            "a shirt with a logo on it in two pictures"
+        ]
+    },
+    {
+        "target": "B00APU4PO2",
+        "candidate": "B0057XC4P4",
+        "captions": [
+            "has longer sleeves and a collar",
+            " less casual with longer sleever"
+        ],
+        "multi_caption_opt": [
+            "a young man wearing a neon t-shirt and black pants",
+            "a man in a yellow shirt is posing",
+            "a man in a bright yellow shirt",
+            "man in a neon t - shirt posing for the camera",
+            "a man standing next to a yellow shirt"
+        ]
+    },
+    {
+        "target": "B005J4CCRG",
+        "candidate": "B002BOHPNS",
+        "captions": [
+            "has a smaller photo",
+            "is more fitted an has less graphics"
+        ],
+        "multi_caption_opt": [
+            "black shirt with golden dragon on the chest",
+            "a black t - shirt with an ornate design on the back",
+            "a t shirt with a gold design and a cross",
+            "a t - shirt with the gold dragon design",
+            "a t - shirt with gold and silver artwork"
+        ]
+    },
+    {
+        "target": "B002KQ6H4U",
+        "candidate": "B008N67FVK",
+        "captions": [
+            "is grey colored",
+            "is gray with longer sleeves"
+        ],
+        "multi_caption_opt": [
+            "a young man standing in jeans with his hand in his pocket",
+            "a man in a black shirt posing for a picture",
+            "a man wearing a black shirt and blue jeans",
+            "a man with black jeans standing up posing",
+            "a man posing for a photo while wearing jeans and a black shirt"
+        ]
+    },
+    {
+        "target": "B007POR2M8",
+        "candidate": "B008KAC0E6",
+        "captions": [
+            "is a tight gray sleeved shirt",
+            "is grey with long sleeves"
+        ],
+        "multi_caption_opt": [
+            "a man in a polo shirt and black jeans",
+            "a man is standing in front of a white wall",
+            "man wearing white short sleeve shirt with pockets, and black jeans",
+            "a man in a white shirt and jeans stands in front of a camera",
+            "a man wearing a white polo shirt and jeans"
+        ]
+    },
+    {
+        "target": "B008RMD8M0",
+        "candidate": "B00BGVS61W",
+        "captions": [
+            "has more graphics",
+            "is lighter"
+        ],
+        "multi_caption_opt": [
+            "a man is posing for a picture",
+            "a man standing with a smile and a cap on",
+            "a man wearing a black shirt and khaki pants",
+            "a young man posing for a photo is wearing a black shirt",
+            "a man wearing a black shirt and grey pants"
+        ]
+    },
+    {
+        "target": "B0065EBKS6",
+        "candidate": "B00CUA9J5A",
+        "captions": [
+            "is a button down with a plaid pattern",
+            "has a checkered pattern"
+        ],
+        "multi_caption_opt": [
+            "a man wearing a black shirt with a red design on it",
+            "a man wearing a black t-shirt and pants",
+            "a man in a shirt with a pocket stands up and smiles",
+            "a man that is standing and wearing a short-sleeve shirt",
+            "a man is posing wearing a short sleeve t-shirt with a large patterned pocket on it"
+        ]
+    },
+    {
+        "target": "B00164ITHU",
+        "candidate": "B0064SJ6EI",
+        "captions": [
+            "is brown with smaller graphic words",
+            "is darker"
+        ],
+        "multi_caption_opt": [
+            "a blue shirt that reads parkway drive",
+            "parkway drive youth tee shirt with the slogan of sleep out our highway drive",
+            "a t - shirt that says sleep out our wayway drive",
+            "a blue t - shirt that says, \"sleep our way to paradise\"",
+            "a shirt with the word parkway drive on it"
+        ]
+    },
+    {
+        "target": "B007GB06WI",
+        "candidate": "B0087KODVM",
+        "captions": [
+            "has a smaller image with less colors",
+            "has an orange colored graphic"
+        ],
+        "multi_caption_opt": [
+            "harley davidson black t-shirt with fire design on front",
+            "a black shirt with a neon green logo on it",
+            "a harley davidson t - shirt in black and green",
+            "a black harley davidson motorcycle t - shirt with neon flames",
+            "a black harley davidson shirt with neon flame design"
+        ]
+    },
+    {
+        "target": "B005FOP470",
+        "candidate": "B00D3DB5KU",
+        "captions": [
+            "is a darker blue with long sleeves",
+            "Is blue and less casual."
+        ],
+        "multi_caption_opt": [
+            "a man is wearing a tank top with the los angels logo",
+            "a man in shorts and a tank top",
+            "a young man is posing with a tank top",
+            "a man wearing a tank top and shorts with a picture on it",
+            "a man wearing a tank top and pants"
+        ]
+    },
+    {
+        "target": "B00A8KZAIE",
+        "candidate": "B005O76TKE",
+        "captions": [
+            "is lighter",
+            "is lighter colored"
+        ],
+        "multi_caption_opt": [
+            "a boy is standing wearing a brown and black shirt",
+            "a man in black pants and red plaid shirt",
+            "a young man standing in front of a white background",
+            "a man that is standing up wearing a shirt",
+            "a boy wearing black shorts and a red plaid shirt"
+        ]
+    },
+    {
+        "target": "B005HT4N0M",
+        "candidate": "B00DLBJ18M",
+        "captions": [
+            "The shirt is white in color with Albert Einstein.",
+            "Is white with Einstein's Theory of Football on it"
+        ],
+        "multi_caption_opt": [
+            "a t - shirt that is worn by a seattle football fan",
+            "a seattle seahawks mens shirt",
+            "a seattle seahawks gray t - shirt",
+            "the seattle seahawks shirt on a white background",
+            "a shirt that says seattle seahawks football"
+        ]
+    },
+    {
+        "target": "B0089823LY",
+        "candidate": "B007T5JNJ8",
+        "captions": [
+            "is a black and white long sleeved shirt",
+            "has longer sleeves"
+        ],
+        "multi_caption_opt": [
+            "a man with a helmet holding a bag",
+            "a man wearing a helmet with headphones on",
+            "a young man wearing a hat and sunglasses and holding a skateboard",
+            "a man wearing a helmet holding a soccer ball",
+            "a man standing with a backpack and two weapons"
+        ]
+    },
+    {
+        "target": "B00CIZI8Y0",
+        "candidate": "B004ZC7YKI",
+        "captions": [
+            "identical",
+            "has pocket and tailored button tab"
+        ],
+        "multi_caption_opt": [
+            "a man in a black shirt and tan pants",
+            "the man in a shirt is posing for the camera",
+            "a man with grey hair in a black shirt",
+            "an older man is standing for a photo",
+            "a man in a black shirt and khaki pants posing for a picture"
+        ]
+    },
+    {
+        "target": "B00DR5TW2M",
+        "candidate": "B009VIGPC4",
+        "captions": [
+            "Is more black and blue",
+            "is darker and shorter sleeves"
+        ],
+        "multi_caption_opt": [
+            "a man standing on a white hoodie with a skull design",
+            "a man wearing a hoodie with a skull wearing a hat",
+            "a male standing up in a white sweatshirt",
+            "a man in a white hoodie standing in front of a white wall",
+            "a man in a white hoodie with a hat on it"
+        ]
+    },
+    {
+        "target": "B00CTSW4B4",
+        "candidate": "B004IWS9C2",
+        "captions": [
+            "is a darker color and has long sleeves",
+            "is a grey hoodie"
+        ],
+        "multi_caption_opt": [
+            "man wearing red tee-shirt and jeans with his hands on his pockets",
+            "a man standing and wearing a red shirt",
+            "a man is posing for the camera in a red shirt and jeans",
+            "a young man in a red shirt and jeans",
+            "a man with a red tee shirt and blue jeans"
+        ]
+    },
+    {
+        "target": "B007IF36VA",
+        "candidate": "B00AJSWYI4",
+        "captions": [
+            "lighter colored",
+            "is a lighter color"
+        ],
+        "multi_caption_opt": [
+            "a shirt that is on a table",
+            "a shirt that is blue and white",
+            "a shirt in a white and blue striped pattern",
+            "a shirt with a blue and white striped collar",
+            "a dress shirt with blue and white stripes"
+        ]
+    },
+    {
+        "target": "B00BPDHMCU",
+        "candidate": "B00C2CZTYG",
+        "captions": [
+            "The shirt is black in color with angry cat.",
+            "is darker with a I Had Fun Once Grumpy Cat"
+        ],
+        "multi_caption_opt": [
+            "a boy's grumpy cat shirt",
+            "a shirt with six grumpy cat designs",
+            "a cat t - shirt that has a picture of grumpy cat on it",
+            "a shirt that says expressions of grumpy cat",
+            "a black t shirt with grumpy cat on it"
+        ]
+    },
+    {
+        "target": "B003YHF2BS",
+        "candidate": "B003WF2ECW",
+        "captions": [
+            "has a darker blue color",
+            "is just a polo"
+        ],
+        "multi_caption_opt": [
+            "a gray and black striped polo shirt",
+            "a long sleeve polo shirt in gray and black",
+            "a sweater with a gray and black striped design",
+            "a gray and black striped sweater",
+            "a sweater with a long neck and a black stripe"
+        ]
+    },
+    {
+        "target": "B001JDPUNO",
+        "candidate": "B0007QCPPK",
+        "captions": [
+            "is a green hat with white designs",
+            "is a cap and is green."
+        ],
+        "multi_caption_opt": [
+            "adidas sneakers for men, with black stripes",
+            "white and black sneakers that has laces",
+            "a men's adidas court shoes on white background",
+            "a white and black adidas sneakers shoe",
+            "a pair of white sneakers on a white surface"
+        ]
+    },
+    {
+        "target": "B0088OX7ZA",
+        "candidate": "B00B0R0JZ8",
+        "captions": [
+            "Is bright blue and has a Tony the Tiger logo",
+            "is bright blue with cartoon tiger on it"
+        ],
+        "multi_caption_opt": [
+            "a shirt with a tiger on it",
+            "a gray t shirt with a tiger on it",
+            "a tiger with an american flag on it's chest",
+            "a t - shirt with a tiger on it with an american flag",
+            "a grey tiger shirt on a white background"
+        ]
+    },
+    {
+        "target": "B009EB1WBW",
+        "candidate": "B006ZU9X16",
+        "captions": [
+            "is gray and white stripes",
+            "is gray with stripes and shorter sleeves"
+        ],
+        "multi_caption_opt": [
+            "a young man with a long black coat, a blue striped shirt, black pants, and a skateboard",
+            "a man standing wearing a striped t-shirt",
+            "a man wearing a striped shirt, black jeans and black shoes",
+            "a man wearing a striped shirt posing for a picture",
+            "a man in a blue and white striped shirt with skateboard in hand"
+        ]
+    },
+    {
+        "target": "B00A9IVY5I",
+        "candidate": "B00A9IW94I",
+        "captions": [
+            "is lighter in color",
+            "is grey with black writing"
+        ],
+        "multi_caption_opt": [
+            "an image of a green lizard printed on a shirt",
+            "a person with a green shirt with his neck exposed",
+            "a person wearing a black and white t-shirt and green t-shirt",
+            "a person standing next to a pair of green t-shirts",
+            "a person standing and wearing two different shirts"
+        ]
+    },
+    {
+        "target": "B003URVV8A",
+        "candidate": "B00D0XHGGA",
+        "captions": [
+            "Grend and doesn't have logo",
+            "is more of a green color"
+        ],
+        "multi_caption_opt": [
+            "a young man posing for a photo",
+            "a man standing in front of a white wall wearing a black t-shirt",
+            "a man standing with his hands in his pockets",
+            "a guy wearing a t shirt and jeans and a baseball cap",
+            "a man is posing in jeans, t-shirt, and sneakers"
+        ]
+    },
+    {
+        "target": "B0086EK3XG",
+        "candidate": "B00B3PNS5K",
+        "captions": [
+            "Is more striped and has more blue",
+            "has a zipper and stripes"
+        ],
+        "multi_caption_opt": [
+            "a man standing up, wearing a white shirt with black buttons and blue jeans",
+            "a man wearing a button down shirt posing for the camera",
+            "man is posing in white button down shirt and jeans",
+            "a man standing on a white background posing",
+            "a man standing in front of a white background"
+        ]
+    },
+    {
+        "target": "B004B6NXIK",
+        "candidate": "B008435IOI",
+        "captions": [
+            "is lighter and has a different graphic",
+            "is light colored with a different graphic"
+        ],
+        "multi_caption_opt": [
+            "a man with tattoos is standing against a wall",
+            "a man with tattooed body, wearing a t-shirt with a painting on it",
+            "a man with tattoos and a beard in black tshirt",
+            "a bearded man stands in a room",
+            "a man with a beard is wearing a t shirt with a skull on it"
+        ]
+    },
+    {
+        "target": "B00BW5K82C",
+        "candidate": "B006ZZV0L2",
+        "captions": [
+            "is more of a costume and is redder",
+            "is a red costume"
+        ],
+        "multi_caption_opt": [
+            "a purple t shirt with a picture of colbert",
+            "a purple shirt that says cool beans on it",
+            "a purple shirt with a photo of colbert on it",
+            "a purple t - shirt that is showing the image of colbert on it",
+            "a t - shirt with the image of colbert in a purple t - shirt"
+        ]
+    },
+    {
+        "target": "B0090YV46G",
+        "candidate": "B007X2DHT4",
+        "captions": [
+            "is lighter",
+            "is whiter"
+        ],
+        "multi_caption_opt": [
+            "a man with a skateboard is standing in front of a wall",
+            "a man riding his skateboard while wearing a skateboarding t-shirt",
+            "a man standing in front of a white background",
+            "a young man in jeans and a black t-shirt standing on the street with his skateboard",
+            "a boy that has a skateboard on his skateboard"
+        ]
+    },
+    {
+        "target": "B0056EJG8M",
+        "candidate": "B0084ERQFG",
+        "captions": [
+            "is darker with buttons",
+            "is black and has buttons down the front"
+        ],
+        "multi_caption_opt": [
+            "a man with a surf board wearing a dark hoodie",
+            "a man standing, wearing a hoodie with a man's silhouette",
+            "a man wearing a navy hoodie with a white image of a person",
+            "a man wearing a sweatshirt and black pants",
+            "a man standing wearing a blue sweatshirt with a horse on it"
+        ]
+    },
+    {
+        "target": "B005LW3XZ6",
+        "candidate": "B005SYP7WO",
+        "captions": [
+            "Has a picture of Captain America on it",
+            "is black and more colorful graphics"
+        ],
+        "multi_caption_opt": [
+            "a man wearing a team captain shirt and jeans",
+            "man standing and smiling wearing a red shirt",
+            "a man standing with his hands in his pockets",
+            "a man in a red t-shirt with team captain written on it",
+            "a smiling man in a red shirt with the words team captain on it"
+        ]
+    },
+    {
+        "target": "B00AEF5VKA",
+        "candidate": "B008447TR6",
+        "captions": [
+            "Is a white color",
+            "is more formal"
+        ],
+        "multi_caption_opt": [
+            "a set of blue and purple men's dress shirts",
+            "two different shirts with cuffing in different colors",
+            "two men's dress shirts side by side",
+            "two blue and one purple men's dress shirts",
+            "three blue and purple men's shirts in a row"
+        ]
+    },
+    {
+        "target": "B0041YRX6K",
+        "candidate": "B001WNSTAW",
+        "captions": [
+            "is black with solid white design",
+            "has a white logo"
+        ],
+        "multi_caption_opt": [
+            "the shirt features an image of a skull and the words jack skellington on it",
+            "a skull t - shirt black",
+            "a shirt with a skull on it",
+            "a t shirt with a skull on it",
+            "a black tee shirt with a skull on it"
+        ]
+    },
+    {
+        "target": "B008BSWMFE",
+        "candidate": "B007VN04BO",
+        "captions": [
+            "is a long sleeve and brown coloered",
+            "Is less fitted in a darker color"
+        ],
+        "multi_caption_opt": [
+            "a man wearing a button-down shirt and blue jeans standing in a studio",
+            "a man in a button down shirt poses for the camera",
+            "a young man in jeans and a shirt",
+            "a man with a gray shirt standing in front of a white background",
+            "a man in a gray shirt posing in a picture"
+        ]
+    },
+    {
+        "target": "B004QQJAF0",
+        "candidate": "B00BJXOE36",
+        "captions": [
+            "is darker and has a more prominent design",
+            "is black with an eagle on it"
+        ],
+        "multi_caption_opt": [
+            "hayabusa vs bear t - shirt from the hayabusa show",
+            "a shirt that reads hayabusa vs beast",
+            "a mens t - shirt that says hayabusa vs bear on it",
+            "a t - shirt that says hayabusa vs bear",
+            "a shirt that reads hayabusa versus bear on it"
+        ]
+    },
+    {
+        "target": "B006X0AKYM",
+        "candidate": "B00931JHSS",
+        "captions": [
+            "The short sleeve shirt is white in color.",
+            "is more plain"
+        ],
+        "multi_caption_opt": [
+            "a man that is standing with his hands in his pockets",
+            "man standing with his hands in pockets, wearing a white shirt",
+            "a man in a long sleeve shirt and cargo pants posing for a picture",
+            "a man standing while wearing a white long sleeve shirt",
+            "a man in a white shirt and black shorts"
+        ]
+    },
+    {
+        "target": "B002GCIN54",
+        "candidate": "B00BJO34NG",
+        "captions": [
+            "Is red but otherwise identical",
+            "is bright red and has no pockets"
+        ],
+        "multi_caption_opt": [
+            "a dress shirt with purple color",
+            "a purple dress shirt on a white background",
+            "purple dress shirt for men on a white background",
+            "purple dress shirt",
+            "men's purple dress shirt"
+        ]
+    },
+    {
+        "target": "B00AR0ARLK",
+        "candidate": "B003MSNCM0",
+        "captions": [
+            "is more sexual and brighter",
+            "is white with woman riding horse"
+        ],
+        "multi_caption_opt": [
+            "lisette dress on a shirt from listerine",
+            "a shirt with the image of a woman",
+            "a shirt with lady gaga on it",
+            "a mannequin wearing a shirt with the picture of a girl in the center",
+            "lady gaga on black shirt on top of dummy mannequin"
+        ]
+    },
+    {
+        "target": "B0009ALW8U",
+        "candidate": "B007VHEYAM",
+        "captions": [
+            "is a white tshirt with emoji es on it",
+            "is not formal"
+        ],
+        "multi_caption_opt": [
+            "a mannequin has a white shirt on a white mannequin stand",
+            "a mannequin in a white dress shirt and white tie",
+            "a mannequin head wearing a white shirt and dress pants",
+            "a white mannequin is dressed in a shirt and a tie",
+            "a mannequin dressed in white shirt standing against a white wall"
+        ]
+    },
+    {
+        "target": "B009G81G82",
+        "candidate": "B008JVJI00",
+        "captions": [
+            "is green",
+            "is green with a yellow motif"
+        ],
+        "multi_caption_opt": [
+            "two different styles of men's shirts",
+            "a shirt with a graphic on the front and back",
+            "two different mens t - shirts on a white background",
+            "two images of men's t - shirts",
+            "a pair of t - shirts side by side with different colors"
+        ]
+    },
+    {
+        "target": "B00AFZ38RM",
+        "candidate": "B00BOHU9ZE",
+        "captions": [
+            "is green with a centered image",
+            "has a smaller logo"
+        ],
+        "multi_caption_opt": [
+            "a black t - shirt with a white logo saying work hard, war hard",
+            "an image of a shirt that says work hard, no war",
+            "a black shirt that reads \"work hard, kill zombies, sleep hard\"",
+            "a work hard war hard shirt with a man on a horse",
+            "a shirt that says work hard, war hard"
+        ]
+    },
+    {
+        "target": "B0045889NS",
+        "candidate": "B00140FIFC",
+        "captions": [
+            "Is purple and less casual",
+            "is purple and has buttons"
+        ],
+        "multi_caption_opt": [
+            "a shirt that reads irish tastester",
+            "an irish t shirt that says irish taste tester",
+            "a t shirt with the words irish taster",
+            "a t shirt with the words, 'irish taste tester'",
+            "a gray t shirt with the words irish taste tester"
+        ]
+    },
+    {
+        "target": "B006Y5SM2I",
+        "candidate": "B00C5KHZTM",
+        "captions": [
+            "A blue short sleeved Famous tee shirt.",
+            "Is blue rather than black."
+        ],
+        "multi_caption_opt": [
+            "a man wearing a shirt with a skateboard logo",
+            "a man is standing wearing a t-shirt with a picture",
+            "a young man posing wearing a hat and a t-shirt",
+            "a man wearing a t shirt and camo shorts standing against a white wall",
+            "a man is wearing a black shirt with a drawing on it"
+        ]
+    },
+    {
+        "target": "B005B4MD0K",
+        "candidate": "B005LBXRWQ",
+        "captions": [
+            "Is less wordy",
+            "is darker"
+        ],
+        "multi_caption_opt": [
+            "a man standing wearing a tank top with the word rvaca on it",
+            "a young man posing wearing a tank top with a word written on it",
+            "a man standing up wearing a tank top with the rvca logo",
+            "a young man in a tank top and jeans",
+            "a man standing in front of a white background"
+        ]
+    },
+    {
+        "target": "B0056B0LFC",
+        "candidate": "B00ABDT1II",
+        "captions": [
+            "is grey in color",
+            "A grey color with black print on front"
+        ],
+        "multi_caption_opt": [
+            "a young man wearing a shirt with the skyrim title",
+            "a man with a skateboard and a t-shirt",
+            "a man standing holding his hand on his hip",
+            "a boy wearing a skyrim t-shirt poses for the camera",
+            "a man wearing a skyrim shirt posing for a picture"
+        ]
+    },
+    {
+        "target": "B000CAZVI4",
+        "candidate": "B007JWZZIO",
+        "captions": [
+            "has more colors and is sportier",
+            "is more green and has 3/4 sleeves"
+        ],
+        "multi_caption_opt": [
+            "a long sleeve guinness t - shirt",
+            "a long sleeve t - shirt with a shamrock design",
+            "a black long sleeve shirt that says surmess on the front",
+            "a long sleeve top that reads SUMMERS",
+            "the front of a shirt with the word summons written on it"
+        ]
+    },
+    {
+        "target": "B008EJ0MMU",
+        "candidate": "B00EPDU2PG",
+        "captions": [
+            "is more anti-religious and darker colored",
+            "is anti religious"
+        ],
+        "multi_caption_opt": [
+            "a long sleeve shirt that says i am not a princess i am a khaleesi",
+            "a gray t shirt that says, i'm not a princess i'm a khaleesi",
+            "a gray long sleeved shirt with white text reading i am not a princess and im not a khaleesi",
+            "a grey long sleeve tee with a slogan that reads i am not a princess",
+            "a shirt that says i'm not a princess, i'm a khaleesi"
+        ]
+    },
+    {
+        "target": "B005L50K6I",
+        "candidate": "B005TVEOKW",
+        "captions": [
+            "is black in color",
+            "is darker colored"
+        ],
+        "multi_caption_opt": [
+            "a red shirt with the words stuyvestant leader physical ed on it",
+            "a red t - shirt that says \"stuyvesant leader physical ed\"",
+            "a red t - shirt that says \"stuvyant leader physical ed.\"",
+            "a red t - shirt that says stuvant leader physical ed",
+            "a red shirt that says'stuysent leader physical ed'"
+        ]
+    },
+    {
+        "target": "B000RP49KK",
+        "candidate": "B000SJFEAE",
+        "captions": [
+            "is black with a skull on it",
+            "is elss formal"
+        ],
+        "multi_caption_opt": [
+            "a shirt with a motorcycle on it",
+            "a shirt that has a big logo on the chest",
+            "a black shirt with an embroidered patch",
+            "a black shirt that has a logo",
+            "a man wearing a black shirt and a hoodie with a logo on it"
+        ]
+    },
+    {
+        "target": "B005OQ0QDG",
+        "candidate": "B009G0S8CM",
+        "captions": [
+            "has shorter sleeves and is more patterned",
+            "Has flames and shorter sleeves"
+        ],
+        "multi_caption_opt": [
+            "an old man's light blue shirt on a white background",
+            "a light blue shirt on a white background",
+            "a dress shirt that is not colored",
+            "the light blue shirt with long sleeves on",
+            "a shirt with two long sleeves and no collar"
+        ]
+    },
+    {
+        "target": "B0071LPNY4",
+        "candidate": "B00B1FCGFU",
+        "captions": [
+            "is a T shirt with a dog soldier on it",
+            "is black and has a larger graphic"
+        ],
+        "multi_caption_opt": [
+            "the shirt has a cat in a banana suit",
+            "a shirt with a black cat in a banana",
+            "a shirt with a black cat inside of it",
+            "a t shirt that has a black cat sitting in a bag",
+            "a shirt that has a cat sitting in a banana"
+        ]
+    },
+    {
+        "target": "B005F0JPDI",
+        "candidate": "B00BGJ4OQA",
+        "captions": [
+            "is white with california republic writing",
+            "is lighter"
+        ],
+        "multi_caption_opt": [
+            "a blonde haired young woman holding a skateboard",
+            "a girl in black with a hat and cat face t-shirt",
+            "a person wearing a hat and t-shirt with a white tiger on it",
+            "a woman is wearing a tiger graphic t shirt",
+            "a blonde young girl standing on one foot with her hands in her pockets"
+        ]
+    },
+    {
+        "target": "B00C61GXEI",
+        "candidate": "B00AWA4RF2",
+        "captions": [
+            "has shorter sleeves and is less formal",
+            "is white and red with shorter sleeves"
+        ],
+        "multi_caption_opt": [
+            "the front view of a shirt that is a gray color",
+            "a grey dress shirt and white shirt on a dummy",
+            "a mens dress shirt with collar",
+            "a men's grey dress shirt with white collar",
+            "a picture of a shirt that is gray and white"
+        ]
+    },
+    {
+        "target": "B0057XC4P4",
+        "candidate": "B000MYC2YG",
+        "captions": [
+            "has a brighter color.",
+            "is neon green with no picture or logo"
+        ],
+        "multi_caption_opt": [
+            "a black shirt with a round circle on the front",
+            "a black shirt with the black keys logo",
+            "an image of the black keys' logo on a black t - shirt",
+            "the black keys logo shirt on a white background",
+            "the black keys logo shirt"
+        ]
+    },
+    {
+        "target": "B004ZC5PXG",
+        "candidate": "B004ZC5RL6",
+        "captions": [
+            "is a lighter color",
+            "is brighter in color"
+        ],
+        "multi_caption_opt": [
+            "man standing in a black shirt and khaki pants",
+            "a man wearing a black shirt and khaki pants",
+            "a man is standing posing in a shirt and khaki pants",
+            "a man in a dark shirt and khaki pants is standing",
+            "a man standing with his hands in his pockets"
+        ]
+    },
+    {
+        "target": "B00D7N1178",
+        "candidate": "B00CU8PDPW",
+        "captions": [
+            "is a beige colored long sleeve with text",
+            "is olive green with white logo"
+        ],
+        "multi_caption_opt": [
+            "a man in a blue and gray checkered shirt and jeans",
+            "a man is standing up wearing a white and blue checkered shirt",
+            "a man is posing while wearing a plaid shirt",
+            "a man that is standing up wearing a check shirt",
+            "a man is standing posing for the camera"
+        ]
+    },
+    {
+        "target": "B00563YWUA",
+        "candidate": "B0045MS86W",
+        "captions": [
+            "is darker",
+            "A black shirt with white design on front"
+        ],
+        "multi_caption_opt": [
+            "the shirt that says'mechanicailigans'megan's donut'megan's donut'megan's donut '",
+            "a shirt that says mec-call sheen megs",
+            "the shirt is showing the words, \"me call sesame street ills\"",
+            "sesame street shirt on a white background",
+            "a sesame street t - shirt with the title mee call sheanigals"
+        ]
+    },
+    {
+        "target": "B006JVZCS4",
+        "candidate": "B00AFRC2EU",
+        "captions": [
+            "is black and says sons of anarchy",
+            "is blac and has a different logo"
+        ],
+        "multi_caption_opt": [
+            "a navy t - shirt that says reaper crew",
+            "the logo for reaper crew on a navy t - shirt",
+            "a navy tee shirt that says reaper crew",
+            "a t - shirt that reads reaper crew",
+            "a navy shirt that says reaper crew"
+        ]
+    },
+    {
+        "target": "B004UTATIU",
+        "candidate": "B004UIOL3K",
+        "captions": [
+            "is black and has a skull on it",
+            "it is black"
+        ],
+        "multi_caption_opt": [
+            "a t - shirt with a green frog with headphones",
+            "an old style t-shirt with a frog with headphones",
+            "a purple tee - shirt with a picture of a frog wearing headphones on it",
+            "a shirt that has a frog wearing headphones",
+            "a purple shirt that has a frog wearing headphones"
+        ]
+    },
+    {
+        "target": "B0080SY1T0",
+        "candidate": "B00AHEZ29I",
+        "captions": [
+            "is darker",
+            "has a different graphic on the front"
+        ],
+        "multi_caption_opt": [
+            "a man is standing with his hands in his pockets",
+            "a man standing in jeans and a black shirt",
+            "a smiling man standing with his hands in the pockets",
+            "a man wearing a tuxedo shirt and a bow tie with a smile on his face",
+            "a man wearing a t-shirt with the words \"I'm sorry I'm a robot.\" on it"
+        ]
+    },
+    {
+        "target": "B00AU4OKW0",
+        "candidate": "B004UJ14RU",
+        "captions": [
+            "is white with blue sleeves",
+            " has buttons"
+        ],
+        "multi_caption_opt": [
+            "a guy with a long hair and a white shirt with a blue graphic",
+            "a young man posing for a photo wearing a shirt with the name of rvca",
+            "a man wearing a white t-shirt with a blue print",
+            "a man standing wearing a white shirt with a blue graphic on it",
+            "a young man wearing a white tee shirt and jeans"
+        ]
+    },
+    {
+        "target": "B005XIGCYW",
+        "candidate": "B00BW9IQBS",
+        "captions": [
+            "has image of star wars",
+            "is gray with black and red logos"
+        ],
+        "multi_caption_opt": [
+            "a man in a chewy t - shirt",
+            "a man wearing a star wars chewy shirt with sunglasses on",
+            "a man wearing a chewy t-shirt",
+            "a man wearing a t shirt with a star wars chewy on it",
+            "a man wearing a t - shirt that has a character on it"
+        ]
+    },
+    {
+        "target": "B00B4WT108",
+        "candidate": "B002N8P7MI",
+        "captions": [
+            "is yellow",
+            "is lighter"
+        ],
+        "multi_caption_opt": [
+            "a purple dress shirt on a white background",
+            "a purple dress shirt with cuffing and buttons",
+            "a purple shirt that is a dress shirt",
+            "a purple dress shirt with the words covo on the shirt",
+            "a purple dress shirt with the word corona on it"
+        ]
+    },
+    {
+        "target": "B005KN1S9Y",
+        "candidate": "B008BTI85Q",
+        "captions": [
+            "is red with a bird",
+            "is red colored with a different graphic"
+        ],
+        "multi_caption_opt": [
+            "the angry birds shirt for young girls",
+            "a white t - shirt with the angry birds logo on it",
+            "an angry birds t - shirt",
+            "a white t shirt with angry birds design on it",
+            "a girl's white tee shirt with the angry birds logo"
+        ]
+    },
+    {
+        "target": "B009LIZAES",
+        "candidate": "B004GGUA9U",
+        "captions": [
+            "is lighter with different graphics",
+            "A white shirt with black/blue letters on front"
+        ],
+        "multi_caption_opt": [
+            "a man with an electric guitar is standing in a studio",
+            "a man is standing next to a wall wearing a skateboard shirt",
+            "a guy in a black shirt is smiling",
+            "a man wearing a shirt that reads \"music sucks\"",
+            "a young man that is standing wearing a black t-shirt"
+        ]
+    },
+    {
+        "target": "B006Z8EV4W",
+        "candidate": "B004YWBYNW",
+        "captions": [
+            "is white",
+            "is a lighter color and has a looser fit"
+        ],
+        "multi_caption_opt": [
+            "a man wearing a black v-neck shirt",
+            "a male in a black v-neck shirt standing next to a skateboard",
+            "a man is standing up wearing a black shirt",
+            "a man posing with a skateboard and sunglasses",
+            "a man wearing a black t shirt and jeans"
+        ]
+    },
+    {
+        "target": "B009JOTMXY",
+        "candidate": "B006TTQX6G",
+        "captions": [
+            "is short sleeve and burgundy colored",
+            "is red with sleeves"
+        ],
+        "multi_caption_opt": [
+            "a man standing holding a skateboard and wearing jeans",
+            "a man wearing an army tank top with a skateboard on it",
+            "a young man in an all-white tank top",
+            "a man with long hair standing on top of something",
+            "a man with long hair in a tank top"
+        ]
+    },
+    {
+        "target": "B00B8XSUSW",
+        "candidate": "B0081V2U6C",
+        "captions": [
+            "is black with orange designs",
+            "is black with orange lettering"
+        ],
+        "multi_caption_opt": [
+            "a shirt featuring a pink ball and green eyes",
+            "a black t - shirt with a pink cartoon character",
+            "a cartoon pink cat t - shirt",
+            "a black shirt with an image of a cartoon cat",
+            "a t shirt with an image of an anime character on it"
+        ]
+    },
+    {
+        "target": "B0096SKKJS",
+        "candidate": "B00G6UFA94",
+        "captions": [
+            "Black and colorful graphic on front",
+            "is darker"
+        ],
+        "multi_caption_opt": [
+            "a green t - shirt with a picture of a face on it",
+            "a green t - shirt that reads \"sock to me\"",
+            "a green tee shirt that says, \"get to me\"",
+            "a green t - shirt with a face and the words \"sock to me\"",
+            "a green shirt with an electric plug on it that says \"sock to me\""
+        ]
+    },
+    {
+        "target": "B003R4PEN4",
+        "candidate": "B0045VQCWA",
+        "captions": [
+            "is gray in color",
+            "is a black Argentina themed shirt"
+        ],
+        "multi_caption_opt": [
+            "a shirt with the word aveya in it",
+            "a red shirt with the words aviva on it",
+            "a red t - shirt with the word avvita on it",
+            "a shirt with a small flag of lithuania on it",
+            "a red shirt with a word and an american flag on it"
+        ]
+    },
+    {
+        "target": "B007JR83CE",
+        "candidate": "B008RJTPT8",
+        "captions": [
+            "is grey in colour with more writing at front",
+            "is blue with shorter sleeves"
+        ],
+        "multi_caption_opt": [
+            "a man standing in a room posing with his hand in his pocket",
+            "a man standing in a field in a shirt and pants",
+            "a man with no hair standing up and looking at the camera",
+            "a man is posing for the camera while wearing a shirt and jeans",
+            "a man is wearing a shirt with two buttons"
+        ]
+    },
+    {
+        "target": "B00A7O1W0G",
+        "candidate": "B006C6XSFA",
+        "captions": [
+            "has less colors",
+            "is dark blue with white lettering"
+        ],
+        "multi_caption_opt": [
+            "a man wearing a sons of anarchy shirt",
+            "a man wearing a long sleeve shirt that reads sons of a",
+            "a man wearing a long sleeve black shirt with an image on it",
+            "a man wearing a shirt with the words sons of anarchy",
+            "a man wearing a sons of a anarchy long sleeve shirt"
+        ]
+    },
+    {
+        "target": "B00F91Q5T0",
+        "candidate": "B0006MUZLG",
+        "captions": [
+            "has longer sleeves and is no collar",
+            "has longer sleeves and no collar."
+        ],
+        "multi_caption_opt": [
+            "a mannequin wearing a green polo shirt",
+            "a mannequin dressed in a green polo shirt",
+            "a green polo shirt in front of a mannequin head",
+            "a mannequin man wearing a polo shirt and jeans",
+            "a mannequin mannequin wearing a green polo shirt and jeans"
+        ]
+    },
+    {
+        "target": "B009LJCL8A",
+        "candidate": "B0084UUHB0",
+        "captions": [
+            "has a more intricate graphic",
+            "is moe emo"
+        ],
+        "multi_caption_opt": [
+            "a black shirt with angry birds on it",
+            "a black tee - shirt that says angry birds",
+            "an angry birds shirt in black with a red and white background",
+            "a shirt with a black angry birds on the front and white angry birds on the back",
+            "a t - shirt featuring two angry birds"
+        ]
+    },
+    {
+        "target": "B00B91705M",
+        "candidate": "B0081GBQFS",
+        "captions": [
+            "is a darker shade of black",
+            "is darker in color"
+        ],
+        "multi_caption_opt": [
+            "kiss me i'm irish st patrick's day t-shirt",
+            "a tee shirt that says kiss me i'm irish",
+            "the t - shirt says kiss me i'm irish",
+            "kiss me i'm irish st. patricks day shirt",
+            "green st patricks day t - shirt with a kiss me i'm irish saying"
+        ]
+    },
+    {
+        "target": "B003C7NPA0",
+        "candidate": "B004ZC7H0K",
+        "captions": [
+            "is a blue polo shirt",
+            "is blue and has shorter sleeves"
+        ],
+        "multi_caption_opt": [
+            "a man posing for a photo wearing a burgundy polo shirt",
+            "a man in a maroon shirt and khaki pants",
+            "a man in a burgundy polo shirt and khaki pants posing for the camera",
+            "a male in a maroon shirt posing for a picture",
+            "a man wearing a maroon shirt and khaki pants"
+        ]
+    },
+    {
+        "target": "B004RDZ39E",
+        "candidate": "B004NIZR44",
+        "captions": [
+            "is lighter and has longer sleeves",
+            "is white and long sleeves"
+        ],
+        "multi_caption_opt": [
+            "a young man standing wearing a black shirt and holding a camera",
+            "a man is posing for a picture in his shirt",
+            "a man standing in a studio in front of a green screen",
+            "a man wearing a black shirt posing for a picture",
+            "a man wearing a baseball cap and t-shirt posing for a picture"
+        ]
+    },
+    {
+        "target": "B0077RZYKA",
+        "candidate": "B007Z8W47C",
+        "captions": [
+            "is a police t shirt",
+            "is a lighter shade of blue"
+        ],
+        "multi_caption_opt": [
+            "a nypd t - shirt that has been shrunk to fit",
+            "a navy new york city police department tee - shirt",
+            "a shirt from the nypd",
+            "a t - shirt that says nypd new york police department",
+            "a nypd shirt that is in blue and yellow"
+        ]
+    },
+    {
+        "target": "B007IDFV9M",
+        "candidate": "B009DLYLS4",
+        "captions": [
+            "is larger",
+            "is orange and wider"
+        ],
+        "multi_caption_opt": [
+            "a red t - shirt with the face of a person on it",
+            "a red shirt that has a man's face in the center",
+            "a red shirt that has a photo of a man on it",
+            "the red t - shirt that has a person's face on it",
+            "the red shirt with a man on it"
+        ]
+    },
+    {
+        "target": "B003RW8XFW",
+        "candidate": "B000X74R7C",
+        "captions": [
+            "Black and has a video game character",
+            "is darker"
+        ],
+        "multi_caption_opt": [
+            "a man in a black t-shirt standing up with his hands in his pockets",
+            "a man in jeans, a shirt with a toilet on it",
+            "a man is standing with his hands in his pockets",
+            "a man in a t shirt is smiling and standing",
+            "a man in a black shirt and jeans, smiling"
+        ]
+    },
+    {
+        "target": "B00C518TIM",
+        "candidate": "B003CMJKGI",
+        "captions": [
+            "is grey",
+            "is gray with red circle"
+        ],
+        "multi_caption_opt": [
+            "a shirt that has a design on it",
+            "the shirt is shown with a picture on top of it",
+            "a black t - shirt on display",
+            "a black t - shirt that says, \"mahines usa\"",
+            "a shirt with an american flag design on it"
+        ]
+    },
+    {
+        "target": "B00CL4JTB4",
+        "candidate": "B0094J9WPM",
+        "captions": [
+            "has a graphic",
+            "has an indian graphic on front"
+        ],
+        "multi_caption_opt": [
+            "a man standing on a white surface posing for a photograph",
+            "a man posing with his hands in his pockets",
+            "man standing in a dark shirt and jeans",
+            "a man that is wearing a shirt and jeans",
+            "a man in a t-shirt posing for a photo"
+        ]
+    },
+    {
+        "target": "B008CXZBG0",
+        "candidate": "B008QU0HJ0",
+        "captions": [
+            "is red and black striped",
+            "is darker"
+        ],
+        "multi_caption_opt": [
+            "a young man in camo shorts and a grey shirt",
+            "a young man wearing camouflage pants with a long sleeve shirt",
+            "a young man is standing with his hands on his hips",
+            "a man is wearing a grey shirt and grey pants",
+            "a man wearing camo pants is posing for a photo"
+        ]
+    },
+    {
+        "target": "B005Y4L6KK",
+        "candidate": "B00812S67S",
+        "captions": [
+            "its has a picture print on front from elda",
+            "is lighter"
+        ],
+        "multi_caption_opt": [
+            "a black t - shirt with an image of the legend of zelda logo on it",
+            "a black shirt with a white triforce logo",
+            "a black t shirt with the legend of zelda on it",
+            "the legend of zelda logo tee-shirt",
+            "a black shirt with a legend on it"
+        ]
+    },
+    {
+        "target": "B004VE4GF6",
+        "candidate": "B001B2LL2W",
+        "captions": [
+            "is less tight and has short sleeves",
+            " shorter sleeves"
+        ],
+        "multi_caption_opt": [
+            "a man wearing shorts holding a tennis racket",
+            "the man is in a gray shirt and black pants",
+            "a man holding a tennis racquet while smiling",
+            "a man is standing and smiling while wearing a shirt",
+            "a smiling man wearing a gray shirt and shorts"
+        ]
+    },
+    {
+        "target": "B009VCN7IA",
+        "candidate": "B0063TRZD2",
+        "captions": [
+            "is all white",
+            "has shorter sleeves"
+        ],
+        "multi_caption_opt": [
+            "a man in a striped shirt is posing for a picture",
+            "a man that is posing for the camera with a baseball cap on",
+            "a man posing for a photo in a long-sleeve shirt",
+            "a man is wearing a long shirt with a multi colored stripe pattern",
+            "man in striped shirt, jeans and sneakers posing for camera"
+        ]
+    },
+    {
+        "target": "B006HT3WBC",
+        "candidate": "B005CXDOA8",
+        "captions": [
+            "It is a buttoned shirt.",
+            "black with buttons and a collar"
+        ],
+        "multi_caption_opt": [
+            "back view of a man wearing a black shirt",
+            "a man wearing a pin up pin up t - shirt",
+            "back of a man wearing a backless shirt with a pin up girl design",
+            "the back of a man wearing a t-shirt with a sailor's pin up girl",
+            "a man wearing a t-shirt with a pin up girl on it"
+        ]
+    },
+    {
+        "target": "B003X46ZKO",
+        "candidate": "B000Z3V2JA",
+        "captions": [
+            "green",
+            "is green and less animal-like"
+        ],
+        "multi_caption_opt": [
+            "grey cat t - shirt on white background",
+            "a t shirt that has a cat head on it",
+            "cat t-shirt with eyes on it",
+            "cat face on a t-shirt with the words \"no one will notice\" written on it",
+            "a cat face on a grey shirt"
+        ]
+    },
+    {
+        "target": "B001PIWUZ4",
+        "candidate": "B001PJ6ZX6",
+        "captions": [
+            "has image in yellow on it",
+            "has yellow writting graphic in front"
+        ],
+        "multi_caption_opt": [
+            "a t-shirt that has a name printed on it",
+            "a t-shirt with a name of maxwell on it",
+            "a t-shirt with a name on it for a person named maxwell",
+            "a shirt with the name maxwell on it",
+            "a grey t - shirt with the name of maxwell"
+        ]
+    },
+    {
+        "target": "B0013EKE3K",
+        "candidate": "B0081ZLSWU",
+        "captions": [
+            "is black ad white striped with a collar and buttons",
+            "has vertical stripes and chest pockets"
+        ],
+        "multi_caption_opt": [
+            "a man standing with his hands on his hips",
+            "a young man standing in front of a white wall",
+            "a man wearing a white shirt and black pants",
+            "man wearing a white shirt standing against a white wall",
+            "a man standing with his hands on his hips"
+        ]
+    },
+    {
+        "target": "B0083J832W",
+        "candidate": "B004LYG40Q",
+        "captions": [
+            "has a huge graphic and is darker colored",
+            "it is blue with a colorful print"
+        ],
+        "multi_caption_opt": [
+            "an i'd rather fishing t - shirt on the white",
+            "a tan shirt that reads, i'd rather fish than going to the store",
+            "a tan shirt that says i'd rather fishing in green letters",
+            "a tee - shirt that reads i'd rather fish",
+            "a tan and green shirt that says i'd rather fish"
+        ]
+    },
+    {
+        "target": "B007984YLM",
+        "candidate": "B004UIOL3K",
+        "captions": [
+            "is grey in color with a snake logo",
+            "has more snakes on it"
+        ],
+        "multi_caption_opt": [
+            "a purple shirt that is shirt that has a frog wearing headphones on it",
+            "a purple t - shirt with a frog on it's head",
+            "a purple shirt that has a frog on headphones",
+            "a shirt that says \"Tyrant Frog\"",
+            "the kid's t-shirt has a frog wearing headphones"
+        ]
+    },
+    {
+        "target": "B008N67V8W",
+        "candidate": "B0053DV6AW",
+        "captions": [
+            "a light blue long sleeve tee shirt",
+            "is lighter and has longer sleeves"
+        ],
+        "multi_caption_opt": [
+            "a man standing wearing a t-shirt that says \"cheaters gonna cheat\"",
+            "a man is wearing a skateboarding t-shirt and jeans",
+            "a male standing up wearing jeans and a t-shirt",
+            "a man in a black shirt and jeans standing up for a picture",
+            "a man in a black t-shirt and jeans poses with his hands on his hips"
+        ]
+    },
+    {
+        "target": "B00B2FIHBQ",
+        "candidate": "B00B2HDZ98",
+        "captions": [
+            "has stripes and is darker",
+            "is black with white stripes"
+        ],
+        "multi_caption_opt": [
+            "a man standing up in a shirt and black pants",
+            "a man standing by himself in front of the camera",
+            "a man posing with his hands in his pockets",
+            "a man posing for a photo wearing a shirt with a check design on it",
+            "a man with a white shirt on and black pants"
+        ]
+    },
+    {
+        "target": "B008KKDN92",
+        "candidate": "B008YEKTO6",
+        "captions": [
+            "is maroon colored short sleeved shirt with button collar",
+            "is dark red and has no graphics"
+        ],
+        "multi_caption_opt": [
+            "a large man standing up and looking at the camera",
+            "a male wearing a black and brown t-shirt and jeans",
+            "a person wearing a black shirt with a print of planes",
+            "a man in brown clothes with an airplane graphic on his shirt",
+            "a man is posing for a picture with his arms around his waist"
+        ]
+    },
+    {
+        "target": "B0015D0PWY",
+        "candidate": "B00BHKFFAW",
+        "captions": [
+            "is a darker green and smaller logo",
+            "is a darker green"
+        ],
+        "multi_caption_opt": [
+            "a green t - shirt that says \"let's get head\".",
+            "a t - shirt with an image of the st patrick's day irish drinking game on the front and the slogan let's get headin'",
+            "a shirt that reads let's get heady st patrick's day",
+            "a shirt that reads let's get heady",
+            "a green shirt with the image of an image of a man holding a beer"
+        ]
+    },
+    {
+        "target": "B0030DG7TC",
+        "candidate": "B004W75SW2",
+        "captions": [
+            " pointing hand on the front",
+            "darker plaid long sleeve shirt"
+        ],
+        "multi_caption_opt": [
+            "a man standing up with his hands in his pockets",
+            "a man is standing and looking at the camera",
+            "a male standing with his hands in his pockets",
+            "a man is standing wearing a short shirt",
+            "a young man is posing for the camera in a plaid shirt and jeans"
+        ]
+    },
+    {
+        "target": "B0088B8CM6",
+        "candidate": "B002DQYGFE",
+        "captions": [
+            "has longer sleeves with black and green boxes",
+            "has more buttons and longer sleeves"
+        ],
+        "multi_caption_opt": [
+            "the front of a blue t - shirt that says jabs awoc keez",
+            "a blue jabba awo keez t shirt",
+            "a t - shirt with the words jabba awoc keez on it",
+            "a blue t - shirt with the words jabb awoc keez",
+            "a blue shirt that says jabb awoockee keez"
+        ]
+    },
+    {
+        "target": "B005B6ZIE6",
+        "candidate": "B00DDXR4QO",
+        "captions": [
+            "is more fitted and has more buttons",
+            "is more solid grey"
+        ],
+        "multi_caption_opt": [
+            "the long sleeved shirt with the logo",
+            "a navy long sleeved shirt with embroidery on it",
+            "an older shirt with a logo on the front",
+            "a shirt that is blue with a logo on it",
+            "a blue long sleeve shirt with an embroidered logo on the front"
+        ]
+    },
+    {
+        "target": "B00A42QEE0",
+        "candidate": "B00BGVUTBC",
+        "captions": [
+            "has a different font",
+            "is a red short sleeved collared tee"
+        ],
+        "multi_caption_opt": [
+            "a man is posing while wearing a t-shirt and shorts",
+            "a man posing for a photo wearing shorts and sneakers",
+            "a man is standing in front of a white background",
+            "a man wearing black t-shirt with a metal mouth on the front",
+            "a male with a hat and jeans"
+        ]
+    },
+    {
+        "target": "B002O1UMAG",
+        "candidate": "B0098GE6OI",
+        "captions": [
+            "is gray",
+            "Is gray not white"
+        ],
+        "multi_caption_opt": [
+            "a young man poses for a photograph",
+            "a man that is standing posing for a picture",
+            "a young man posing with a t-shirt on",
+            "man standing with his hands in pockets and looking at something",
+            "a man standing up with a hat on"
+        ]
+    },
+    {
+        "target": "B000V3MZNG",
+        "candidate": "B00CC2O4PQ",
+        "captions": [
+            "is more dark with visual patterns",
+            "is darker and floral printed"
+        ],
+        "multi_caption_opt": [
+            "blue hawaiian shirt with airplanes printed on it",
+            "hawaiian style shirt with airplanes in blue print",
+            "a hawaiian shirt with airplanes and ships on it",
+            "an airplane hawaiian shirt with hawaiian planes",
+            "blue hawaiian shirt featuring airplanes and clouds"
+        ]
+    },
+    {
+        "target": "B004Q3PQYM",
+        "candidate": "B00BIFZU4C",
+        "captions": [
+            "has longer sleeves and a collared neckline",
+            "it is long sleeved and plaid"
+        ],
+        "multi_caption_opt": [
+            "a t - shirt that has the volcom logo on it",
+            "a black shirt that is on a mannequin",
+            "a mannequin wearing a shirt with a logo",
+            "a shirt with the volcom logo on it",
+            "a shirt that is black with a white triangle"
+        ]
+    },
+    {
+        "target": "B00AWJT5LY",
+        "candidate": "B009OMU5V4",
+        "captions": [
+            "is similar",
+            "is lighter"
+        ],
+        "multi_caption_opt": [
+            "a man in blue striped shirt and black pants",
+            "a person in a striped shirt is standing",
+            "a male wearing a striped shirt standing up",
+            "a man standing and wearing a striped shirt",
+            "a man wearing a shirt and pants standing"
+        ]
+    },
+    {
+        "target": "B004Y4G6XI",
+        "candidate": "B00FN9J26Q",
+        "captions": [
+            "Black and less neck opening",
+            "is darker"
+        ],
+        "multi_caption_opt": [
+            "a young man with a v-neck striped shirt on",
+            "a man wearing a blue and black striped shirt",
+            "a man with his hands in his pockets and a blue and black striped shirt",
+            "a man in jeans and a striped shirt",
+            "the man is standing up with his pants pulled down"
+        ]
+    },
+    {
+        "target": "B003TP2GXM",
+        "candidate": "B008B5HO2S",
+        "captions": [
+            "is a white shirt",
+            "is more formal"
+        ],
+        "multi_caption_opt": [
+            "a man is standing, wearing a grey polo shirt",
+            "a young man standing in his shirt",
+            "man in a long sleeve black shirt standing up",
+            "a man in a grey long sleeve shirt stands for a photo",
+            "a man posing for a photograph in a gray shirt and jeans"
+        ]
+    },
+    {
+        "target": "B00C9VY1XU",
+        "candidate": "B00A476WU6",
+        "captions": [
+            "is green",
+            "is much darker in color"
+        ],
+        "multi_caption_opt": [
+            "a man with a skateboard standing up and looking down",
+            "a young man wearing a skateboard graphic t-shirt",
+            "a man with a shirt that has a skull design",
+            "a man standing with a skateboard and wearing a shirt",
+            "a young man standing up, wearing a shirt with a skull and cross bones"
+        ]
+    },
+    {
+        "target": "B00DJ3UPPA",
+        "candidate": "B009NUR66O",
+        "captions": [
+            "is blue with a yellow truck",
+            "is blue"
+        ],
+        "multi_caption_opt": [
+            "a shirt that says, \"oceans apart from each other\"",
+            "a white tee - shirt with geometric shapes on it",
+            "a white t - shirt with geometric designs",
+            "a white t - shirt with geometric shapes",
+            "a white t - shirt with geometric shapes printed on it"
+        ]
+    },
+    {
+        "target": "B00517AX5O",
+        "candidate": "B00517ABLA",
+        "captions": [
+            "Is more blue and fun",
+            "is more colourfull"
+        ],
+        "multi_caption_opt": [
+            "a young man wearing a cap and jacket with a skateboard",
+            "a man wearing a baseball cap and a skateboard",
+            "a young man in a black and white striped hat and shirt",
+            "a guy standing up wearing a motorcycle helmet",
+            "a young man standing with a hat and a skateboard"
+        ]
+    },
+    {
+        "target": "B0002JUEKU",
+        "candidate": "B000LM7S2K",
+        "captions": [
+            "The shirt is blue with birds.",
+            "is navy with less patterned"
+        ],
+        "multi_caption_opt": [
+            "a hawaiian shirt with colorful birds",
+            "hawaiian shirt with colorful parrots and leaves",
+            "a shirt that is black and has colorful parrots",
+            "an hawaiian shirt with parrots, palms, and leaves",
+            "hawaiian shirt with birds, leaves and tropical fruit on it"
+        ]
+    },
+    {
+        "target": "B007679AJ2",
+        "candidate": "B00DSY5UOQ",
+        "captions": [
+            "The shirt is blue jean.",
+            " longer sleeves"
+        ],
+        "multi_caption_opt": [
+            "a man wearing a denim shirt and pants",
+            "a man is standing looking at his camera",
+            "a man standing up posing for the camera",
+            "a man that is wearing a hat and a shirt",
+            "a man standing on a white background in a blue denim shirt and black jeans"
+        ]
+    },
+    {
+        "target": "B004BGYQPO",
+        "candidate": "B0059A4A5C",
+        "captions": [
+            "is purple with white designs",
+            "is a t-shirt with writing"
+        ],
+        "multi_caption_opt": [
+            "a long sleeve shirt that has a button down",
+            "a shirt with the collar open",
+            "a black long sleeved shirt that is cut out",
+            "a black shirt and men's v - neck",
+            "a black men's long sleeve t shirt"
+        ]
+    },
+    {
+        "target": "B00066ZKS0",
+        "candidate": "B00BS7FFQ8",
+        "captions": [
+            "is white and is in tshirt design",
+            "is all white and no collar or buttons"
+        ],
+        "multi_caption_opt": [
+            "a man is standing, with a white shirt and pink and brown plaids",
+            "a man in a shirt with a bow tie on his jacket",
+            "a man in a pink and white checked shirt",
+            "a man in a red and pink checked shirt",
+            "a man with white shirt and brown pants standing against a wall"
+        ]
+    },
+    {
+        "target": "B006NR72OQ",
+        "candidate": "B0080F3536",
+        "captions": [
+            "is a shirt with long sleeves and has a pocket.",
+            "has longer sleeves"
+        ],
+        "multi_caption_opt": [
+            "a man wearing a t-shirt standing still on a skateboard",
+            "a man standing in front of a white background wearing a black hat and a t-shirt",
+            "a man in a shirt and jeans posing for a photo",
+            "man standing wearing a white t-shirt and black shorts",
+            "man wearing an image on his white t-shirt"
+        ]
+    },
+    {
+        "target": "B00FH65X5E",
+        "candidate": "B004BOV7DK",
+        "captions": [
+            "The shirt is blue with white writing.",
+            "is lighter"
+        ],
+        "multi_caption_opt": [
+            "a friday the 13th jersey with the word jason on it",
+            "a black friday the 13th jersey that says woh",
+            "a jersey with the face of jason jason on it",
+            "a jersey that says \"why jo?\" with a jason mask on it",
+            "a jersey featuring a friday the 13th mask"
+        ]
+    },
+    {
+        "target": "B006U6ENVK",
+        "candidate": "B00CH1JZ92",
+        "captions": [
+            "its black with red print",
+            "is black with red logo"
+        ],
+        "multi_caption_opt": [
+            "blue i love ligonia t-shirt",
+            "a light blue t - shirt with white lettering i love legina",
+            "a blue shirt with i love regina in white on the front",
+            "a t - shirt with the words i love regina in it",
+            "a t - shirt that says i love legnia, nebraska"
+        ]
+    },
+    {
+        "target": "B00EINT7N6",
+        "candidate": "B00APU4KE2",
+        "captions": [
+            "is a blue tee shirt",
+            "has short sleeves"
+        ],
+        "multi_caption_opt": [
+            "a young man standing in front of a white backdrop",
+            "a male model in a button down shirt and jeans",
+            "a man in a black shirt and grey pants",
+            "a man wearing a black shirt and jeans",
+            "a man stands with his arms crossed in front of him"
+        ]
+    },
+    {
+        "target": "B0015N1DYI",
+        "candidate": "B0001TP9FG",
+        "captions": [
+            "is black with yellow designs",
+            "has brighter colors in it"
+        ],
+        "multi_caption_opt": [
+            "a t-shirt with the letter \"o\" is shown against a white background",
+            "a black shirt with a white logo on it",
+            "a black t - shirt with a white logo on it",
+            "a black shirt with a white button logo on it",
+            "a t - shirt that is shown with the symbol on it"
+        ]
+    },
+    {
+        "target": "B005OJ9D32",
+        "candidate": "B00CACXSU0",
+        "captions": [
+            "is lighter",
+            "is gray"
+        ],
+        "multi_caption_opt": [
+            "a black t - shirt with the word airborne on it",
+            "a black t - shirt with the words airborne and parachutes on it",
+            "a black airborne t shirt that says airborne on it",
+            "a t - shirt that says airborne",
+            "black parachute corps logo t - shirt on white background"
+        ]
+    },
+    {
+        "target": "B005MWDFGC",
+        "candidate": "B006GJTLSG",
+        "captions": [
+            "is grey and oval neck",
+            "gray with larger graphic on front"
+        ],
+        "multi_caption_opt": [
+            "a man is standing with an empty bag",
+            "a young man is posing for a picture",
+            "a man in a black shirt and grey pants with a knife in his hand",
+            "a man with long hair wearing a tank top with the letters uag on it",
+            "a man posing with his arm on the hip,"
+        ]
+    },
+    {
+        "target": "B00BQX5XPM",
+        "candidate": "B007HB6JI2",
+        "captions": [
+            "is a blue t-shirt",
+            "is blue with a graphic and is more casual"
+        ],
+        "multi_caption_opt": [
+            "a child's bed shirt with large pockets",
+            "a large blue and white plaid shirt sitting on top of a white cloth",
+            "a person wearing a blue and white plaid shirt",
+            "an old blue plaid shirt laying on a white surface",
+            "a plaid blue shirt on the white background"
+        ]
+    },
+    {
+        "target": "B005Q0B9ZY",
+        "candidate": "B004B2XMPI",
+        "captions": [
+            "has a collar and is more preppy",
+            "is collared"
+        ],
+        "multi_caption_opt": [
+            "a male wearing a polo shirt and shorts",
+            "a young man standing in a white shirt",
+            "a male professional basketball player wearing a white t-shirt",
+            "a man with a black cap and dark pants",
+            "a male model poses wearing a white tee-shirt and shorts"
+        ]
+    },
+    {
+        "target": "B006YDMYCY",
+        "candidate": "B00F6886DY",
+        "captions": [
+            "It has sleeves.",
+            "has longer sleeves"
+        ],
+        "multi_caption_opt": [
+            "a women's oakland raiders tank top",
+            "a tank top that is black and says oakland raiders",
+            "a black oakland raiders tank top",
+            "a tank top that says oakland raiders on the front",
+            "a black raiders tank top that says oakland raiders"
+        ]
+    },
+    {
+        "target": "B004UIOL3K",
+        "candidate": "B00BXQTGGY",
+        "captions": [
+            "is more colorful",
+            "is purple with frog graphic on front"
+        ],
+        "multi_caption_opt": [
+            "an image on the shirt that has a wolf in front of the full moon",
+            "the mountain tee shirt with a wolf laying under the full moon",
+            "the moonlight t - shirt featuring a wolf on the back",
+            "a t - shirt with a wolf on it with the moon behind it",
+            "a t - shirt featuring a wolf and the moon"
+        ]
+    },
+    {
+        "target": "B00CH59Q38",
+        "candidate": "B00680K0D8",
+        "captions": [
+            "has longer sleeves and is more colorful",
+            "is more blue and red"
+        ],
+        "multi_caption_opt": [
+            "a man standing in a room with his hands in his pockets",
+            "man in checkered shirt with red plaid vest and hipster pants",
+            "a man is wearing a checked shirt, and holding his hand in his pocket",
+            "a man wearing a checked shirt posing for a picture",
+            "a man standing up posing wearing a plaid shirt"
+        ]
+    },
+    {
+        "target": "B001F8IK0S",
+        "candidate": "B0071BYF0M",
+        "captions": [
+            "is black with a logo of american flag",
+            "has a lighter logo"
+        ],
+        "multi_caption_opt": [
+            "a shirt that features a dog wearing a military uniform",
+            "t - shirt with a bulldog wearing military gear",
+            "a t shirt with a dog on it",
+            "an image of a bulldog with a rifle and a gun",
+            "a shirt with an image of a man dressed in uniform with a bulldog"
+        ]
+    },
+    {
+        "target": "B00B4EF1AA",
+        "candidate": "B009LM1ZJS",
+        "captions": [
+            "is purple in color with playing cards graphic",
+            "is darker"
+        ],
+        "multi_caption_opt": [
+            "a young man wearing a t-shirt with the word giant on it",
+            "a man in a t-shirt and jeans posing for a picture",
+            "a man standing with his hands in his pockets",
+            "a man is standing while wearing a t-shirt with a crown on it",
+            "a man is posing for a picture while wearing a black shirt with a crown"
+        ]
+    },
+    {
+        "target": "B00FZ57788",
+        "candidate": "B006ID7VIC",
+        "captions": [
+            "Green and has more text",
+            "is green with white on red text"
+        ],
+        "multi_caption_opt": [
+            "a red t - shirt with a santa clause and \"you serious clark?\"",
+            "a red t - shirt that reads you're serious clark",
+            "a red christmas t - shirt that says you're serious clark?",
+            "a t shirt that says you serious clark",
+            "a red shirt that has the words \"you serious clark\" on it"
+        ]
+    },
+    {
+        "target": "B00D1G6Y2S",
+        "candidate": "B002WE9S7I",
+        "captions": [
+            "has words on it",
+            "is black with white lettering"
+        ],
+        "multi_caption_opt": [
+            "a t - shirt with an illustration of a fish",
+            "the shirt is on a white background",
+            "an image of a black fish t - shirt",
+            "a t - shirt with a fish on it",
+            "a black t - shirt with a red fish design on it"
+        ]
+    },
+    {
+        "target": "B001SN7QH8",
+        "candidate": "B007P28IKK",
+        "captions": [
+            "this white t shirt has darker color",
+            "is white with image of men"
+        ],
+        "multi_caption_opt": [
+            "a young man with a hat and skate shoes poses for a photograph",
+            "a young man stands while wearing a shirt with an acdc logo",
+            "a man in a white t shirt is standing in a white background",
+            "a man standing with his hand in his pockets",
+            "a man stands and poses with his hands in his pockets"
+        ]
+    },
+    {
+        "target": "B005KXL6TQ",
+        "candidate": "B004MYFR3K",
+        "captions": [
+            "dark colored with a Game of Thrones image",
+            "Is darker black with a lighter colored graphic"
+        ],
+        "multi_caption_opt": [
+            "a man with a long hair standing on a skateboard",
+            "a man wearing a dark shirt with a photo of a bottle of tequila",
+            "a man standing with a skateboard and wearing a t shirt with a picture of a bottle",
+            "a man is standing on his skateboard with a black t-shirt on his head",
+            "a man with long hair wearing a grey shirt and denim jeans"
+        ]
+    },
+    {
+        "target": "B00FEQ60KY",
+        "candidate": "B003LNPB70",
+        "captions": [
+            "is baby outfit and is green",
+            "is a baby outfit"
+        ],
+        "multi_caption_opt": [
+            "a man with a hat that reads john deere",
+            "a man with a smile on his face is wearing a john deere tee shirt",
+            "a man with a t - shirt that says john deere",
+            "a guy wearing a shirt and jeans posing for a photo",
+            "a man wearing a john deere t-shirt and jeans"
+        ]
+    },
+    {
+        "target": "B004OKFF7K",
+        "candidate": "B004U7I0SI",
+        "captions": [
+            "is black with a dog on it",
+            "is darker in color"
+        ],
+        "multi_caption_opt": [
+            "a gray t - shirt with a tiger face",
+            "a tiger's face on a gray t-shirt",
+            "a gray tiger t shirt with a black cat face on the front",
+            "a t shirt with a tiger face on it",
+            "a tiger shirt that shows a blue eye"
+        ]
+    },
+    {
+        "target": "B001KAFI6U",
+        "candidate": "B006ZJUB8G",
+        "captions": [
+            "is pink with black stars",
+            "is pink with black logos"
+        ],
+        "multi_caption_opt": [
+            "a man standing and posing wearing a baseball cap and hat",
+            "a man standing on a street and wearing a polo shirt",
+            "a man is standing with his hands on his hips",
+            "a man standing with his hands in his pockets",
+            "a guy posing for a photo in a shirt"
+        ]
+    }
+]
