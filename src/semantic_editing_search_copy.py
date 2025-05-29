@@ -625,15 +625,37 @@ def main():
         raise ValueError("Dataset not supported")
 
 def main1():
+    import matplotlib.pyplot as plt
+    from pathlib import Path
+    import PIL.Image
+
+    dataset_path = Path(args.dataset_path)
     dress_type = "shirt"
     preprocess = targetpad_transform(1.25, 224)
     relative_val_dataset = FashionIQDataset(
-        args.dataset_path, 
+        dataset_path, 
         'val', 
         [dress_type], 
         'relative', 
         preprocess
     )
+    item = relative_val_dataset[0]
+
+    print(f"Input caption: {item['relative_captions']}")
+    print(f"multi_opt: {item['multi_opt']}")
+    # 'a person in a suit standing with hands in pockets'
+    # 'a young man in a black dress shirt and pants'
+    # I think the above captions for ref_img are not very accurate 
+
+    #print(f"multi_gpt_out: {item['multi_gpt_out']}")
+
+    ref_img = PIL.Image.open(dataset_path / "images" / (item["reference_name"] + ".png"))
+    target_img = PIL.Image.open(dataset_path / "images" / (item["target_name"] + ".png"))
+    
+    fig, (ax1, ax2) = plt.subplots(1, 2)
+    ax1.imshow(np.array(ref_img)); ax1.axis("off"); ax1.set_title("Reference Image")
+    ax2.imshow(np.array(target_img)); ax2.axis("off"); ax2.set_title("Target Image")
+    plt.show()
 
 if __name__ == '__main__':
     main()
