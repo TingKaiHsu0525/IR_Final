@@ -17,6 +17,11 @@ from tqdm import tqdm
 from datasets import CIRRDataset, CIRCODataset, FashionIQDataset
 from utils import extract_image_features, device, collate_fn, PROJECT_ROOT, targetpad_transform
 
+import matplotlib.pyplot as plt
+from pathlib import Path
+import PIL.Image
+import math
+
 print(f"device: {device}")
 
 name2model = {
@@ -538,6 +543,8 @@ def fiq_generate_val_predictions(clip_model: CLIP, relative_val_dataset: Fashion
         relative_captions = batch['relative_captions']
         multi_caption = batch['multi_{}'.format(args.caption_type)]
         multi_gpt_caption = batch['multi_gpt_{}'.format(args.caption_type)]
+        # # multi_gpt_caption is a list of length NUM_CAPTION. Then each item is a tuple
+        # # of length batch_size
 
         # flattened_captions: list = np.array(relative_captions).T.flatten().tolist()
         # input_captions = [
@@ -581,6 +588,133 @@ def fiq_generate_val_predictions(clip_model: CLIP, relative_val_dataset: Fashion
 
     predicted_features = torch.vstack(predicted_features_list)
     return predicted_features, target_names_list
+
+
+@torch.no_grad()
+def fiq_retrieve_single(ref_multi_captions: List[str],
+                        edit_text: str,
+                        dataset_path: str,
+                        dress_type: str,
+                        clip_model_name: str,
+                        preprocess: callable):
+    """
+    Given one reference image + one edit text (composed caption), return 
+    sorted_index_names, distances
+    """
+
+    # --- 1. load CLIP once (from fiq_val_retrieval) ---
+    clip_model, _, _ = open_clip.create_model_and_transforms(
+        clip_model_name,
+        device=device,
+        pretrained=pretrained[clip_model_name]
+    )
+    clip_model = clip_model.float().eval().requires_grad_(False)
+
+    # --- 2. load or build index features (from fiq_val_retrieval) ---
+    feat_dir = f'feature/{args.dataset}/{dress_type}/{args.model_type}'
+    idx_feat_file  = os.path.join(feat_dir, 'index_features.pt')
+    idx_names_file = os.path.join(feat_dir, 'index_names.npy')
+    if os.path.exists(idx_feat_file):
+        index_features = torch.load(idx_feat_file).to(device)
+        index_names    = np.load(idx_names_file).tolist()
+    else:
+        # fallback to full extraction
+        classic_ds = FashionIQDataset(dataset_path, 'val', [dress_type], 'classic', preprocess)
+        index_features, index_names = extract_image_features(classic_ds, clip_model, dress_type=dress_type)
+        index_features = index_features.to(device)
+
+    # --- 3. encode the edit text (from fiq_generate_val_predictions) ---
+    tokenizer = open_clip.get_tokenizer(name2model[args.model_type])
+    tokenized = tokenizer(edit_text, context_length=77).to(device)
+    text_features = clip_model.encode_text(tokenized)
+    predicted_features = F.normalize(text_features)   # shape [1, D]
+
+    # --- 3a. encode multi captions of the reference image (from fiq_generate_val_predictions) ---
+    text_features_list = []
+    # Calculate cross-caption mean of caption features, stored in text_features
+    for cap in ref_multi_captions:
+        tokenized_input_captions = tokenizer(cap, context_length=77).to(device)
+        text_features = clip_model.encode_text(tokenized_input_captions)
+        text_features_list.append(text_features)
+    text_features_list = torch.stack(text_features_list)
+    text_features = torch.mean(text_features_list, dim=0)
+
+    blip_predicted_features = F.normalize(text_features)
+
+    # Make sure that predicted_features and blip_predicted_features 
+    # are of shape [1, D], where D is clip vector dimension
+
+    # --- 4. compute similarity & take top_k (directly copied from fiq_compute_val_metrics) ---
+    ref_names_list = index_names
+
+    # Normalize the features
+    index_features = F.normalize(index_features.float())
+
+    index_name_dict = {name: index for index, name in enumerate(index_names)}
+    indexs = [index_name_dict[name] if name in index_name_dict else -1 for name in ref_names_list]
+
+
+    similarity_after = predicted_features @ index_features.T
+    similarity_before = blip_predicted_features @ index_features.T
+
+    diff_pos = similarity_after - similarity_before
+
+    diff_pos[diff_pos < 0] = 0
+
+    diff_neg = similarity_after - similarity_before
+
+    diff_neg[diff_neg > 0] = 0
+
+    similarity = similarity_after + args.neg_factor * diff_neg + args.pos_factor * diff_pos
+
+    for i in range(similarity_before.shape[0]):
+        if indexs[i] != -1: # if name in ref_names_list and in index_name_dict
+            similarity[i][indexs[i]] = -1
+
+    # Compute the distances
+    distances = 1 - similarity
+    sorted_indices = torch.argsort(distances, dim=-1).cpu()
+    sorted_index_names = np.array(index_names)[sorted_indices]
+
+    return sorted_index_names, distances
+
+def show_topk_grid(dataset_path: Path,
+                   sorted_index_names: np.ndarray,
+                   distances: np.ndarray,
+                   top_k: int = 50,
+                   ncols: int = 10,
+                   img_ext: str = ".png"):
+    """
+    Display the top_k retrieved images in a grid, ordered by increasing distance.
+    
+    Args:
+        dataset_path: Path to the FashionIQ root (must contain an 'images/' subfolder).
+        sorted_index_names: 1D array of all index_names sorted by distance ascending.
+        distances: 1D tensor of distances aligned with sorted_index_names.
+        top_k: how many of the top items to show.
+        ncols: how many columns in the grid.
+        img_ext: file extension of your images (e.g. ".png" or ".jpg").
+    """
+    topk_names = sorted_index_names[:top_k]
+    topk_dists = distances[:top_k]
+    
+    nrows = math.ceil(top_k / ncols)
+    fig, axes = plt.subplots(nrows, ncols, figsize=(ncols * 2, nrows * 2))
+    axes = axes.flatten()
+    
+    for i, (name, dist) in enumerate(zip(topk_names, topk_dists)):
+        img_path = dataset_path / "images" / (name + img_ext)
+        img = PIL.Image.open(img_path)
+        axes[i].imshow(img)
+        axes[i].set_title(f"{dist:.4f}", fontsize=8)
+        axes[i].axis("off")
+    
+    # hide any leftover axes
+    for j in range(top_k, len(axes)):
+        axes[j].axis("off")
+    
+    plt.tight_layout()
+    plt.show()
 
 
 args = args_define.args
@@ -633,13 +767,17 @@ def main():
         raise ValueError("Dataset not supported")
 
 def main1():
-    import matplotlib.pyplot as plt
-    from pathlib import Path
-    import PIL.Image
-
     dataset_path = Path(args.dataset_path)
+
+    if args.model_type in ['SEIZE-B', 'SEIZE-L', 'SEIZE-H', 'SEIZE-g', 'SEIZE-G', 'SEIZE-CoCa-B', 'SEIZE-CoCa-L']:
+        clip_model_name = name2model[args.model_type]
+        preprocess = targetpad_transform(1.25, 224)
+    else:
+        raise ValueError("Model type not supported")
+
     dress_type = "shirt"
-    preprocess = targetpad_transform(1.25, 224)
+    print(f"Using dress type: {dress_type}")
+
     relative_val_dataset = FashionIQDataset(
         dataset_path, 
         'val', 
@@ -650,13 +788,14 @@ def main1():
     item = relative_val_dataset[0]
 
     print(f"Input caption: {item['relative_captions']}")
-    print(f"multi_opt: {item['multi_opt']}")
+    print(f"multi_opt (caption for reference image): {item['multi_opt']}")
     # 'a person in a suit standing with hands in pockets'
     # 'a young man in a black dress shirt and pants'
     # I think the above captions for ref_img are not very accurate 
 
     #print(f"multi_gpt_out: {item['multi_gpt_out']}")
 
+    # # Show reference image and ground truth target image
     ref_img = PIL.Image.open(dataset_path / "images" / (item["reference_name"] + ".png"))
     target_img = PIL.Image.open(dataset_path / "images" / (item["target_name"] + ".png"))
     
@@ -665,5 +804,20 @@ def main1():
     ax2.imshow(np.array(target_img)); ax2.axis("off"); ax2.set_title("Target Image")
     plt.show()
 
+    composed_text = input("Enter composed text for retrieval: ")
+
+    sorted_index_names, distances = fiq_retrieve_single(
+        item['multi_opt'], 
+        composed_text, 
+        dataset_path, 
+        dress_type, 
+        clip_model_name, 
+        preprocess
+    )
+
+    show_topk_grid(dataset_path,
+                   sorted_index_names,
+                   distances.cpu().numpy())
+
 if __name__ == '__main__':
-    main()
+    main1()
