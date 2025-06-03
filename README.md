@@ -294,9 +294,6 @@ Analysis by GPT caption_num=15, defalut pos_fator & neg factor, model=SEIZE-G, a
 |   0.3    |   58.10   |   54.98   |   64.20   |   59.09   |
 |   0.4    |   58.29   |   54.93   |   63.95   |   59.06   |
 
-
-reference : https://github.com/yzy-bupt/SEIZE
-
 ## 2025/06/03
 ### Updates
 In `src/semantic_editing_search_v1.py`, 
@@ -319,4 +316,13 @@ NEW
 Visualization pipeline that will take in the saved `distances` and `sorted_index_names`. 
 
 
-
+# Citatiion
+```
+@inproceedings{yang2024semantic,
+  title={Semantic Editing Increment Benefits Zero-Shot Composed Image Retrieval},
+  author={Yang, Zhenyu and Qian, Shengsheng and Xue, Dizhan and Wu, Jiahong and Yang, Fan and Dong, Weiming and Xu, Changsheng},
+  booktitle={Proceedings of the 32nd ACM International Conference on Multimedia},
+  pages={1245--1254},
+  year={2024}
+}
+```
