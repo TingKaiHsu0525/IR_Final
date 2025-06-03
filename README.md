@@ -155,3 +155,19 @@ srcFashionIQ_multi_opt_gpt35_5
 
 
 reference : https://github.com/yzy-bupt/SEIZE
+
+## 2025/06/03
+### Updates
+In `src/semantic_editing_search_v1.py`, 
+- I added a `use_cache=False` argument in `fiq_compute_val_metrics` function so that it does not load the cached `predicted_features`, `original_features`, `target_names`, etc but recompute them instead. This is to prevent the possiblity that the cache is wrong. For example, I am computing `predicted_features` from a relative dataset of the same dress type and model type, but the dataset uses GPT outputs from prompt 2, whereas the cache stores predicted_features from GPT outputs from prompt 1. Then the cached `predicted_features` should not be used here. Thus, it is recommended to set `use_cache=False`.
+
+- The line `os.environ['CUDA_VISIBLE_DEVICES'] = '1'` is commented out.
+
+- The variables `distances` and `sorted_index_names` are saved. These variables are later needed for visualization. So far, they are stored in the directory `retrieved_index_names`, but the save location is subject to change. 
+
+In `src/utils.py`,
+- Added `sample_dataset` to create a sample of dataset json. This is useful when one wants to test something with the dataset quickly but does not want to wait for running through the whole dataset. 
+
+### TODO
+Visualization pipeline that will take in the saved `distances` and `sorted_index_names`. 
+

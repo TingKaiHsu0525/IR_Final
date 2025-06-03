@@ -1,5 +1,5 @@
 import os
-os.environ['CUDA_VISIBLE_DEVICES'] = '1'
+#os.environ['CUDA_VISIBLE_DEVICES'] = '1'
 
 import json
 from args import args_define
@@ -606,7 +606,7 @@ def fiq_val_retrieval(dataset_path: str, dress_type: str, clip_model_name: str, 
 
 @torch.no_grad()
 def fiq_compute_val_metrics(relative_val_dataset: FashionIQDataset, clip_model: CLIP, index_features: torch.Tensor,
-                            index_names: List[str], ref_names_list: List[str]) \
+                            index_names: List[str], ref_names_list: List[str], use_cache=False) \
         -> Dict[str, float]:
     """
     Compute the retrieval metrics on the FashionIQ validation set given the dataset, pseudo tokens and the reference names
@@ -615,26 +615,35 @@ def fiq_compute_val_metrics(relative_val_dataset: FashionIQDataset, clip_model: 
     dress_type = relative_val_dataset.dress_types[0]
     # Generate the predicted features
     feat_dataset_dress_path = f'feature/{args.dataset}/{dress_type}'
-    if os.path.exists(f'{feat_dataset_dress_path}/{args.model_type}/{args.gpt_version}_predicted_features.pt'):
-        target_names = np.load(f'{feat_dataset_dress_path}/target_names.npy')
-        predicted_features = torch.load(f'{feat_dataset_dress_path}/{args.model_type}/{args.gpt_version}_predicted_features.pt')
-        original_features = torch.load(f'{feat_dataset_dress_path}/{args.model_type}/original_features.pt')
-        target_names = target_names.tolist()
+    if use_cache:
+        if os.path.exists(f'{feat_dataset_dress_path}/{args.model_type}/{args.gpt_version}_predicted_features.pt'):
+            target_names = np.load(f'{feat_dataset_dress_path}/target_names.npy')
+            predicted_features = torch.load(f'{feat_dataset_dress_path}/{args.model_type}/{args.gpt_version}_predicted_features.pt')
+            original_features = torch.load(f'{feat_dataset_dress_path}/{args.model_type}/original_features.pt')
+            target_names = target_names.tolist()
+        else:
+            predicted_features, original_features, target_names = fiq_generate_val_predictions(clip_model, relative_val_dataset, ref_names_list
+                                                                            )
+            np.save(f'{feat_dataset_dress_path}/target_names.npy', target_names)
+            torch.save(predicted_features, f'{feat_dataset_dress_path}/{args.model_type}/{args.gpt_version}_predicted_features.pt')
+            torch.save(original_features, f'{feat_dataset_dress_path}/{args.model_type}/original_features.pt')
     else:
-        predicted_features, original_features, target_names = fiq_generate_val_predictions(clip_model, relative_val_dataset, ref_names_list
-                                                                        )
-        np.save(f'{feat_dataset_dress_path}/target_names.npy', target_names)
-        torch.save(predicted_features, f'{feat_dataset_dress_path}/{args.model_type}/{args.gpt_version}_predicted_features.pt')
-        torch.save(original_features, f'{feat_dataset_dress_path}/{args.model_type}/original_features.pt')
+        print("Recalculating fiq_generate_val_predictions...")
+        predicted_features, original_features, target_names = fiq_generate_val_predictions(
+            clip_model, relative_val_dataset, ref_names_list)
 
     if args.use_momentum_strategy:
-        if os.path.exists(f'{feat_dataset_dress_path}/{args.model_type}/blip_predicted_features.pt'):
-            blip_predicted_features = torch.load(f'{feat_dataset_dress_path}/{args.model_type}/blip_predicted_features.pt')
+        if use_cache:
+            if os.path.exists(f'{feat_dataset_dress_path}/{args.model_type}/blip_predicted_features.pt'):
+                blip_predicted_features = torch.load(f'{feat_dataset_dress_path}/{args.model_type}/blip_predicted_features.pt')
+            else:
+                blip_predicted_features , *_ = \
+                    fiq_generate_val_predictions(clip_model, relative_val_dataset, ref_names_list, args.use_momentum_strategy)
+                
+                torch.save(blip_predicted_features, f'{feat_dataset_dress_path}/{args.model_type}/blip_predicted_features.pt')
         else:
             blip_predicted_features , *_ = \
                 fiq_generate_val_predictions(clip_model, relative_val_dataset, ref_names_list, args.use_momentum_strategy)
-            
-            torch.save(blip_predicted_features, f'{feat_dataset_dress_path}/{args.model_type}/blip_predicted_features.pt')
 
     # Move the features to the device
     index_features = index_features.to(device)
@@ -676,6 +685,14 @@ def fiq_compute_val_metrics(relative_val_dataset: FashionIQDataset, clip_model: 
     print(f"Distances range: min={distances.min().item()}, max={distances.max().item()}")
     sorted_indices = torch.argsort(distances, dim=-1).cpu()
     sorted_index_names = np.array(index_names)[sorted_indices]
+
+    # save distances and sorted_index_names
+    rin_dir = os.path.join(args.dataset_path, "retrieved_index_names")
+    os.makedirs(
+        rin_dir, 
+        exist_ok=True)
+    np.save(os.path.join(rin_dir, f"{dress_type}_sorted_index_names.npy"), sorted_index_names)
+    np.save(os.path.join(rin_dir, f"{dress_type}_distances.npy"), distances.cpu().numpy())
 
     # Check if the target names are in the top 10 and top 50
     labels = torch.tensor(
