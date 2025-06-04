@@ -91,7 +91,7 @@ LLM-edit
 ### Captions Directory for step 3
 I put the all version caption data in FashionIQ_multi_opt_gpt35_5 directory
 ```
-srcFashionIQ_multi_opt_gpt35_5
+FashionIQ_multi_opt_gpt35_5
 | -- captions
     |-- cap.dress.val.json
     |-- cap.shirt.val.json
@@ -387,8 +387,26 @@ multi_opt: ['the umojm logo t shirt', 'the only utah map t shirt', 'the black sh
 multi_gpt_opt: ['The Umojm logo t-shirt is black with a red skeleton design.', 'a black t-shirt with a skeleton, only Utah map, is red.', 'a black shirt with a red skeleton print.', 'a black t-shirt with a skeleton and red text "the only winning move is not to play"', 'a black shirt with a red skeleton that says "only the unique is moving not to play"', 'a black t-shirt with a red map and world image on it.', 'The shirt for a band called the ultimate mod movement, it has a map of the world, and the skeleton is red.']
 captions: ['The shirt is black with a skeleton.', ' is red']
 
+NEW
+- Captions: I update the captions result from step 2 for captions_num=15
+- Captions_{DRESS}.text: for images database caption text
 
-
+```
+FashionIQ_multi_opt_gpt35_5
+| -- captions -> step 3 load captions
+    |-- cap.dress.val.json
+    |-- cap.shirt.val.json
+    |-- cap.toptee.val.json
+| -- caption_gpt_15     -> gpt3.5, caption_num=15
+| -- caption_gpt3.5_v1  -> gpt3.5, caption_num=5
+| -- caption_Llama2     -> Llama2-7b, , caption_num=5
+| -- caption_Llama2_15  -> Llama2-7b, , caption_num=5
+| -- image_splits
+| -- captions_dress.text
+| -- captions_shirt.text
+| -- captions_toptee.text
+| -- images
+```
 
 # Citatiion
 ```
