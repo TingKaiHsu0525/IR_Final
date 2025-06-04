@@ -6,6 +6,6 @@ python src/semantic_editing_search_v1.py \
   --gpt_version           gpt-3.5\
   --caption_type          opt \
   --use_momentum_strategy True \
-  --pos_factor            0.5 \
-  --neg_factor            0 \
+  --pos_factor            0.8 \
+  --neg_factor            0.0 \
   --nums_caption          7

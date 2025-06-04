@@ -312,8 +312,79 @@ NEW
 - Step 3: add compare image database captions text feature with edited caption features
 - Gpt captions_num = 15 result
 
-### TODO
-Visualization pipeline that will take in the saved `distances` and `sorted_index_names`.
+## 2025/06/04
+### Updates
+The updates are mainly in `src/semantic_editing_search_v1.py`. The main function will additionally create an `output` directory storing extra experiment outputs. Each running experiment will create a directory named by the running datetime under `output`. Such a directory stores 
+- `args.json` containing experiment input arguments for reproducibility.
+- `retrieved_index_names` containing the retrieved image index names and the retrieved images' distance matrices. They are used for visualization. 
+
+The updates above for the main loop mainly adds things and do not modify existing code, so don't worry that it would change the logic of the main loop.
+
+Running the python script stays the same, that is,
+```
+python src/semantic_editing_search_v1.py <ARGS>
+```
+
+## Visualization
+A method `visualize` in `src/semantic_editing_search_v1.py` is added to visualize the retrieved images in an experiment. This is useful for demos and seeing where the retrieval can be improved. 
+
+To use it, comment out `main()` under the `if __name__ == "__main__` block and write
+```
+visualize(experiment_output_dir, item_idx, dress_type)
+```
+where 
+- `experiment_output_dir` is a directory under, for example, `FashionIQ_cap_num_15_split1/outputs`, that stores the `retrieved_index_names` and `args.json` of a previous experiment. 
+- `item_idx` is the index of a piece of data in the relative FashionIQDataset specified in the experiment's dataset_path argument. For example, if you want to see the inputs, ground truth image, and the retrieved images of the first input, set `item_idx` to be 0.
+- `dress_type`: dress, shirt, or toptee. 
+
+Then, as usual, run
+```
+python src/semantic_editing_search_v1.py <ARGS>
+```
+Note that `<ARGS>` must be the same as the args of the experiment. I enforce that the two args must be the same when running `visualize`, meaning that an exception will be raised if they are not the same. For reasons why, see comments in the code.
+
+## Visualization Results
+Han-Yuan ran an experiment using the captions in `FashionIQ_cap_num_15_split1` and the arguments
+```
+{
+    "dataset": "fashioniq",
+    "dataset_path": "FashionIQ_cap_num_15_split1",
+    "model_type": "SEIZE-G",
+    "gpt_version": "gpt-3.5",
+    "submission_name": "cap_num_15_split1",
+    "caption_type": "opt",
+    "nums_caption": 7,
+    "use_momentum_strategy": true,
+    "pos_factor": 0.13,
+    "neg_factor": 2.1,
+}
+```
+Then, he used `visualize` to visualize the retrieved images given by that experiment. Here are his comments on a few visualization cases:
+
+### item_idx=0, dress_type='shirt'
+Relative Captions: 'is solid white', 'is a lighter color'
+
+Problem: relative captions suggest the style should be solid white AND a lighter color. The gpt-generated captions seem to use OR instead of AND, so the gpt-generated captions include "a young man is wearing a light blue shirt" and "a young man is posing with a light gray tee shirt on". So the retrieved images contain non-white color
+
+### item_idx=2000, dress_type='shirt'
+Relative Captions: ' is a shirt and has a dotted pattern', 'has more white and wider checks'
+
+The target image does not seem to have dotted patterns?
+
+### item_idx=2001, dress_type='shirt'
+relative_captions: 'is a white long sleeved shirt', 'is solid white in color'
+
+Too many irrelevant information in generated captions: on a skateboard, holding a tennis racket.
+
+Top retrieved images are not of the texture of a shirt. The gpt-generated captions do have the word "shirt" though, so is it the CLIP embedding's problem?
+
+### item_idx=1000, dress_type='shirt'
+relative_captions: ['The shirt is black with a skeleton.', ' is red']
+multi_opt: ['the umojm logo t shirt', 'the only utah map t shirt', 'the black shirt with white print, with an image of a map of the world', 'a t - shirt with the words "the only world movement is not to play"', 'a black shirt that says only the unique is moving not to play', 'an image of a t - shirt with an image of a map and the world', 'the shirt for a band called the ultimate mod movement, it has a map of the world']
+multi_gpt_opt: ['The Umojm logo t-shirt is black with a red skeleton design.', 'a black t-shirt with a skeleton, only Utah map, is red.', 'a black shirt with a red skeleton print.', 'a black t-shirt with a skeleton and red text "the only winning move is not to play"', 'a black shirt with a red skeleton that says "only the unique is moving not to play"', 'a black t-shirt with a red map and world image on it.', 'The shirt for a band called the ultimate mod movement, it has a map of the world, and the skeleton is red.']
+captions: ['The shirt is black with a skeleton.', ' is red']
+
+
 
 
 # Citatiion

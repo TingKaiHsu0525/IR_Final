@@ -691,10 +691,7 @@ def fiq_compute_val_metrics(relative_val_dataset: FashionIQDataset, clip_model: 
     sorted_index_names = np.array(index_names)[sorted_indices]
 
     # save distances and sorted_index_names
-    rin_dir = os.path.join(args.dataset_path, "retrieved_index_names")
-    os.makedirs(
-        rin_dir, 
-        exist_ok=True)
+    rin_dir = os.path.join(args.output_dir, "retrieved_index_names")
     np.save(os.path.join(rin_dir, f"{dress_type}_sorted_index_names.npy"), sorted_index_names)
     np.save(os.path.join(rin_dir, f"{dress_type}_distances.npy"), distances.cpu().numpy())
 
@@ -805,9 +802,9 @@ def show_topk_grid(dataset_path: Path,
     Display the top_k retrieved images in a grid, ordered by increasing distance.
     
     Args:
-        dataset_path: Path to the FashionIQ root (must contain an 'images/' subfolder).
+        dataset_path: Path to a FashionIQ root (must contain an 'images/' subfolder).
         sorted_index_names: 1D array of all index_names sorted by distance ascending.
-        distances: 1D tensor of distances aligned with sorted_index_names.
+        distances: 1D tensor of distances.
         top_k: how many of the top items to show.
         ncols: how many columns in the grid.
         img_ext: file extension of your images (e.g. ".png" or ".jpg").
@@ -836,29 +833,52 @@ def show_topk_grid(dataset_path: Path,
     plt.show()
 
 
-def visualize(item_idx, dress_type):
-    if args.model_type in ['SEIZE-B', 'SEIZE-L', 'SEIZE-H', 'SEIZE-g', 'SEIZE-G', 'SEIZE-CoCa-B', 'SEIZE-CoCa-L']:
+def visualize(output_dir, item_idx, dress_type):
+    with open(os.path.join(output_dir, "args.json"), 'r') as f:
+        exp_args = json.load(f)
+    
+    if exp_args["model_type"] in ['SEIZE-B', 'SEIZE-L', 'SEIZE-H', 'SEIZE-g', 'SEIZE-G', 'SEIZE-CoCa-B', 'SEIZE-CoCa-L']:
         preprocess = targetpad_transform(1.25, 224)
     else:
         raise ValueError("Model type not supported")
+    
+    dataset_path = Path(exp_args["dataset_path"])
 
-    dataset_path = Path(args.dataset_path)
+    # Note that FashionIQDataset still depends on args
+    # To ensure that FashionIQDataset gives the right data
+    # We need to make sure that args match exp_args
+    arg_mismatch_msg = "The arguments of standard input do not match \
+the arguments specified in the experiment checkpoint \
+(the args.json file in the experiement checkpoint directory).\n\
+Please make sure they match, or the visualization results may be incorrect."
+    for k, v in vars(args).items():
+        if not (k in exp_args and exp_args[k] == v):
+            arg_mismatch_msg += f"\nAt argument {k}: {v} (standard input) != {exp_args[k]} (experiment)."
+            raise ValueError(
+                arg_mismatch_msg
+            )
 
+    # Note: FashionIQDataset depends on args
     relative_val_dataset = FashionIQDataset(
-        args.dataset_path, 'val', [dress_type], 'relative', preprocess)
+        exp_args["dataset_path"], 'val', [dress_type], 'relative', preprocess)
     
     item = relative_val_dataset[item_idx]
 
     print(f"dataset item:")
-    print(item)
+    for k, v in item.items():
+        if "image" in k:
+            continue
+        print(f"{k}: {v}")
 
     # print(f"Input editing caption: {item['relative_captions']}")
     # print(f"multi_opt (caption for reference image): {item['multi_opt']}")
     # print(f"multi_gpt (caption for reference image): {item['multi_gpt']}")
 
-    # Show reference image and ground truth target image
-    ref_img = PIL.Image.open(dataset_path / "images" / (item["reference_name"] + ".png"))
-    target_img = PIL.Image.open(dataset_path / "images" / (item["target_name"] + ".png"))
+    # Show reference image and ground truth target image (not preprocessed)
+    ref_img = PIL.Image.open(
+        dataset_path / "images" / (item["reference_name"] + ".png"))
+    target_img = PIL.Image.open(
+        dataset_path / "images" / (item["target_name"] + ".png"))
     
     fig, (ax1, ax2) = plt.subplots(1, 2)
     ax1.imshow(np.array(ref_img)); ax1.axis("off"); ax1.set_title("Reference Image")
@@ -869,14 +889,20 @@ def visualize(item_idx, dress_type):
 
     # Show retrieved images
     distances = np.load(
-        dataset_path / "retrieved_index_names" / f"{dress_type}_distances.npy")
+        Path(output_dir) / "retrieved_index_names" / f"{dress_type}_distances.npy")
     sorted_index_names = np.load(
-        dataset_path / "retrieved_index_names" / f"{dress_type}_sorted_index_names.npy")
+        Path(output_dir) / "retrieved_index_names" / f"{dress_type}_sorted_index_names.npy")
 
     # Check if sorted_index_names and distances have 1-1 correspondence with
     # data in relative_val_dataset
     assert sorted_index_names.shape[0] == len(relative_val_dataset)
     assert distances.shape[0] == len(relative_val_dataset)
+
+    # Find where target_name is at
+    target_idx = np.asarray(
+        sorted_index_names[item_idx] == item["target_name"]
+    ).nonzero()[0][0]
+    print(f"Target found at index {target_idx} in sorted_index_names.")
 
     show_topk_grid(
         dataset_path,
@@ -901,6 +927,22 @@ def main():
     folder_path = f'feature/{args.dataset}/{args.model_type}/'
     if not os.path.exists(folder_path):
         os.makedirs(folder_path)
+
+    # set up experiment output directory
+    outputs_root = os.path.join(args.dataset_path, "outputs")
+    if not os.path.exists(outputs_root):
+        os.makedirs(outputs_root)
+    # name output by datetime
+    from datetime import datetime
+    output_dir = os.path.join(outputs_root, datetime.now().strftime('%Y%m%d_%H%M%S'))
+    os.makedirs(output_dir, exist_ok=False)
+    args.output_dir = output_dir
+
+    # Set up output_dir, which includes 
+    # saving args for record keeping and reproducibility
+    with open(os.path.join(output_dir, "args.json"), "w") as f:
+        json.dump(vars(args), f, indent=4)
+    os.makedirs(os.path.join(output_dir, "retrieved_index_names"))
 
     if args.dataset == 'cirr':
         cirr_generate_test_submission_file(args.dataset_path, clip_model_name, preprocess, args.submission_name)
@@ -937,5 +979,7 @@ def main():
 
 
 if __name__ == '__main__':
-    #main()
-    visualize(0, 'dress')
+    main()
+    
+    # output_dir = "FashionIQ_cap_num_15_split1/outputs/20250604_115111"
+    # visualize(output_dir, item_idx=1, dress_type='shirt')

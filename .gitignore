@@ -6,4 +6,5 @@ FashionIQ/images
 *.pt
 feature/*
 
-retrieved_index_names
+dump
+outputs
