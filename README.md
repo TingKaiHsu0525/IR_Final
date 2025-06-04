@@ -1,5 +1,7 @@
 # IR Final Project
 
+![Framework](images/framework.png)
+
 ### Dataset 
 1. Fashion-iq: https://disk.yandex.com/d/Z2E54WCwvrQA3A
 
@@ -102,7 +104,7 @@ srcFashionIQ_multi_opt_gpt35_5
 
 ### Ablation Study Results (FashionIQ Recall)
 
-#### LLM: LLama2-7B
+#### LLM: LLama2-7B captions-num=5
 | Category | Model | pos_factor | neg_factor | add_original| Recall@10 (%) | Recall@50(%) |
 |----|---|------|---|---|--------|--------|
 | Shirt | SEIZE-g | 0.5 | 0 | ✔️ | 33.32 | 52.60 |
@@ -136,7 +138,7 @@ srcFashionIQ_multi_opt_gpt35_5
 | **Average** | | | | **31.79** | **51.59** |
 
 
-#### LLM: GPT3.5
+#### LLM: GPT3.5 captions-num=5
 | Category | Model | pos_factor | neg_factor | add_original| Recall@10 (%) | Recall@50(%) |
 |----|---|------|---|---|--------|--------|
 | Shirt | SEIZE-g | 0.5 | 0 | ❌ |  |  |
@@ -153,8 +155,144 @@ srcFashionIQ_multi_opt_gpt35_5
 | Dress | SEIZE-g | default  | default  | ❌ | 30.59 | 53.40 |
 | Toptee | SEIZE-g | default  | default  | ❌ |  |  |
 
+-------------------------------------------
+**NEW Update**
 
-reference : https://github.com/yzy-bupt/SEIZE
+#### LLM: LLama2-7B captions-num=15
+| Category | Model | pos_factor | neg_factor | add_original| Recall@10 (%) | Recall@50(%) |
+|----|---|------|---|---|--------|--------|
+| Shirt | SEIZE-g | 0.5 | 0 | ✔️ | 33.42 | 53.19 |
+| Dress | SEIZE-g | 0.5 | 0 | ✔️ | 28.16 | 50.47 |
+| Toptee | SEIZE-g | 0.5 | 0 | ✔️ | 37.17 | 59.77 |
+| **Average** | | | | **32.92** | **54.48** |
+| | | | | | | |
+| Shirt | SEIZE-g | 0.5 | 0 | ❌ | 34.30 | 54.02 |
+| Dress | SEIZE-g | 0.5 | 0 | ❌ | 27.37 | 49.63 |
+| Toptee | SEIZE-g | 0.5 | 0 | ❌ | 37.17 | 59.20 |
+| **Average** | | | | **32.95** | **54.29** |
+| | | | | | | |
+| Shirt | SEIZE-g | default | default | ❌ | 34.54 | 53.73 |
+| Dress | SEIZE-g | default | default | ❌ | 27.37 | 48.88 |
+| Toptee | SEIZE-g | default | default | ❌ | 36.87 | 58.13 |
+| **Average** | | | | **32.93** | **53.58** |
+| | | | | | | |
+| Shirt | SEIZE-G | default | default | ❌ | 35.72 | 54.37 |
+| Dress | SEIZE-G | default | default | ❌ | 26.77 | 47.89 |
+| Toptee | SEIZE-G | default | default | ❌ | 37.63 | 59.15 |
+| **Average** | | | | **33.38** | **53.80** |
+
+
+#### LLM: GPT3.5 captions-num=15
+
+config: alpha=0.8, beta=0.25
+
+| Category | Model | pos_factor | neg_factor | add_original| Recall@10 (%) | Recall@50(%) |
+|----|---|------|---|---|--------|--------|
+| Shirt | SEIZE-G | default | default | ❌ | 40.38 | 58.54 |
+| Dress | SEIZE-G | default | default | ❌ | 31.73 | 54.73 |
+| Toptee | SEIZE-G | default | default | ❌ | 40.54 | 63.03 |
+| **Average** | | | | | **37.55** | **58.77** |
+| | | | | | | |
+| Shirt | SEIZE-G | default | default | ✔️ | 40.38 | 58.00 |
+| Dress | SEIZE-G | default | default | ✔️ | 31.83 | 55.13 |
+| Toptee | SEIZE-G | default | default | ✔️ | 41.31 | 64.20 |
+| **Average** | | | | | **37.84** | **59.21** |
+| | | | | | | |
+| Shirt | SEIZE-G | 0.5 | 0 | ❌ | 40.53 | 59.52 |
+| Dress | SEIZE-G | 0.5 | 0 | ❌ | 32.47 | 55.78 |
+| Toptee | SEIZE-G | 0.5 | 0 | ❌ | 40.95 | 64.51 |
+| **Average** | | | | | **37.98** | **59.93** |
+| | | | | | | |
+| Shirt | SEIZE-G | 0.5 | 0 | ✔️ | 40.09 | 59.13 |
+| Dress | SEIZE-G | 0.5 | 0 | ✔️ | 32.42 | 55.83 |
+| Toptee | SEIZE-G | 0.5 | 0 | ✔️ | 41.05 | 64.92 |
+| **Average** | | | | | **37.85** | **59.96** |
+| | | | | | | |
+| Shirt | SEIZE-g | default | default | ❌ | 38.22 | 57.51 |
+| Dress | SEIZE-g | default | default | ❌ | 31.43 | 54.93 |
+| Toptee | SEIZE-g | default | default | ❌ | 40.49 | 62.11 |
+| **Average** | | | | | **36.72** | **58.18** |
+| | | | | | | |
+| Shirt | SEIZE-g | default | default | ✔️ | 39.01 | 57.61 |
+| Dress | SEIZE-g | default | default | ✔️ | 31.48 | 55.53 |
+| Toptee | SEIZE-g | default | default | ✔️ | 40.64 | 63.03 |
+| **Average** | | | | | **37.04** | **58.72** |
+
+| Category | Model | pos_factor | neg_factor | add_original| text_feature |Recall@10 (%) | Recall@50(%) |
+|----|---|------|---|---|--|------|--------|
+| Shirt | SEIZE-G | default | default | ✔️ | ❌ | 40.38 | 58.00 |
+| Dress | SEIZE-G | default | default | ✔️ | ❌ | 31.83 | 55.13 |
+| Toptee | SEIZE-G | default | default | ✔️ | ❌ |41.31 | 64.30 |
+| **Average** | | | | | | **37.84** | **59.14** |
+| | | | | | | | |
+| Shirt | SEIZE-G | default | default | ✔️ | ✔️ | 40.73 | 58.34 |
+| Dress | SEIZE-G | default | default | ✔️ | ✔️ | 31.68 | 55.13 |
+| Toptee | SEIZE-G | default | default | ✔️ | ✔️ |42.12 | 64.25 |
+| **Average** | | | | | | **38.18** | **59.24** |
+| | | | | | | | |
+| Shirt | SEIZE-G | 0.5 | 0 | ✔️ | ❌ | 40.09 | 59.13 |
+| Dress | SEIZE-G | 0.5 | 0 | ✔️ | ❌ | 32.42 | 55.83 |
+| Toptee | SEIZE-G | 0.5 | 0 | ✔️ | ❌ |41.05 | 64.92 |
+| **Average** | | | | | | **37.85** | **59.96** |
+| | | | | | | | |
+| Shirt | SEIZE-G | 0.5 | 0 | ✔️ | ✔️ | 40.28 | 59.13 |
+| Dress | SEIZE-G | 0.5 | 0 | ✔️ | ✔️ | 32.23 | 56.07 |
+| Toptee | SEIZE-G | 0.5 | 0 | ✔️ | ✔️ |41.56 | 65.27 |
+| **Average** | | | | | | **38.02** | **60.16** |
+
+### Hyperparamter Analysis
+
+- Hyperparmeter define:
+
+        alpha -> add_original hyperparameter
+        beta  -> text_feature hyperparameter
+
+Analysis by GPT caption_num=15, defalut pos_fator & neg factor, model=SEIZE-G
+
+#### Recall@10(%)
+|  Alpha  |   Shirt   |   Dress   |   Toptee  |  Average  |
+| :-----: | :-------: | :-------: | :-------: | :-------: |
+|   0.2   |   40.38   | **32.03** |   40.85   |   37.75   |
+|   0.3   | **40.53** |   31.98   |   40.90   |   37.80   |
+|   0.4   |   40.48   |   31.88   |   41.10   |   37.82   |
+|   0.5   |   40.43   |   31.93   |   41.15   |   37.84   |
+|   0.6   |   40.38   |   31.73   |   41.15   |   37.76   |
+|   0.7   |   40.33   |   31.88   |   41.41   | **37.87** |
+| **0.8** |   40.38   |   31.83   | **41.31** |   37.84   |
+|   0.9   |   40.24   |   31.68   |   41.10   |   37.67   |
+#### Recall@50(%)
+|  Alpha  |   Shirt   |   Dress   |   Toptee  |  Average  |
+| :-----: | :-------: | :-------: | :-------: | :-------: |
+|   0.2   |   58.39   |   54.98   |   63.44   |   58.94   |
+|   0.3   | **58.49** |   55.03   |   63.74   |   59.09   |
+|   0.4   |   58.39   |   55.03   |   63.90   |   59.11   |
+|   0.5   |   58.24   |   55.03   |   63.90   |   59.06   |
+|   0.6   |   58.15   |   55.03   |   64.20   |   59.13   |
+|   0.7   |   58.10   |   54.98   |   64.25   |   59.11   |
+| **0.8** |   58.00   |   55.13   | **64.30** |   59.14   |
+|   0.9   |   58.15   | **55.28** |   64.20   | **59.21** |
+
+Analysis by GPT caption_num=15, defalut pos_fator & neg factor, model=SEIZE-G, alpha=0.8
+
+#### Recall@10(%)
+|   Beta   |   Shirt   |   Dress   |   Toptee  |  Average  |
+| :------: | :-------: | :-------: | :-------: | :-------: |
+|   0.1    |   40.33   | **32.03** |   41.71   |   38.02   |
+|   0.15   |   40.28   |   31.98   |   41.71   |   37.99   |
+|   0.2    |   40.43   |   31.68   |   41.97   |   38.03   |
+| **0.25** | **40.73** |   31.68   | **42.12** | **38.18** |
+|   0.3    |   40.48   |   31.63   |   41.87   |   37.99   |
+|   0.4    |   40.24   |   31.48   |   41.92   |   37.88   |
+
+#### Recall@50(%)
+|   Beta   |   Shirt   |   Dress   |   Toptee  |  Average  |
+| :------: | :-------: | :-------: | :-------: | :-------: |
+|   0.1    |   58.29   |   55.38   |   64.35   | **59.34** |
+|   0.15   |   58.39   |   55.13   |   64.41   |   59.31   |
+|   0.2    | **58.39** |   54.93   | **64.41** |   59.24   |
+| **0.25** |   58.34   | **55.13** |   64.25   |   59.24   |
+|   0.3    |   58.10   |   54.98   |   64.20   |   59.09   |
+|   0.4    |   58.29   |   54.93   |   63.95   |   59.06   |
 
 ## 2025/06/03
 ### Updates
@@ -168,6 +306,23 @@ In `src/semantic_editing_search_v1.py`,
 In `src/utils.py`,
 - Added `sample_dataset` to create a sample of dataset json. This is useful when one wants to test something with the dataset quickly but does not want to wait for running through the whole dataset. 
 
+
+NEW
+- Framework picture
+- Step 3: add compare image database captions text feature with edited caption features
+- Gpt captions_num = 15 result
+
 ### TODO
 Visualization pipeline that will take in the saved `distances` and `sorted_index_names`.
 
+
+# Citatiion
+```
+@inproceedings{yang2024semantic,
+  title={Semantic Editing Increment Benefits Zero-Shot Composed Image Retrieval},
+  author={Yang, Zhenyu and Qian, Shengsheng and Xue, Dizhan and Wu, Jiahong and Yang, Fan and Dong, Weiming and Xu, Changsheng},
+  booktitle={Proceedings of the 32nd ACM International Conference on Multimedia},
+  pages={1245--1254},
+  year={2024}
+}
+```
