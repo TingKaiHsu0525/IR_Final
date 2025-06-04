@@ -169,5 +169,5 @@ In `src/utils.py`,
 - Added `sample_dataset` to create a sample of dataset json. This is useful when one wants to test something with the dataset quickly but does not want to wait for running through the whole dataset. 
 
 ### TODO
-Visualization pipeline that will take in the saved `distances` and `sorted_index_names`. 
+Visualization pipeline that will take in the saved `distances` and `sorted_index_names`.
 
