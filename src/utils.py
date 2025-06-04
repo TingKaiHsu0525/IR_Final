@@ -13,6 +13,19 @@ from torchvision.transforms import InterpolationMode
 import torchvision.transforms.functional as FT
 import PIL
 
+import open_clip
+
+name2model = {
+    'SEIZE-B':'ViT-B-32',
+    'SEIZE-L':'ViT-L-14',
+    'SEIZE-H':'ViT-H-14',
+    'SEIZE-g':'ViT-g-14',
+    'SEIZE-G':'ViT-bigG-14',
+    'SEIZE-CoCa-B':'coca_ViT-B-32',
+    'SEIZE-CoCa-L':'coca_ViT-L-14'
+}
+
+
 if torch.cuda.is_available():
     device = torch.device("cuda")
     dtype = torch.float16
@@ -68,6 +81,54 @@ def extract_image_features(dataset: Dataset, clip_model: CLIP, batch_size: Optio
         torch.save(index_features, index_features_path)
     return index_features, index_names
 
+@torch.no_grad()
+def extract_text_features(dataset: Dataset, clip_model: CLIP, batch_size: Optional[int] = 32,
+                           num_workers: Optional[int] = 16, dress_type = None) -> Tuple[torch.Tensor, List[str]]:
+    """
+    Extracts text features from a dataset using a CLIP model.
+    """
+    # Create data loader
+    loader = DataLoader(dataset=dataset, batch_size=batch_size,
+                        num_workers=num_workers, pin_memory=True, collate_fn=collate_fn)
+
+    index_features = []
+    index_names = []
+    try:
+        print(f"extracting text features {dataset.__class__.__name__} - {dataset.split}")
+    except Exception as e:
+        pass
+
+    tokenizer = open_clip.get_tokenizer(name2model[args.model_type])
+
+    # Extract features
+    for batch in tqdm(loader):
+        texts = batch.get('text')
+        names = batch.get('text_name')
+        # if images is None:
+        #     images = batch.get('reference_image')
+        # if names is None:
+        #     names = batch.get('reference_name')
+
+        # texts = texts.to(device)
+        # with torch.no_grad():
+        tokenized_input_text = tokenizer(texts, context_length=77).to(device)
+        batch_features = clip_model.encode_text(tokenized_input_text)
+        index_features.append(batch_features)
+        index_names.extend(names)
+
+    index_features = torch.vstack(index_features)
+    if dress_type is None:
+        # np.save(f'feature/{args.dataset}/{args.model_type}/index_names.npy', index_names)
+        torch.save(index_features, f'feature/{args.dataset}/{args.model_type}/index_text_features.pt')
+    else:
+        dir_path = f'feature/{args.dataset}/{dress_type}/{args.model_type}'
+        if not os.path.exists(dir_path):
+            os.makedirs(dir_path)
+        # index_names_path = f'feature/{args.dataset}/{dress_type}/index_names.npy'
+        index_features_path = f'{dir_path}/index_text_features.pt'
+        # np.save(index_names_path, index_names)
+        torch.save(index_features, index_features_path)
+    return index_features, index_names
 
 
 PROJECT_ROOT = Path(__file__).absolute().parents[1].absolute()

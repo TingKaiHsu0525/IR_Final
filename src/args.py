@@ -22,6 +22,8 @@ class args_define():
     parser.add_argument("--pos_factor", type=float, default=0.13) # 5e-7 0.13 0.22 0.31 0.0005
     parser.add_argument("--neg_factor", type=float, default=2.1) # 5e-7 2.1 1.0 5.0 0.25 
     
+    parser.add_argument("--alpha", type=float, default=0.8, help="hyperparameter for the add original strategy")
+    parser.add_argument("--beta", type=float, default=0.2, help="hyperparameter for the text feature")
     args = parser.parse_args()
 
     
