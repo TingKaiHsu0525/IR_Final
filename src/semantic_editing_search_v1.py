@@ -17,6 +17,10 @@ from tqdm import tqdm
 from datasets import CIRRDataset, CIRCODataset, FashionIQDataset
 from utils import extract_image_features, device, collate_fn, PROJECT_ROOT, targetpad_transform
 
+import matplotlib.pyplot as plt
+import PIL.Image
+from pathlib import Path
+import math
 
 name2model = {
     'SEIZE-B':'ViT-B-32',
@@ -791,6 +795,95 @@ def fiq_generate_val_predictions(clip_model: CLIP, relative_val_dataset: Fashion
     predicted_features1 = torch.vstack(predicted_features_list1)
     return predicted_features, predicted_features1, target_names_list
 
+def show_topk_grid(dataset_path: Path,
+                   sorted_index_names: np.ndarray,
+                   distances: np.ndarray,
+                   top_k: int = 50,
+                   ncols: int = 10,
+                   img_ext: str = ".png"):
+    """
+    Display the top_k retrieved images in a grid, ordered by increasing distance.
+    
+    Args:
+        dataset_path: Path to the FashionIQ root (must contain an 'images/' subfolder).
+        sorted_index_names: 1D array of all index_names sorted by distance ascending.
+        distances: 1D tensor of distances aligned with sorted_index_names.
+        top_k: how many of the top items to show.
+        ncols: how many columns in the grid.
+        img_ext: file extension of your images (e.g. ".png" or ".jpg").
+    """
+    topk_names = sorted_index_names[:top_k]
+
+    sorted_indices = np.argsort(distances)[:top_k]
+    topk_dists = distances[sorted_indices]
+    
+    nrows = math.ceil(top_k / ncols)
+    fig, axes = plt.subplots(nrows, ncols, figsize=(ncols * 2, nrows * 2))
+    axes = axes.flatten()
+    
+    for i, (name, dist) in enumerate(zip(topk_names, topk_dists)):
+        img_path = dataset_path / "images" / (str(name) + img_ext)
+        img = PIL.Image.open(img_path)
+        axes[i].imshow(img)
+        axes[i].set_title(f"{dist:.4f}", fontsize=8)
+        axes[i].axis("off")
+    
+    # hide any leftover axes
+    for j in range(top_k, len(axes)):
+        axes[j].axis("off")
+    
+    plt.tight_layout()
+    plt.show()
+
+
+def visualize(item_idx, dress_type):
+    if args.model_type in ['SEIZE-B', 'SEIZE-L', 'SEIZE-H', 'SEIZE-g', 'SEIZE-G', 'SEIZE-CoCa-B', 'SEIZE-CoCa-L']:
+        preprocess = targetpad_transform(1.25, 224)
+    else:
+        raise ValueError("Model type not supported")
+
+    dataset_path = Path(args.dataset_path)
+
+    relative_val_dataset = FashionIQDataset(
+        args.dataset_path, 'val', [dress_type], 'relative', preprocess)
+    
+    item = relative_val_dataset[item_idx]
+
+    print(f"dataset item:")
+    print(item)
+
+    # print(f"Input editing caption: {item['relative_captions']}")
+    # print(f"multi_opt (caption for reference image): {item['multi_opt']}")
+    # print(f"multi_gpt (caption for reference image): {item['multi_gpt']}")
+
+    # Show reference image and ground truth target image
+    ref_img = PIL.Image.open(dataset_path / "images" / (item["reference_name"] + ".png"))
+    target_img = PIL.Image.open(dataset_path / "images" / (item["target_name"] + ".png"))
+    
+    fig, (ax1, ax2) = plt.subplots(1, 2)
+    ax1.imshow(np.array(ref_img)); ax1.axis("off"); ax1.set_title("Reference Image")
+    ax2.imshow(np.array(target_img)); ax2.axis("off"); ax2.set_title("Target Image")
+    
+    #plt.ion() 
+    plt.show()
+
+    # Show retrieved images
+    distances = np.load(
+        dataset_path / "retrieved_index_names" / f"{dress_type}_distances.npy")
+    sorted_index_names = np.load(
+        dataset_path / "retrieved_index_names" / f"{dress_type}_sorted_index_names.npy")
+
+    # Check if sorted_index_names and distances have 1-1 correspondence with
+    # data in relative_val_dataset
+    assert sorted_index_names.shape[0] == len(relative_val_dataset)
+    assert distances.shape[0] == len(relative_val_dataset)
+
+    show_topk_grid(
+        dataset_path,
+        sorted_index_names[item_idx],
+        distances[item_idx]
+    )
+
 
 
 args = args_define.args
@@ -844,4 +937,5 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    #main()
+    visualize(0, 'dress')
