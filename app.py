@@ -141,10 +141,11 @@ def create_app(OUTPUT_DIR: Path) -> Flask:
 
         # 7. Pick top_k (we’ll use 3)
         top_k = 3
-        sorted_dists_for_row = distances[item_idx]
-        sorted_positions = np.argsort(sorted_dists_for_row)[:top_k]
-        topk_names = [row_names[pos] for pos in sorted_positions]
-        topk_dists = [float(sorted_dists_for_row[pos]) for pos in sorted_positions]
+        dists_row = distances[item_idx]
+        sorted_indices = np.argsort(dists_row)[:top_k]
+        topk_names = [str(row_names[i]) for i in range(top_k)]
+        topk_dists = [float(dists_row[i]) for i in sorted_indices]
+        #dists_row[sorted_indices].tolist()
 
         # 8. Construct URLs for images via a custom route
         #    We’ll create a route @app.route("/images/<filename>")
@@ -167,7 +168,7 @@ def create_app(OUTPUT_DIR: Path) -> Flask:
             "item_fields": item_fields,      # list of (key, value)
             "input_image_url": input_image_url,
             "ground_truth_url": gt_image_url,
-            "ground_truth_rank": rank_idx,
+            "ground_truth_rank": rank_idx + 1, # 1-based
             "topk": topk_list                # list of dicts with rank, name, distance, url
         }
 
@@ -188,11 +189,13 @@ def create_app(OUTPUT_DIR: Path) -> Flask:
     return app
 
 if __name__ == "__main__":
-    import argparse
-    parser = argparse.ArgumentParser(description="Run the FashionIQ visualization app.")
-    parser.add_argument("--output_dir", type=str, required=True,
-                        help="Path to the experiment checkpoint folder (must contain args.json, retrieved_index_names).")
-    args = parser.parse_args()
+    # import argparse
+    # parser = argparse.ArgumentParser()
+    # parser.add_argument("--output_dir", type=str, required=True, help="Path to the experiment output directory")
+    # args = parser.parse_args()
+
+    from args import args_define
+    args = args_define.args
 
     app = create_app(Path(args.output_dir))
 

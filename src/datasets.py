@@ -7,27 +7,7 @@ import PIL.Image
 from torch.utils.data import Dataset
 from args import args_define
 
-import sys
-if sys.argv[0].endswith('app.py'):
-    tag = "datasets.py"
-    print(f"[{tag}] Running app.py")
-    print(f"[{tag}] Replacing args to experiment args to ensure correct reproducibility")
-    
-    import argparse
-    args = argparse.ArgumentParser().parse_args()
-    print(f"[{tag}] args before: {args}")
-    exp_args_path = Path(args.output_dir) / "args.json"
-    if not exp_args_path.exists():
-        raise FileNotFoundError(f"[{tag}] Cannot find args.json at {exp_args_path}")
-
-    with open(exp_args_path, "r") as f:
-        exp_args = json.load(f)
-    
-    args = argparse.Namespace(**exp_args)
-    print(f"[{tag}] args after: {args}")
-else:
-    print("[utils.py] NOT running app.py")
-    args = args_define.args
+args = args_define.args
 
 class FashionIQDataset(Dataset):
     """

@@ -1,0 +1,12 @@
+python app.py \
+    --dataset "fashioniq" \
+    --dataset_path "FashionIQ_cap_num_15_split1" \
+    --model_type "SEIZE-G" \
+    --gpt_version "gpt-3.5" \
+    --submission_name "cap_num_15_split1" \
+    --caption_type "opt" \
+    --nums_caption 7 \
+    --use_momentum_strategy true \
+    --pos_factor 0.8 \
+    --neg_factor 0.0 \
+    --output_dir "FashionIQ_cap_num_15_split1/outputs/20250604_154326"

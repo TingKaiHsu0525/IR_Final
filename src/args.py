@@ -21,6 +21,7 @@ class args_define():
     parser.add_argument("--use_momentum_strategy", type=bool, default=True)
     parser.add_argument("--pos_factor", type=float, default=0.13) # 5e-7 0.13 0.22 0.31 0.0005
     parser.add_argument("--neg_factor", type=float, default=2.1) # 5e-7 2.1 1.0 5.0 0.25 
+    parser.add_argument("--output_dir", type=str, required=False)
     
     args = parser.parse_args()
 
