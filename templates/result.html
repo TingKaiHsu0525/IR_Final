@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Visualization Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 24px;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 960px;
+            margin: auto;
+            background: white;
+            padding: 24px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+        .section {
+            margin-bottom: 24px;
+        }
+        .section h2 {
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 4px;
+        }
+        .item-fields {
+            margin-top: 8px;
+        }
+        .item-fields dt {
+            font-weight: 600;
+        }
+        .item-fields dd {
+            margin: 0 0 8px 16px;
+        }
+        .images-row {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .image-card {
+            margin: 8px;
+            text-align: center;
+        }
+        .image-card img {
+            max-height: 200px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .back-link {
+            margin-top: 16px;
+            display: block;
+            text-align: center;
+        }
+        .back-link a {
+            color: #007BFF;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Visualization Results</h1>
+
+        <!-- Section: Query Info -->
+        <div class="section">
+            <h2>Query Parameters</h2>
+            <p><strong>Item Index:</strong> {{ item_idx }}</p>
+            <p><strong>Dress Type:</strong> {{ dress_type }}</p>
+        </div>
+
+        <!-- Section: item.items() fields -->
+        <div class="section">
+            <h2>Dataset Item Details</h2>
+            <dl class="item-fields">
+                {% for key, value in item_fields %}
+                <dt>{{ key }}</dt>
+                <dd>{{ value }}</dd>
+                {% endfor %}
+            </dl>
+        </div>
+
+        <!-- Section: Input (Reference) Image -->
+        <div class="section">
+            <h2>Input (Reference) Image</h2>
+            <div class="images-row">
+                <div class="image-card">
+                    <img src="{{ input_image_url }}" alt="Reference Image" />
+                    <div class="caption">Reference: {{ item_fields | selectattr('0','equalto','reference_name') | map(attribute='1') | first }}</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section: Top-K Retrieved Images -->
+        <div class="section">
+            <h2>Top {{ topk | length }} Retrieved Images</h2>
+            <div class="images-row">
+                {% for entry in topk %}
+                <div class="image-card">
+                    <img src="{{ entry.url }}" alt="Top {{ entry.rank }}" />
+                    <div class="caption">Rank {{ entry.rank }}<br/>Distance: {{ entry.distance }}</div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Section: Ground-Truth Image -->
+        <div class="section">
+            <h2>Ground-Truth Image</h2>
+            <div class="images-row">
+                <div class="image-card">
+                    <img src="{{ ground_truth_url }}" alt="Ground Truth" />
+                    <div class="caption">Rank in Retrieval: {{ ground_truth_rank }}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="back-link">
+            <a href="{{ url_for('index') }}">&larr; Back to Query Form</a>
+        </div>
+    </div>
+</body>
+</html>
