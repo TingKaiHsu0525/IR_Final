@@ -2,21 +2,13 @@
 
 ![Framework](images/framework.png)
 
-### Dataset 
+## Dataset 
 1. Fashion-iq: https://disk.yandex.com/d/Z2E54WCwvrQA3A
 
 reference: https://github.com/XiaoxiaoGuo/fashion-iq/issues/18
 
-### Modify
-    step 1:
-    NUM_CAPTION 15 -> 5
-    BLIP2_MODEL opt6.7b -> opt2.7b
 
-    step 3:
-    get reference_name list
-
-## 2025/05/21
-### Duplicate the experiment
+## Duplicate the experiment
 Run Step 1. and Step 2. as usual:
 ```
 python src/multi_caption generator_{circo/cirr/fashioniq}.py
@@ -54,6 +46,10 @@ To do Step 3, run
 ./run_sem.sh
 ```
 In the shell script, the `--dataset_path` argument should be `<directory_name_you_like>`.
+
+
+<details>
+<summary>📅 2025/05/28 </summary>
 
 ## 2025/05/28
 
@@ -296,6 +292,10 @@ Analysis by GPT caption_num=15, defalut pos_fator & neg factor, model=SEIZE-G, a
 |   0.3    |   58.10   |   54.98   |   64.56   |   59.21   |
 |   0.4    |   58.29   |   54.93   |   64.30   |   59.18   |
 
+</details>
+
+<details>
+<summary>📅 2025/06/03 </summary>
 
 ## 2025/06/03
 ### Updates
@@ -315,6 +315,11 @@ NEW
 - Step 3: add compare image database captions text feature with edited caption features
 - Gpt captions_num = 15 result
 
+</details>
+
+<details>
+<summary>📅 2025/06/04 </summary>
+
 ## 2025/06/04
 ### Updates
 The updates are mainly in `src/semantic_editing_search_v1.py`. The main function will additionally create an `output` directory storing extra experiment outputs. Each running experiment will create a directory named by the running datetime under `output`. Such a directory stores 
@@ -327,6 +332,7 @@ Running the python script stays the same, that is,
 ```
 python src/semantic_editing_search_v1.py <ARGS>
 ```
+</details>
 
 ## Visualization
 A method `visualize` in `src/semantic_editing_search_v1.py` is added to visualize the retrieved images in an experiment. This is useful for demos and seeing where the retrieval can be improved. 
@@ -389,7 +395,10 @@ captions: ['The shirt is black with a skeleton.', ' is red']
 
 NEW
 - Captions: I update the captions result from step 2 for captions_num=15
-- Captions_{DRESS}.text: for images database caption text
+- Captions_{DRESS}.text: for images database caption 
+text
+
+## Final Directory
 
 ```
 FashionIQ_multi_opt_gpt35_5
@@ -408,7 +417,34 @@ FashionIQ_multi_opt_gpt35_5
 | -- images
 ```
 
-# Citatiion
+# Reproduce
+Following the instruction to reproduce our result
+
+- Environment setup: \
+    Following the Installation in SEIZE for using LLM GPT
+    ```
+    conda create -n SEIZE -y python=3.9.20
+    conda activate SEIZE
+    conda install -y -c pytorch pytorch=1.11.0 torchvision=0.12.0
+    pip install -r requirements.txt
+    ```
+    To use LLaMA2-7B, you need to create another environment and set it up with Hugging Face.
+    ```
+    torch==2.7.0
+    torchaudio==2.7.0
+    torchvision==0.22.0
+    transformers==4.49.0
+    ```
+
+- Dataset:
+    Follow the -[Dataset part](#dataset) to Download the Fashioniq dataset
+
+- Run code: \
+    Follow the -[Instruction](#duplicate-the-experiment) and the directory shoud like [this](#final-directory) put the captions_{DRESS}.txt in directory edited captions in captions directory\
+    Read the -[Visualization part](#visualization) for visualize the result
+
+
+# Citation
 ```
 @inproceedings{yang2024semantic,
   title={Semantic Editing Increment Benefits Zero-Shot Composed Image Retrieval},
