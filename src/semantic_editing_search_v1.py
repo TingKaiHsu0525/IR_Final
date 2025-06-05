@@ -1006,7 +1006,7 @@ def main():
 
 
 if __name__ == '__main__':
-    #main()
+    main()
     
-    output_dir = "FashionIQ_cap_num_15_split1/outputs/20250604_154326"
-    visualize(output_dir, item_idx=5, dress_type='shirt')
+    # output_dir = "FashionIQ_cap_num_15_split1/outputs/20250604_154326"
+    # visualize(output_dir, item_idx=5, dress_type='shirt')
