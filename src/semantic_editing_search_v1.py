@@ -880,12 +880,12 @@ Please make sure they match, or the visualization results may be incorrect."
     target_img = PIL.Image.open(
         dataset_path / "images" / (item["target_name"] + ".png"))
     
-    fig, (ax1, ax2) = plt.subplots(1, 2)
-    ax1.imshow(np.array(ref_img)); ax1.axis("off"); ax1.set_title("Reference Image")
-    ax2.imshow(np.array(target_img)); ax2.axis("off"); ax2.set_title("Target Image")
+    # fig, (ax1, ax2) = plt.subplots(1, 2)
+    # ax1.imshow(np.array(ref_img)); ax1.axis("off"); ax1.set_title("Reference Image")
+    # ax2.imshow(np.array(target_img)); ax2.axis("off"); ax2.set_title("Target Image")
     
     #plt.ion() 
-    plt.show()
+    # plt.show()
 
     # Show retrieved images
     distances = np.load(
@@ -904,11 +904,38 @@ Please make sure they match, or the visualization results may be incorrect."
     ).nonzero()[0][0]
     print(f"Target found at index {target_idx} in sorted_index_names.")
 
-    show_topk_grid(
-        dataset_path,
-        sorted_index_names[item_idx],
-        distances[item_idx]
-    )
+    top_k = 3
+    ncols = 2 + top_k
+    fig, axes = plt.subplots(1, ncols, figsize=(ncols * 2, 2))
+    axes = axes.flatten()
+
+    axes[0].imshow(np.array(ref_img))
+    axes[0].axis("off")
+    axes[0].set_title("Input Image")
+
+    topk_names = sorted_index_names[item_idx, :top_k]
+    sorted_indices = np.argsort(distances[item_idx])[:top_k]
+    topk_dists = distances[item_idx, sorted_indices]
+
+    for i, (name, dist) in enumerate(zip(topk_names, topk_dists)):
+        img_path = dataset_path / "images" / (str(name) + ".png")
+        img = PIL.Image.open(img_path)
+        axes[i+1].imshow(np.array(img))
+        axes[i+1].axis("off")
+        axes[i+1].set_title(f"Top {i+1} (distance={dist:.4f})")
+
+    axes[1+top_k].imshow(np.array(target_img))
+    axes[1+top_k].axis("off")
+    axes[1+top_k].set_title(f"Ground Truth Image (top {target_idx})")
+
+    plt.tight_layout()
+    plt.show()
+
+    # show_topk_grid(
+    #     dataset_path,
+    #     sorted_index_names[item_idx],
+    #     distances[item_idx]
+    # )
 
 
 
@@ -979,7 +1006,7 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    #main()
     
-    # output_dir = "FashionIQ_cap_num_15_split1/outputs/20250604_115111"
-    # visualize(output_dir, item_idx=1, dress_type='shirt')
+    output_dir = "FashionIQ_cap_num_15_split1/outputs/20250604_154326"
+    visualize(output_dir, item_idx=5, dress_type='shirt')

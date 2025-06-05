@@ -1,11 +1,9 @@
 python src/semantic_editing_search_v1.py \
   --dataset               fashioniq \
-  --dataset_path          FashionIQ_cap_num_15_split1 \
+  --dataset_path          FashionIQ_multi_opt_gpt35_5 \
   --gpt_version           gpt-3.5 \
-  --submission_name       "cap_num_15_split1" \
+  --submission_name       "multi_opt_gpt35_5" \
   --gpt_version           gpt-3.5\
   --caption_type          opt \
   --use_momentum_strategy True \
-  --pos_factor            0.8 \
-  --neg_factor            0.0 \
-  --nums_caption          7
+  --nums_caption          5
