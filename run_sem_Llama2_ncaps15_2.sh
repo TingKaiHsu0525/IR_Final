@@ -7,6 +7,8 @@ python src/semantic_editing_search_v1.py \
  --caption_type         opt \
  --model_type           SEIZE-g \
  --use_momentum_strategy True \
+ --pos_factor           0.5 \
+ --neg_factor           0.0 \
  --alpha               0 \
  --beta                0 \
  --nums_caption         15
