@@ -5,5 +5,5 @@ python src/semantic_editing_search_v1.py \
   --submission_name       "multi_opt_gpt35_5" \
   --gpt_version           gpt-3.5\
   --caption_type          opt \
-  --use_momentum_strategy True \
-  --nums_caption          5
+  --model_type            SEIZE-G \
+  --use_momentum_strategy True

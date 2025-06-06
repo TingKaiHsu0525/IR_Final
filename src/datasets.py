@@ -43,7 +43,7 @@ class FashionIQDataset(Dataset):
         self.no_duplicates = no_duplicates
 
         # Validate the inputs
-        if mode not in ['relative', 'classic']:
+        if mode not in ['relative', 'classic', 'text']:
             raise ValueError("mode should be in ['relative', 'classic']")
         if split not in ['test', 'train', 'val']:
             raise ValueError("split should be in ['test', 'train', 'val']")
@@ -126,6 +126,18 @@ class FashionIQDataset(Dataset):
                     'image_name': image_name
                 }
 
+            elif self.mode == 'text':
+                text_name = self.image_names[index]
+                text_path = self.dataset_path / f"captions_{self.dress_types[0]}.txt"
+                with open(text_path, 'r') as f:
+                    text = f.readlines()[index].strip()
+
+                return {
+                    'text': text,
+                    'text_name': text_name
+                }
+
+
             else:
                 raise ValueError("mode should be in ['relative', 'classic']")
         except Exception as e:
@@ -135,6 +147,8 @@ class FashionIQDataset(Dataset):
         if self.mode == 'relative':
             return len(self.triplets)
         elif self.mode == 'classic':
+            return len(self.image_names)
+        elif self.mode == 'text':
             return len(self.image_names)
         else:
             raise ValueError("mode should be in ['relative', 'classic']")

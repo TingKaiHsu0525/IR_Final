@@ -16,6 +16,7 @@ from tqdm import tqdm
 
 from datasets import CIRRDataset, CIRCODataset, FashionIQDataset
 from utils import extract_image_features, device, collate_fn, PROJECT_ROOT, targetpad_transform
+from utils import extract_text_features
 
 import matplotlib.pyplot as plt
 import PIL.Image
@@ -409,179 +410,6 @@ def circo_generate_test_dict(relative_test_dataset: CIRCODataset, clip_model: CL
     return queryid_to_retrieved_images
 
 
-# original
-# @torch.no_grad()
-# def fiq_val_retrieval(dataset_path: str, dress_type: str, clip_model_name: str, ref_names_list: List[str],
-#                       pseudo_tokens: torch.Tensor, preprocess: callable) -> Dict[str, float]:
-#     """
-#     Compute the retrieval metrics on the FashionIQ validation set given the pseudo tokens and the reference names
-#     """
-#     # Load the model
-#     clip_model, _, _ = open_clip.create_model_and_transforms(clip_model_name, device=device, pretrained=pretrained[clip_model_name])
-#     clip_model = clip_model.float().eval().requires_grad_(False)
-
-#     # Extract the index features
-#     classic_val_dataset = FashionIQDataset(dataset_path, 'val', [dress_type], 'classic', preprocess)
-
-#     if os.path.exists(f'feature/{args.dataset}/{dress_type}/{args.model_type}/index_features.pt'):
-#         index_features = torch.load(f'feature/{args.dataset}/{dress_type}/{args.model_type}/index_features.pt')
-#         index_names = np.load(f'feature/{args.dataset}/{dress_type}/index_names.npy')
-#         index_names = index_names.tolist()
-#     else:
-#         index_features, index_names = extract_image_features(classic_val_dataset, clip_model, dress_type=dress_type)
-
-#     # Define the relative dataset
-#     relative_val_dataset = FashionIQDataset(dataset_path, 'val', [dress_type], 'relative', preprocess)
-
-#     return fiq_compute_val_metrics(relative_val_dataset, clip_model, index_features, index_names, ref_names_list,
-#                                    pseudo_tokens)
-
-
-# @torch.no_grad()
-# def fiq_compute_val_metrics(relative_val_dataset: FashionIQDataset, clip_model: CLIP, index_features: torch.Tensor,
-#                             index_names: List[str], ref_names_list: List[str], pseudo_tokens: torch.Tensor) \
-#         -> Dict[str, float]:
-#     """
-#     Compute the retrieval metrics on the FashionIQ validation set given the dataset, pseudo tokens and the reference names
-#     """
-
-#     dress_type = relative_val_dataset.dress_types[0]
-#     # Generate the predicted features
-#     feat_dataset_dress_path = f'feature/{args.dataset}/{dress_type}'
-#     if os.path.exists(f'{feat_dataset_dress_path}/{args.model_type}/{args.gpt_version}_predicted_features.pt'):
-#         target_names = np.load(f'{feat_dataset_dress_path}/target_names.npy')
-#         predicted_features = torch.load(f'{feat_dataset_dress_path}/{args.model_type}/{args.gpt_version}_predicted_features.pt')
-#         target_names = target_names.tolist()
-#     else:
-#         predicted_features, target_names = fiq_generate_val_predictions(clip_model, relative_val_dataset, ref_names_list,
-#                                                                         pseudo_tokens)
-#         np.save(f'{feat_dataset_dress_path}/target_names.npy', target_names)
-#         torch.save(predicted_features, f'{feat_dataset_dress_path}/{args.model_type}/{args.gpt_version}_predicted_features.pt')
-
-#     if args.use_momentum_strategy:
-#         if os.path.exists(f'{feat_dataset_dress_path}/{args.model_type}/blip_predicted_features.pt'):
-#             blip_predicted_features = torch.load(f'{feat_dataset_dress_path}/{args.model_type}/blip_predicted_features.pt')
-#         else:
-#             blip_predicted_features, _ = \
-#                 fiq_generate_val_predictions(clip_model, relative_val_dataset, ref_names_list, pseudo_tokens, True)
-            
-#             torch.save(blip_predicted_features, f'{feat_dataset_dress_path}/{args.model_type}/blip_predicted_features.pt')
-
-#     # Move the features to the device
-#     index_features = index_features.to(device)
-#     predicted_features = predicted_features.to(device)
-
-#     # Normalize the features
-#     index_features = F.normalize(index_features.float())
-
-#     index_name_dict = {name: index for index, name in enumerate(index_names)}
-#     indexs = [index_name_dict[name] if name in index_name_dict else -1 for name in ref_names_list]
-
-
-#     similarity_after = predicted_features @ index_features.T
-#     similarity_before = blip_predicted_features @ index_features.T
-
-#     diff_pos = similarity_after - similarity_before
-
-#     diff_pos[diff_pos < 0] = 0
-
-#     diff_neg = similarity_after - similarity_before
-
-#     diff_neg[diff_neg > 0] = 0
-
-#     similarity = similarity_after + args.neg_factor * diff_neg + args.pos_factor * diff_pos
-
-#     for i in range(similarity_before.shape[0]):
-#         if indexs[i] != -1:
-#             similarity[i][indexs[i]] = -1
-
-#     # Compute the distances
-#     distances = 1 - similarity
-#     sorted_indices = torch.argsort(distances, dim=-1).cpu()
-#     sorted_index_names = np.array(index_names)[sorted_indices]
-
-#     # Check if the target names are in the top 10 and top 50
-#     labels = torch.tensor(
-#         sorted_index_names == np.repeat(np.array(target_names), len(index_names)).reshape(len(target_names), -1))
-#     assert torch.equal(torch.sum(labels, dim=-1).int(), torch.ones(len(target_names)).int())
-
-#     # Compute the metrics
-#     recall_at10 = (torch.sum(labels[:, :10]) / len(labels)).item() * 100
-#     recall_at50 = (torch.sum(labels[:, :50]) / len(labels)).item() * 100
-
-#     return {'fiq_recall_at10': recall_at10,
-#             'fiq_recall_at50': recall_at50}
-
-
-# @torch.no_grad()
-# def fiq_generate_val_predictions(clip_model: CLIP, relative_val_dataset: FashionIQDataset, ref_names_list: List[str],
-#                                  pseudo_tokens: torch.Tensor, use_momentum_strategy=False) -> Tuple[torch.Tensor, List[str]]:
-#     """
-#     Generates features predictions for the validation set of Fashion IQ.
-#     """
-
-#     # Create data loader
-#     relative_val_loader = DataLoader(dataset=relative_val_dataset, batch_size=32, num_workers=16,
-#                                      pin_memory=False, collate_fn=collate_fn, shuffle=False)
-
-#     predicted_features_list = []
-#     target_names_list = []
-#     tokenizer = open_clip.get_tokenizer(name2model[args.model_type])
-
-#     # Compute features
-#     for batch in tqdm(relative_val_loader):
-#         reference_names = batch['reference_name']
-#         target_names = batch['target_name']
-#         relative_captions = batch['relative_captions']
-#         multi_caption = batch['multi_{}'.format(args.caption_type)]
-#         multi_gpt_caption = batch['multi_gpt_{}'.format(args.caption_type)]
-
-#         # flattened_captions: list = np.array(relative_captions).T.flatten().tolist()
-#         # input_captions = [
-#         #     f"{flattened_captions[i].strip('.?, ')} and {flattened_captions[i + 1].strip('.?, ')}" for
-#         #     i in range(0, len(flattened_captions), 2)]
-#         # input_captions_reversed = [
-#         #     f"{flattened_captions[i + 1].strip('.?, ')} and {flattened_captions[i].strip('.?, ')}" for
-#         #     i in range(0, len(flattened_captions), 2)]
-        
-#         if use_momentum_strategy:
-#             input_captions = multi_caption
-#         else:
-#             input_captions = multi_gpt_caption
-
-#         # input_captions = [
-#         #     f"a photo of $ that {in_cap}" for in_cap in input_captions]
-#         # tokenized_input_captions = tokenizer(input_captions, context_length=77).to(device)
-#         # text_features = encode_with_pseudo_tokens(clip_model, tokenized_input_captions, batch_tokens)
-
-#         # input_captions_reversed = [
-#         #     f"a photo of $ that {in_cap}" for in_cap in input_captions_reversed]
-#         # tokenized_input_captions_reversed = tokenizer(input_captions_reversed, context_length=77).to(device)
-#         # text_features_reversed = encode_with_pseudo_tokens(clip_model, tokenized_input_captions_reversed,
-#         #                                                    batch_tokens)
-
-
-#         text_features_list = []
-#         for cap in input_captions:
-#             tokenized_input_captions = tokenizer(cap, context_length=77).to(device)
-#             text_features = clip_model.encode_text(tokenized_input_captions)
-#             text_features_list.append(text_features)
-#         text_features_list = torch.stack(text_features_list)
-#         text_features = torch.mean(text_features_list, dim=0)
-
-#         predicted_features = F.normalize(text_features)
-#         # predicted_features = F.normalize((F.normalize(text_features) + F.normalize(text_features_reversed)) / 2)
-#         # predicted_features = F.normalize((text_features + text_features_reversed) / 2)
-
-#         predicted_features_list.append(predicted_features)
-#         target_names_list.extend(target_names)
-
-#     predicted_features = torch.vstack(predicted_features_list)
-#     return predicted_features, target_names_list
-
-
-
-## modify fiq
 @torch.no_grad()
 def fiq_val_retrieval(dataset_path: str, dress_type: str, clip_model_name: str, ref_names_list: List[str], preprocess: callable) -> Dict[str, float]:
     """
@@ -593,23 +421,26 @@ def fiq_val_retrieval(dataset_path: str, dress_type: str, clip_model_name: str, 
 
     # Extract the index features
     classic_val_dataset = FashionIQDataset(dataset_path, 'val', [dress_type], 'classic', preprocess)
-
+    text_val_dataset = FashionIQDataset(dataset_path, 'val', [dress_type], 'text', preprocess)
+    
     if os.path.exists(f'feature/{args.dataset}/{dress_type}/{args.model_type}/index_features.pt'):
         index_features = torch.load(f'feature/{args.dataset}/{dress_type}/{args.model_type}/index_features.pt')
         index_names = np.load(f'feature/{args.dataset}/{dress_type}/index_names.npy')
         index_names = index_names.tolist()
+        index_text_features = torch.load(f'feature/{args.dataset}/{dress_type}/{args.model_type}/index_text_features.pt')
     else:
         index_features, index_names = extract_image_features(classic_val_dataset, clip_model, dress_type=dress_type)
-
+        index_text_features, index_names = extract_text_features(text_val_dataset, clip_model, dress_type=dress_type)
+    
     # Define the relative dataset
     relative_val_dataset = FashionIQDataset(dataset_path, 'val', [dress_type], 'relative', preprocess)
 
-    return fiq_compute_val_metrics(relative_val_dataset, clip_model, index_features, index_names, ref_names_list,
+    return fiq_compute_val_metrics(relative_val_dataset, clip_model, index_features, index_text_features, index_names, ref_names_list,
                                    )
 
 
 @torch.no_grad()
-def fiq_compute_val_metrics(relative_val_dataset: FashionIQDataset, clip_model: CLIP, index_features: torch.Tensor,
+def fiq_compute_val_metrics(relative_val_dataset: FashionIQDataset, clip_model: CLIP, index_features: torch.Tensor, index_text_features: torch.Tensor,
                             index_names: List[str], ref_names_list: List[str], use_cache=False) \
         -> Dict[str, float]:
     """
@@ -652,10 +483,14 @@ def fiq_compute_val_metrics(relative_val_dataset: FashionIQDataset, clip_model: 
     # Move the features to the device
     index_features = index_features.to(device)
     predicted_features = predicted_features.to(device)
+    original_features = original_features.to(device)
+    index_text_features = index_text_features.to(device)
 
     # Normalize the features
     index_features = F.normalize(index_features.float(), dim=1)
     predicted_features = F.normalize(predicted_features.float(), dim=1)
+    original_features = F.normalize(original_features.float(), dim=1)
+    index_text_features = F.normalize(index_text_features.float(), dim=1)
 
     index_name_dict = {name: index for index, name in enumerate(index_names)}
     indexs = [index_name_dict[name] if name in index_name_dict else -1 for name in ref_names_list]
@@ -664,6 +499,7 @@ def fiq_compute_val_metrics(relative_val_dataset: FashionIQDataset, clip_model: 
     similarity_after = predicted_features @ index_features.T
     similarity_before = blip_predicted_features @ index_features.T
     similarity_original = original_features @ index_features.T
+    text_similarity = predicted_features @ index_text_features.T
 
     diff_pos = similarity_after - similarity_before
 
@@ -676,9 +512,9 @@ def fiq_compute_val_metrics(relative_val_dataset: FashionIQDataset, clip_model: 
     # original 
     # similarity = similarity_after + args.neg_factor * diff_neg + args.pos_factor * diff_pos
     
-    # Modify: add original caption feature
-    similarity = similarity_original + similarity_after + args.neg_factor * diff_neg + args.pos_factor * diff_pos
-
+    # Modify: similarity
+    similarity = args.beta*torch.sigmoid(text_similarity) + args.alpha*torch.sigmoid(similarity_original) + similarity_after + args.neg_factor * diff_neg + args.pos_factor * diff_pos
+    
     for i in range(similarity_before.shape[0]):
         if indexs[i] != -1:
             similarity[i][indexs[i]] = -1

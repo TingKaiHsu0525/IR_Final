@@ -112,7 +112,7 @@ for DRESS in ['dress', 'shirt', 'toptee']:
                 usr_prompt = f"Image Content: {cap}\nInstruction: {rel_cap}"
                 ret = generate_response(sys_prompt, usr_prompt)
                 multi_gpt.append(ret)
-            ans[f"multi_llama2_{BLIP2_MODEL}"] = multi_gpt
+            ans[f"multi_gpt-3.5_{BLIP2_MODEL}"] = multi_gpt
         else:
             # usr_prompt = (
             #     "I will put my image content beginning with \"Image Content:\". "

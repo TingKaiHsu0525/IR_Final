@@ -91,7 +91,7 @@ LLM-edit
 ### Captions Directory for step 3
 I put the all version caption data in FashionIQ_multi_opt_gpt35_5 directory
 ```
-srcFashionIQ_multi_opt_gpt35_5
+FashionIQ_multi_opt_gpt35_5
 | -- captions
     |-- cap.dress.val.json
     |-- cap.shirt.val.json
@@ -190,55 +190,55 @@ config: alpha=0.8, beta=0.25
 |----|---|------|---|---|--------|--------|
 | Shirt | SEIZE-G | default | default | ❌ | 40.38 | 58.54 |
 | Dress | SEIZE-G | default | default | ❌ | 31.73 | 54.73 |
-| Toptee | SEIZE-G | default | default | ❌ | 40.54 | 63.03 |
-| **Average** | | | | | **37.55** | **58.77** |
+| Toptee | SEIZE-G | default | default | ❌ | 40.39 | 63.84 |
+| **Average** | | | | | **37.50** | **59.04** |
 | | | | | | | |
 | Shirt | SEIZE-G | default | default | ✔️ | 40.38 | 58.00 |
 | Dress | SEIZE-G | default | default | ✔️ | 31.83 | 55.13 |
-| Toptee | SEIZE-G | default | default | ✔️ | 41.31 | 64.20 |
-| **Average** | | | | | **37.84** | **59.21** |
+| Toptee | SEIZE-G | default | default | ✔️ | 40.80 | 64.41 |
+| **Average** | | | | | **37.67** | **59.18** |
 | | | | | | | |
 | Shirt | SEIZE-G | 0.5 | 0 | ❌ | 40.53 | 59.52 |
 | Dress | SEIZE-G | 0.5 | 0 | ❌ | 32.47 | 55.78 |
-| Toptee | SEIZE-G | 0.5 | 0 | ❌ | 40.95 | 64.51 |
-| **Average** | | | | | **37.98** | **59.93** |
+| Toptee | SEIZE-G | 0.5 | 0 | ❌ | 40.95 | 64.56 |
+| **Average** | | | | | **37.98** | **59.95** |
 | | | | | | | |
 | Shirt | SEIZE-G | 0.5 | 0 | ✔️ | 40.09 | 59.13 |
 | Dress | SEIZE-G | 0.5 | 0 | ✔️ | 32.42 | 55.83 |
-| Toptee | SEIZE-G | 0.5 | 0 | ✔️ | 41.05 | 64.92 |
-| **Average** | | | | | **37.85** | **59.96** |
+| Toptee | SEIZE-G | 0.5 | 0 | ✔️ | 41.51 | 65.37 |
+| **Average** | | | | | **38.01** | **60.11** |
 | | | | | | | |
 | Shirt | SEIZE-g | default | default | ❌ | 38.22 | 57.51 |
 | Dress | SEIZE-g | default | default | ❌ | 31.43 | 54.93 |
-| Toptee | SEIZE-g | default | default | ❌ | 40.49 | 62.11 |
-| **Average** | | | | | **36.72** | **58.18** |
+| Toptee | SEIZE-g | default | default | ❌ | 40.49 | 62.88 |
+| **Average** | | | | | **36.72** | **58.44** |
 | | | | | | | |
 | Shirt | SEIZE-g | default | default | ✔️ | 39.01 | 57.61 |
 | Dress | SEIZE-g | default | default | ✔️ | 31.48 | 55.53 |
-| Toptee | SEIZE-g | default | default | ✔️ | 40.64 | 63.03 |
-| **Average** | | | | | **37.04** | **58.72** |
+| Toptee | SEIZE-g | default | default | ✔️ | 41.25 | 63.28 |
+| **Average** | | | | | **37.25** | **58.81** |
 
 | Category | Model | pos_factor | neg_factor | add_original| text_feature |Recall@10 (%) | Recall@50(%) |
 |----|---|------|---|---|--|------|--------|
 | Shirt | SEIZE-G | default | default | ✔️ | ❌ | 40.38 | 58.00 |
 | Dress | SEIZE-G | default | default | ✔️ | ❌ | 31.83 | 55.13 |
-| Toptee | SEIZE-G | default | default | ✔️ | ❌ |41.31 | 64.30 |
-| **Average** | | | | | | **37.84** | **59.14** |
+| Toptee | SEIZE-G | default | default | ✔️ | ❌ |40.80 | 64.41 |
+| **Average** | | | | | | **37.67** | **59.18** |
 | | | | | | | | |
 | Shirt | SEIZE-G | default | default | ✔️ | ✔️ | 40.73 | 58.34 |
 | Dress | SEIZE-G | default | default | ✔️ | ✔️ | 31.68 | 55.13 |
-| Toptee | SEIZE-G | default | default | ✔️ | ✔️ |42.12 | 64.25 |
-| **Average** | | | | | | **38.18** | **59.24** |
+| Toptee | SEIZE-G | default | default | ✔️ | ✔️ |42.07 | 64.71 |
+| **Average** | | | | | | **38.16** | **59.39** |
 | | | | | | | | |
 | Shirt | SEIZE-G | 0.5 | 0 | ✔️ | ❌ | 40.09 | 59.13 |
 | Dress | SEIZE-G | 0.5 | 0 | ✔️ | ❌ | 32.42 | 55.83 |
-| Toptee | SEIZE-G | 0.5 | 0 | ✔️ | ❌ |41.05 | 64.92 |
-| **Average** | | | | | | **37.85** | **59.96** |
+| Toptee | SEIZE-G | 0.5 | 0 | ✔️ | ❌ |41.51 | 65.37 |
+| **Average** | | | | | | **38.01** | **60.11** |
 | | | | | | | | |
 | Shirt | SEIZE-G | 0.5 | 0 | ✔️ | ✔️ | 40.28 | 59.13 |
 | Dress | SEIZE-G | 0.5 | 0 | ✔️ | ✔️ | 32.23 | 56.07 |
-| Toptee | SEIZE-G | 0.5 | 0 | ✔️ | ✔️ |41.56 | 65.27 |
-| **Average** | | | | | | **38.02** | **60.16** |
+| Toptee | SEIZE-G | 0.5 | 0 | ✔️ | ✔️ |42.43 | 65.17 |
+| **Average** | | | | | | **38.31** | **60.12** |
 
 ### Hyperparamter Analysis
 
@@ -252,47 +252,50 @@ Analysis by GPT caption_num=15, defalut pos_fator & neg factor, model=SEIZE-G
 #### Recall@10(%)
 |  Alpha  |   Shirt   |   Dress   |   Toptee  |  Average  |
 | :-----: | :-------: | :-------: | :-------: | :-------: |
-|   0.2   |   40.38   | **32.03** |   40.85   |   37.75   |
-|   0.3   | **40.53** |   31.98   |   40.90   |   37.80   |
-|   0.4   |   40.48   |   31.88   |   41.10   |   37.82   |
-|   0.5   |   40.43   |   31.93   |   41.15   |   37.84   |
-|   0.6   |   40.38   |   31.73   |   41.15   |   37.76   |
-|   0.7   |   40.33   |   31.88   |   41.41   | **37.87** |
-| **0.8** |   40.38   |   31.83   | **41.31** |   37.84   |
-|   0.9   |   40.24   |   31.68   |   41.10   |   37.67   |
+|   0.2   |   40.38   | **32.03** |   40.54   |   37.65   |
+|   0.3   | **40.53** |   31.98   |   40.64   |   37.72   |
+|   0.4   |   40.48   |   31.88   |   40.59   |   37.65   |
+|   0.5   |   40.43   |   31.93   |   40.74   |   37.70   |
+|   0.6   |   40.38   |   31.73   |   40.95   |   37.69   |
+|   0.7   |   40.33   |   31.88   |   40.95   |   37.72   |
+| **0.8** |   40.38   |   31.83   |   40.80   |   37.67   |
+|   0.9   |   40.24   |   31.68   |   40.90   |   37.60   |
+|   1.0   |   40.24   |   31.73   | **41.51** | **37.83** |
 #### Recall@50(%)
 |  Alpha  |   Shirt   |   Dress   |   Toptee  |  Average  |
 | :-----: | :-------: | :-------: | :-------: | :-------: |
-|   0.2   |   58.39   |   54.98   |   63.44   |   58.94   |
-|   0.3   | **58.49** |   55.03   |   63.74   |   59.09   |
-|   0.4   |   58.39   |   55.03   |   63.90   |   59.11   |
-|   0.5   |   58.24   |   55.03   |   63.90   |   59.06   |
-|   0.6   |   58.15   |   55.03   |   64.20   |   59.13   |
-|   0.7   |   58.10   |   54.98   |   64.25   |   59.11   |
-| **0.8** |   58.00   |   55.13   | **64.30** |   59.14   |
-|   0.9   |   58.15   | **55.28** |   64.20   | **59.21** |
+|   0.2   |   58.39   |   54.98   |   64.05   |   59.14   |
+|   0.3   | **58.49** |   55.03   |   64.15   |   59.22   |
+|   0.4   |   58.39   |   55.03   |   64.05   |   59.16   |
+|   0.5   |   58.24   |   55.03   |   64.30   |   59.19   |
+|   0.6   |   58.15   |   55.03   |   64.46   |   59.21   |
+|   0.7   |   58.10   |   54.98   |   64.51   |   59.20   |
+| **0.8** |   58.00   |   55.13   |   64.41   |   59.18   |
+|   0.9   |   58.15   | **55.28** | **64.71** | **59.38** |
+|   1.0   |   58.19   |   55.13   |   64.66   |   59.33   |
 
 Analysis by GPT caption_num=15, defalut pos_fator & neg factor, model=SEIZE-G, alpha=0.8
 
 #### Recall@10(%)
 |   Beta   |   Shirt   |   Dress   |   Toptee  |  Average  |
 | :------: | :-------: | :-------: | :-------: | :-------: |
-|   0.1    |   40.33   | **32.03** |   41.71   |   38.02   |
-|   0.15   |   40.28   |   31.98   |   41.71   |   37.99   |
+|   0.1    |   40.33   | **32.03** |   41.51   |   37.96   |
+|   0.15   |   40.28   |   31.98   |   41.76   |   38.01   |
 |   0.2    |   40.43   |   31.68   |   41.97   |   38.03   |
-| **0.25** | **40.73** |   31.68   | **42.12** | **38.18** |
-|   0.3    |   40.48   |   31.63   |   41.87   |   37.99   |
-|   0.4    |   40.24   |   31.48   |   41.92   |   37.88   |
+| **0.25** | **40.73** |   31.68   |   42.07   | **38.16** |
+|   0.3    |   40.48   |   31.63   | **42.33** |   38.15   |
+|   0.4    |   40.24   |   31.48   |   41.12   |   37.95   |
 
 #### Recall@50(%)
 |   Beta   |   Shirt   |   Dress   |   Toptee  |  Average  |
 | :------: | :-------: | :-------: | :-------: | :-------: |
-|   0.1    |   58.29   |   55.38   |   64.35   | **59.34** |
-|   0.15   |   58.39   |   55.13   |   64.41   |   59.31   |
-|   0.2    | **58.39** |   54.93   | **64.41** |   59.24   |
-| **0.25** |   58.34   | **55.13** |   64.25   |   59.24   |
-|   0.3    |   58.10   |   54.98   |   64.20   |   59.09   |
-|   0.4    |   58.29   |   54.93   |   63.95   |   59.06   |
+|   0.1    |   58.29   | **55.38** |   64.81   | **59.50** |
+|   0.15   |   58.39   |   55.13   | **64.86** |   59.46   |
+|   0.2    | **58.39** |   54.93   |   64.71   |   59.35   |
+| **0.25** |   58.34   |   55.13   |   64.71   |   59.39   |
+|   0.3    |   58.10   |   54.98   |   64.56   |   59.21   |
+|   0.4    |   58.29   |   54.93   |   64.30   |   59.18   |
+
 
 ## 2025/06/03
 ### Updates
@@ -384,8 +387,26 @@ multi_opt: ['the umojm logo t shirt', 'the only utah map t shirt', 'the black sh
 multi_gpt_opt: ['The Umojm logo t-shirt is black with a red skeleton design.', 'a black t-shirt with a skeleton, only Utah map, is red.', 'a black shirt with a red skeleton print.', 'a black t-shirt with a skeleton and red text "the only winning move is not to play"', 'a black shirt with a red skeleton that says "only the unique is moving not to play"', 'a black t-shirt with a red map and world image on it.', 'The shirt for a band called the ultimate mod movement, it has a map of the world, and the skeleton is red.']
 captions: ['The shirt is black with a skeleton.', ' is red']
 
+NEW
+- Captions: I update the captions result from step 2 for captions_num=15
+- Captions_{DRESS}.text: for images database caption text
 
-
+```
+FashionIQ_multi_opt_gpt35_5
+| -- captions -> step 3 load captions
+    |-- cap.dress.val.json
+    |-- cap.shirt.val.json
+    |-- cap.toptee.val.json
+| -- caption_gpt_15     -> gpt3.5, caption_num=15
+| -- caption_gpt3.5_v1  -> gpt3.5, caption_num=5
+| -- caption_Llama2     -> Llama2-7b, , caption_num=5
+| -- caption_Llama2_15  -> Llama2-7b, , caption_num=5
+| -- image_splits
+| -- captions_dress.text
+| -- captions_shirt.text
+| -- captions_toptee.text
+| -- images
+```
 
 # Citatiion
 ```
