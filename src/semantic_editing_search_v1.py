@@ -436,7 +436,7 @@ def fiq_val_retrieval(dataset_path: str, dress_type: str, clip_model_name: str, 
     relative_val_dataset = FashionIQDataset(dataset_path, 'val', [dress_type], 'relative', preprocess)
 
     return fiq_compute_val_metrics(relative_val_dataset, clip_model, index_features, index_text_features, index_names, ref_names_list,
-                                   )
+                                   use_cache=True)
 
 
 @torch.no_grad()

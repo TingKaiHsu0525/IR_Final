@@ -2,6 +2,41 @@
 
 ![Framework](images/framework.png)
 
+# Environment Setup and Reproducing Results
+Follow the instruction to reproduce our result
+
+- Environment setup: \
+    This is arranged from the installation guide of [SEIZE repository](https://github.com/yzy-bupt/SEIZE/tree/main).
+
+    To use the original OpenAI GPT for caption generation, create an environment with python 3.9.x:    
+    ```
+    conda create -n SEIZE -y python=3.9.20
+    conda activate SEIZE
+    ```
+
+    Then, install `torch==1.11.0` and `torchvision==0.12.0` in the environment. 
+
+    Finally, run
+    ```
+    pip install -r requirements.txt
+    ```
+
+    To use LLaMA2-7B instead of OpenAI GPT, you need to create another environment and set it up with Hugging Face.
+    ```
+    torch==2.7.0
+    torchaudio==2.7.0
+    torchvision==0.22.0
+    transformers==4.49.0
+    ```
+
+- Dataset:
+    Follow the -[Dataset part](#dataset) to Download the Fashioniq dataset
+
+- Run code: \
+    Follow the -[Instruction](#duplicate-the-experiment) and the directory should look like [this](#final-directory). put the captions_{DRESS}.txt in directory edited captions in captions directory\
+    Read the -[Visualization part](#visualization) for visualize the result
+
+
 ## Dataset 
 1. Fashion-iq: https://disk.yandex.com/d/Z2E54WCwvrQA3A
 
@@ -416,33 +451,6 @@ FashionIQ_multi_opt_gpt35_5
 | -- captions_toptee.text
 | -- images
 ```
-
-# Reproduce
-Following the instruction to reproduce our result
-
-- Environment setup: \
-    Following the Installation in SEIZE for using LLM GPT
-    ```
-    conda create -n SEIZE -y python=3.9.20
-    conda activate SEIZE
-    conda install -y -c pytorch pytorch=1.11.0 torchvision=0.12.0
-    pip install -r requirements.txt
-    ```
-    To use LLaMA2-7B, you need to create another environment and set it up with Hugging Face.
-    ```
-    torch==2.7.0
-    torchaudio==2.7.0
-    torchvision==0.22.0
-    transformers==4.49.0
-    ```
-
-- Dataset:
-    Follow the -[Dataset part](#dataset) to Download the Fashioniq dataset
-
-- Run code: \
-    Follow the -[Instruction](#duplicate-the-experiment) and the directory shoud like [this](#final-directory) put the captions_{DRESS}.txt in directory edited captions in captions directory\
-    Read the -[Visualization part](#visualization) for visualize the result
-
 
 # Citation
 ```

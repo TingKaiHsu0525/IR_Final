@@ -1,0 +1,14 @@
+python src/semantic_editing_search_v1.py \
+ --dataset              fashioniq \
+ --dataset_path         FashionIQ_multi_opt_gpt35_5 \
+ --gpt_version          gpt-3.5 \
+ --submission_name      "multi_opt_gpt35_5" \
+ --gpt_version          gpt-3.5\
+ --caption_type         opt \
+ --model_type           SEIZE-G \
+ --use_momentum_strategy True \
+ --pos_factor           0.13 \
+ --neg_factor           2.1 \
+ --alpha               0.8 \
+ --beta                0 \
+ --nums_caption         15
